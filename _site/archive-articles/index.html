@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8"/>
+	
+	<title>Weblog Archive &mdash; Jonah Wiaderny</title>
+
+	
+	<link rel="alternate" type="application/rss+xml" href="http://feeds.feedburner.com/andytaylor">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
+	<link rel="shortcut icon" href="/assets/images/avatar.png" type="image/x-icon" />
+	
+	<link rel="apple-touch-icon-precomposed" href="/assets/images/avatar.jpg"/>
+	
+	<meta name="description" content="Random Logs" />
+	
+	<!-- jQuery -->
+	<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js'></script>
+	
+	<!-- Custom JS -->
+	<script type='text/javascript' src='/assets/js/custom.js'></script>
+	
+	<!-- Modernizr adding css classes -->
+	<script type='text/javascript' src='/assets/js/libs/modernizr_css_classes.js'></script>
+
+</head>
+<body>
+	
+	<div id="masthead">
+		<h2 class="sitetitle"><a href="/" class="sitetitle">Jonah Wiaderny</a></h2>
+		<p class="description">Random Logs</p>
+		<hr />
+		<ul id="pagenav">
+	<li><a href="/">Weblog</a></li>
+	<li><a href="/archive">Archive</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/curriculum-vitae" class="adn">Curriculum Vit&aelig;</a></li>
+	<li><a href="/colophon">Colophon</a></li>
+	
+	<li><a href="http://feeds.feedburner.com/andytaylor" class="rss">RSS Feed</a></li>
+	
+	
+	
+</ul>
+</div> <!--/masthead-->
+
+	
+	<div class="container" id="archive">
+		
+		<div id="content">
+			<h1 class="posttitle">Weblog Archive</h1>
+	
+			
+			
+			<ul class="archivenav">
+				<li><a href="/archive/">All posts</a></li>
+				<li class="selected">Articles</li>
+			</ul>
+			
+			<p>Note: There is an <a href="http://feeds.feedburner.com/andytaylor-articles">RSS feed</a> that only contains articles.</p>
+			
+			<div class="clear"></div>
+			
+			
+			
+			
+				
+				
+				
+				<h2>May 2013</h2>
+				<ul class="archivelist">
+				
+					
+				  	<li><a href="/notes/install-gnupg-on-mountain-lion/">Install GnuPG on Mountain Lion</a></li>
+			
+			
+			
+			
+			
+				
+				
+				</ul>
+				<h2>January 2013</h2>
+				<ul class="archivelist">
+				
+					
+				  	<li><a href="/notes/do-not-forget-your-blosxom-conf/">Don't forget your bloscom config</a></li>
+			
+			
+			
+			
+			
+				
+					
+				  	<li><a href="/notes/collaborative-editing-with-markdown/">Collaborative Editing with Markdown</a></li>
+			
+			
+			
+			
+			
+				
+					
+				  	<li><a href="/notes/textile-as-custom-processor-in-marked/">Textile as a custom processor in Marked</a></li>
+			
+			
+			
+			
+			
+				
+				
+				</ul>
+				<h2>November 2012</h2>
+				<ul class="archivelist">
+				
+					
+				  	<li><a href="/notes/html-entities-or-decimals/">HTML Entities or Decimals</a></li>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+				
+					
+				  	<li><a href="/notes/access-local-wordpress-on-ipad/">Access local WordPress on iPad</a></li>
+			
+			
+			
+			
+			
+				
+					
+				  	<li><a href="/notes/unix-command-line-usage-notes/">UNIX Command Line Usage Notes</a></li>
+			
+			
+			
+			
+			
+				
+					
+				  	<li><a href="/notes/installing-ruby-and-jekyll/">Installing Ruby &amp; Jekyll on Mac OS X</a></li>
+			
+			
+			
+			
+			
+				
+				
+				</ul>
+				<h2>October 2012</h2>
+				<ul class="archivelist">
+				
+					
+				  	<li><a href="/notes/economic-diagrams-with-tikz/">Economic Diagrams with TikZ</a></li>
+			
+			
+			
+			
+			
+				
+					
+				  	<li><a href="/notes/fill-table-space-with-dots-in-latex/">Fill table space with dots in LaTeX</a></li>
+			
+			
+			
+			
+			
+				
+				
+				</ul>
+				<h2>May 2012</h2>
+				<ul class="archivelist">
+				
+					
+				  	<li><a href="/notes/how-to-exclude-pages-from-wordpress-search/">How to exclude pages from wordpress search</a></li>
+			
+			
+			
+			</ul>
+			
+		</div> <!-- /content -->
+	</div> <!-- /container -->
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-16909425-8']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+<!-- jQuery Infinite Scrolling -->
+<script type='text/javascript' src='/assets/js/libs/jquery.infinitescroll.min.js'></script>
+<script>
+// infinitescroll() is called on the element that surrounds 
+// the items you will be loading more of
+$('ul#posts').infinitescroll({ 
+	navSelector		: "p.pagination",
+					// selector for the paged navigation (it will be hidden)
+	nextSelector	: "p.pagination a.older",
+					// selector for the NEXT link (to page 2)
+	itemSelector	: "#content ul#posts li.post"
+					// selector for all items you'll retrieve
+});
+</script>
+
+</body>
+</html>

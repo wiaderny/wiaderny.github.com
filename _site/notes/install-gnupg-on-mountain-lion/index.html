@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8"/>
+	
+	<title>Install GnuPG on Mountain Lion &mdash; Jonah Wiaderny</title>
+
+	
+	<link rel="alternate" type="application/rss+xml" href="http://feeds.feedburner.com/andytaylor">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
+	<link rel="shortcut icon" href="/assets/images/avatar.png" type="image/x-icon" />
+	
+	<link rel="apple-touch-icon-precomposed" href="/assets/images/avatar.jpg"/>
+	
+	<meta name="description" content="Random Logs" />
+	
+	<!-- jQuery -->
+	<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js'></script>
+	
+	<!-- Custom JS -->
+	<script type='text/javascript' src='/assets/js/custom.js'></script>
+	
+	<!-- Modernizr adding css classes -->
+	<script type='text/javascript' src='/assets/js/libs/modernizr_css_classes.js'></script>
+
+</head>
+<body>
+	
+	<div id="masthead">
+		<h2 class="sitetitle"><a href="/" class="sitetitle">Jonah Wiaderny</a></h2>
+		<p class="description">Random Logs</p>
+		<hr />
+		<ul id="pagenav">
+	<li><a href="/">Weblog</a></li>
+	<li><a href="/archive">Archive</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/curriculum-vitae" class="adn">Curriculum Vit&aelig;</a></li>
+	<li><a href="/colophon">Colophon</a></li>
+	
+	<li><a href="http://feeds.feedburner.com/andytaylor" class="rss">RSS Feed</a></li>
+	
+	
+	
+</ul>
+</div> <!--/masthead-->
+
+	
+	<div class="container">
+		
+		<div id="content" class="post">
+	
+		
+		<h1 class="posttitle">Install GnuPG on Mountain Lion</h1>
+		<p class="date articledate">May 13, 2013</p>
+		
+	
+		<p>With the introduction of OS X 10.8 a very handy possibility of using PGP vanished &#8211; although the guys from <a href='https://www.gpgtools.org/'>PGP-Tools</a> are working on an update to make their tool work with the native mail app. However great luck for us there is still the old school possibility of installing <a href='http://www.gnupg.org/'>Gnu Privacy Guard</a> on your local machine. This log will be a (hopefully) handy note on how to install this great pice.</p>
+
+<p>After you have opened your Terminal, you start-off by downloading the desired version (and its corresponding signature) from gnupg.org.</p>
+<div class='highlight'><pre><code class='bash'><span class='nv'>$ </span>curl -O ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-1.4.tar.gz 
+</code></pre></div>
+<p>To ensure the originality of your obtained file you should concider to run following command</p>
+<div class='highlight'><pre><code class='bash'><span class='nv'>$ </span>openssl sha1 gnupg-1.4.12.tar.gz
+</code></pre></div>
+<p>what should yield you a value of <code>790587e440ec7d429b120db7a96a237badc638fd</code>. If it does not, stop here and contact the guys at gnupg. I assume however, that you got a valid distribution. You may untar, change directory and configure your</p>
+<div class='highlight'><pre><code class='bash'><span class='nv'>$ </span>tar -xzf gnupg-1.4.12.tar.gz
+<span class='nv'>$ </span><span class='nb'>cd </span>gnupg-1.4.12 
+<span class='nv'>$ </span>./configure
+</code></pre></div>
+<p>I assume that you do not yield any error when running the tests, so that we are good to go and install with the well known method, namely <code>make</code>, <code>make check</code> and finalize this procedure with <code>sudo make install</code>.</p>
+
+<p>Now that everything is set up, it&#8217;s time to generate some random numbers and afterwards our keys.</p>
+<div class='highlight'><pre><code class='bash'>gpg <span class='o'>(</span>GnuPG<span class='o'>)</span> 1.4; Copyright <span class='o'>(</span>C<span class='o'>)</span> 2012 Free Software Foundation, Inc. 
+This is free software: you are free to change and redistribute it. 
+There is NO WARRANTY, to the extent permitted by law. 
+Bitte wählen Sie, welche Art von Schlüssel Sie möchten: 
+<span class='o'>(</span>1<span class='o'>)</span> RSA und RSA <span class='o'>(</span>voreingestellt<span class='o'>)</span> 
+<span class='o'>(</span>2<span class='o'>)</span> DSA und Elgamal 
+<span class='o'>(</span>3<span class='o'>)</span> DSA <span class='o'>(</span>nur unterschreiben/beglaubigen<span class='o'>)</span> 
+<span class='o'>(</span>4<span class='o'>)</span> RSA <span class='o'>(</span>nur signieren/beglaubigen<span class='o'>)</span> 
+Ihre Auswahl?
+</code></pre></div>
+<p>According to your system language the output will vary. Nevertheless you are free to choose whatever suits your needs most, I have chosen (1). Next steps are pretty straight forward and self explanatory. After the process will be finished you will end up with a generated public and private key. Some important functions for you may be the <code>--list keys</code> option, which yields all available keys in your <code>pubring.pgp</code> file, or the command</p>
+<div class='highlight'><pre><code class='bash'><span class='nv'>$ </span>gpg --armor --export you@youremail.tld
+</code></pre></div>
+<p>This will yield your public key block which you can save and send to your addressees so they will be able to encrypt their messages for you. To import a public key, just use the <code>--import</code> command which should be followed by the key file you want to use. Encrypting a file can be achieved by the first command, decrypting by the second.</p>
+<div class='highlight'><pre><code class='bash'><span class='nv'>$ </span>gpg --output outfile --encrypt --recipient name@domain.tld inputfile 
+<span class='nv'>$ </span>gpg --output inputfile --decrypt outfile
+</code></pre></div>
+		
+		
+		<p class="comments">Got a comment? @me on
+
+			
+			<a href="http://twitter.com/jonah.wiaderny">Twitter</a>
+			
+			
+			
+			
+			
+		
+		</p>
+		
+		
+		<!-- Tweet button -->
+		<div class="tweet">
+		<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-count="none" data-dnt="true">Tweet</a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+		</div>
+		
+		</div> <!-- /content -->
+	</div> <!-- /container -->
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-16909425-8']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+<!-- jQuery Infinite Scrolling -->
+<script type='text/javascript' src='/assets/js/libs/jquery.infinitescroll.min.js'></script>
+<script>
+// infinitescroll() is called on the element that surrounds 
+// the items you will be loading more of
+$('ul#posts').infinitescroll({ 
+	navSelector		: "p.pagination",
+					// selector for the paged navigation (it will be hidden)
+	nextSelector	: "p.pagination a.older",
+					// selector for the NEXT link (to page 2)
+	itemSelector	: "#content ul#posts li.post"
+					// selector for all items you'll retrieve
+});
+</script>
+
+</body>
+</html>

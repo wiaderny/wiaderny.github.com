@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8"/>
+	
+	<title>Textile as a custom processor in Marked &mdash; Jonah Wiaderny</title>
+
+	
+	<link rel="alternate" type="application/rss+xml" href="http://feeds.feedburner.com/andytaylor">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
+	<link rel="shortcut icon" href="/assets/images/avatar.png" type="image/x-icon" />
+	
+	<link rel="apple-touch-icon-precomposed" href="/assets/images/avatar.jpg"/>
+	
+	<meta name="description" content="Random Logs" />
+	
+	<!-- jQuery -->
+	<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js'></script>
+	
+	<!-- Custom JS -->
+	<script type='text/javascript' src='/assets/js/custom.js'></script>
+	
+	<!-- Modernizr adding css classes -->
+	<script type='text/javascript' src='/assets/js/libs/modernizr_css_classes.js'></script>
+
+</head>
+<body>
+	
+	<div id="masthead">
+		<h2 class="sitetitle"><a href="/" class="sitetitle">Jonah Wiaderny</a></h2>
+		<p class="description">Random Logs</p>
+		<hr />
+		<ul id="pagenav">
+	<li><a href="/">Weblog</a></li>
+	<li><a href="/archive">Archive</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/curriculum-vitae" class="adn">Curriculum Vit&aelig;</a></li>
+	<li><a href="/colophon">Colophon</a></li>
+	
+	<li><a href="http://feeds.feedburner.com/andytaylor" class="rss">RSS Feed</a></li>
+	
+	
+	
+</ul>
+</div> <!--/masthead-->
+
+	
+	<div class="container">
+		
+		<div id="content" class="post">
+	
+		
+		<h1 class="posttitle">Textile as a custom processor in Marked</h1>
+		<p class="date articledate">January 11, 2013</p>
+		
+	
+		<p>Just recently a few fellow students were curious how to use <a href='[http://en.wikipedia.org/wiki/Textile_(markup_language)]'>textile</a> as the markup language in <a href='[http://markedapp.com]'>Marked</a>, which is a great app by the way. in the first place you have to have textile, of course. The rest is quite trivial but you need to have Apple Developer Tools to be installed on your local machine.</p>
+
+<ul>
+<li>Download and install perl textile from <a href='[https://github.com/bradchoate/text-textile]'>github</a>.</li>
+
+<li>Run <code>which textile</code> in a terminal to determine your textile path.</li>
+
+<li>Set textile as your custom processor in Marked preferences as shown in the following image.<sup id='fnref:1'><a href='#fn:1' rel='footnote'>1</a></sup></li>
+</ul>
+<img alt='Marked app textile as custom processor ' src='../../assets/images/Bildschirmfoto-2013-01-11-um-21.29.46.png' /><div class='footnotes'><hr /><ol><li id='fn:1'>
+<p>It&#8217;s a good idea to actually tick the checkbox if you want to use textile. I had it off in this screenshot as I mostly stick with the markdown syntax.</p>
+<a href='#fnref:1' rev='footnote'>&#8617;</a></li></ol></div>
+		
+		
+		<p class="comments">Got a comment? @me on
+
+			
+			<a href="http://twitter.com/jonah.wiaderny">Twitter</a>
+			
+			
+			
+			
+			
+		
+		</p>
+		
+		
+		<!-- Tweet button -->
+		<div class="tweet">
+		<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-count="none" data-dnt="true">Tweet</a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+		</div>
+		
+		</div> <!-- /content -->
+	</div> <!-- /container -->
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-16909425-8']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+<!-- jQuery Infinite Scrolling -->
+<script type='text/javascript' src='/assets/js/libs/jquery.infinitescroll.min.js'></script>
+<script>
+// infinitescroll() is called on the element that surrounds 
+// the items you will be loading more of
+$('ul#posts').infinitescroll({ 
+	navSelector		: "p.pagination",
+					// selector for the paged navigation (it will be hidden)
+	nextSelector	: "p.pagination a.older",
+					// selector for the NEXT link (to page 2)
+	itemSelector	: "#content ul#posts li.post"
+					// selector for all items you'll retrieve
+});
+</script>
+
+</body>
+</html>

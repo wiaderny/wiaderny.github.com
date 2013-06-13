@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8"/>
+	
+	<title>Collaborative Editing with Markdown &mdash; Jonah Wiaderny</title>
+
+	
+	<link rel="alternate" type="application/rss+xml" href="http://feeds.feedburner.com/andytaylor">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
+	<link rel="shortcut icon" href="/assets/images/avatar.png" type="image/x-icon" />
+	
+	<link rel="apple-touch-icon-precomposed" href="/assets/images/avatar.jpg"/>
+	
+	<meta name="description" content="Random Logs" />
+	
+	<!-- jQuery -->
+	<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js'></script>
+	
+	<!-- Custom JS -->
+	<script type='text/javascript' src='/assets/js/custom.js'></script>
+	
+	<!-- Modernizr adding css classes -->
+	<script type='text/javascript' src='/assets/js/libs/modernizr_css_classes.js'></script>
+
+</head>
+<body>
+	
+	<div id="masthead">
+		<h2 class="sitetitle"><a href="/" class="sitetitle">Jonah Wiaderny</a></h2>
+		<p class="description">Random Logs</p>
+		<hr />
+		<ul id="pagenav">
+	<li><a href="/">Weblog</a></li>
+	<li><a href="/archive">Archive</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/curriculum-vitae" class="adn">Curriculum Vit&aelig;</a></li>
+	<li><a href="/colophon">Colophon</a></li>
+	
+	<li><a href="http://feeds.feedburner.com/andytaylor" class="rss">RSS Feed</a></li>
+	
+	
+	
+</ul>
+</div> <!--/masthead-->
+
+	
+	<div class="container">
+		
+		<div id="content" class="post">
+	
+		
+		<h1 class="posttitle">Collaborative Editing with Markdown</h1>
+		<p class="date articledate">January 11, 2013</p>
+		
+	
+		<p>Just recently I had to make up my mind about how to collaborate on simple memo files which would be synchronized using <a href='http://db.tt/tfvLVYN'>dropbox</a> across heterogeneous systems. Proprietary file formats would of course drop out. Besides, no one wanted to install an additional program.<sup id='fnref:1'><a href='#fn:1' rel='footnote'>1</a></sup></p>
+
+<p>A very intuitive possibility was to use the great and straightforward <a href='http://daringfireball.net/projects/markdown/syntax'>mardown syntax</a>.<sup id='fnref:2'><a href='#fn:2' rel='footnote'>2</a></sup> By mardown&#8217;s design you are able to compile an input document to an output document with markdown. However, we had three individual memo files, so everyone of us could write into his own <code>.md</code> file and two style files which we wanted to be compiled into one single <code>.html</code> file. For compiling multiple input files into one output file <a href='http://johnmacfarlane.net/pandoc/'>pandoc</a> comes in really handy.</p>
+
+<p>If you are on a Unix/Mac machine you can compile multiple input files to one file by running following commands in a terminal window</p>
+<div class='highlight'><pre><code class='bash'><span class='nv'>$ </span><span class='nb'>cd</span> &lt;YOURDIRECTORY&gt;
+<span class='c'># =&gt; Change directory to where your files are located</span>
+<span class='nv'>$ </span>pandoc *.md &gt; memos.html
+<span class='c'># =&gt; Take all .md files in &lt;YOURDIRECTORY&gt; and compile a single html file</span>
+</code></pre></div>
+<p>Using Windows you might get an input error using the above mentioned command. Therefore it seems better to run following commands in your <code>cmd.exe</code>.</p>
+<div class='highlight'><pre><code class='bash'><span class='nv'>$ </span><span class='nb'>cd</span> &lt;YOURDIRECTORY&gt;
+<span class='c'># =&gt; Change directory to where your files are located</span>
+<span class='nv'>$ </span>pandoc -o memos.html input_1.md input_2.md input_n.md 
+<span class='c'># =&gt; Compile a single .html using all specified input files</span>
+</code></pre></div>
+<p>Using pandoc and dropbox for collaborative editing of simple memos across heterogeneous systems seems to work just fine. However pandoc as a processor is much more powerful and I can only recommend you take a look for yourself.</p>
+<div class='footnotes'><hr /><ol><li id='fn:1'>
+<p>Although there are many great programs for that kind of work, like <a href='http://www.codingmonkeys.de/subethaedit/'>SubEthaEdit</a>, inter alia.</p>
+<a href='#fnref:1' rev='footnote'>&#8617;</a></li><li id='fn:2'>
+<p>I actually use Markdown to produce every note I write on this very website. It is extremely useful and I cannot stress how much I recommend it for plain writing.</p>
+<a href='#fnref:2' rev='footnote'>&#8617;</a></li></ol></div>
+		
+		
+		<p class="comments">Got a comment? @me on
+
+			
+			<a href="http://twitter.com/jonah.wiaderny">Twitter</a>
+			
+			
+			
+			
+			
+		
+		</p>
+		
+		
+		<!-- Tweet button -->
+		<div class="tweet">
+		<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-count="none" data-dnt="true">Tweet</a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+		</div>
+		
+		</div> <!-- /content -->
+	</div> <!-- /container -->
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-16909425-8']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+<!-- jQuery Infinite Scrolling -->
+<script type='text/javascript' src='/assets/js/libs/jquery.infinitescroll.min.js'></script>
+<script>
+// infinitescroll() is called on the element that surrounds 
+// the items you will be loading more of
+$('ul#posts').infinitescroll({ 
+	navSelector		: "p.pagination",
+					// selector for the paged navigation (it will be hidden)
+	nextSelector	: "p.pagination a.older",
+					// selector for the NEXT link (to page 2)
+	itemSelector	: "#content ul#posts li.post"
+					// selector for all items you'll retrieve
+});
+</script>
+
+</body>
+</html>

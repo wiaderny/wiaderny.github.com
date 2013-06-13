@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8"/>
+	
+	<title>Installing Ruby &amp; Jekyll on Mac OS X &mdash; Jonah Wiaderny</title>
+
+	
+	<link rel="alternate" type="application/rss+xml" href="http://feeds.feedburner.com/andytaylor">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
+	<link rel="shortcut icon" href="/assets/images/avatar.png" type="image/x-icon" />
+	
+	<link rel="apple-touch-icon-precomposed" href="/assets/images/avatar.jpg"/>
+	
+	<meta name="description" content="Random Logs" />
+	
+	<!-- jQuery -->
+	<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js'></script>
+	
+	<!-- Custom JS -->
+	<script type='text/javascript' src='/assets/js/custom.js'></script>
+	
+	<!-- Modernizr adding css classes -->
+	<script type='text/javascript' src='/assets/js/libs/modernizr_css_classes.js'></script>
+
+</head>
+<body>
+	
+	<div id="masthead">
+		<h2 class="sitetitle"><a href="/" class="sitetitle">Jonah Wiaderny</a></h2>
+		<p class="description">Random Logs</p>
+		<hr />
+		<ul id="pagenav">
+	<li><a href="/">Weblog</a></li>
+	<li><a href="/archive">Archive</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/curriculum-vitae" class="adn">Curriculum Vit&aelig;</a></li>
+	<li><a href="/colophon">Colophon</a></li>
+	
+	<li><a href="http://feeds.feedburner.com/andytaylor" class="rss">RSS Feed</a></li>
+	
+	
+	
+</ul>
+</div> <!--/masthead-->
+
+	
+	<div class="container">
+		
+		<div id="content" class="post">
+	
+		
+		<h1 class="posttitle">Installing Ruby &amp; Jekyll on Mac OS X</h1>
+		<p class="date articledate">November  3, 2012</p>
+		
+	
+		<p>Because of my ignorance for Terminal, I struggled to install Ruby and <a href='https://github.com/mojombo/jekyll' title='Jekyll on GitHub'>Jekyll</a>, so I&#8217;ve written some notes on that process. When I have to do it from scratch again, I&#8217;ll attempt to make them clearer.</p>
+
+<p>I installed so much shit trying to get Jekyll installed, that I don&#8217;t really know what I did. But there was a couple of gotchas. So if I need to do it again, the rough process was what I&#8217;ve listed below. Along the way, <a href='https://gist.github.com/1587643' title='Gist explaining installing Ruby on OS X Lion'>this</a> seemed to be the most straightforward guide I read.</p>
+
+<h2 id='install_ruby_and_dependencies'>Install Ruby and Dependencies</h2>
+
+<ul>
+<li>Download and install <strong>Xcode</strong> from the Mac App Store. Xcode apparently <em>used</em> to come with <strong>Command Line Tools</strong>, but now you have to install them as an extra. Within Xcode, go to <em>Preferences &gt; Downloads</em>, and install them. I installed Xcode figuring it came with these&#8212;I&#8217;m guessing I would have had Ruby installed earlier if I knew about this.</li>
+
+<li>Install <strong>Homebrew</strong>, a package manager. <code>ruby -e &quot;$(curl -fsSkL raw.github.com/mxcl/homebrew/go)&quot;</code> It lets you install stuff easily.</li>
+
+<li>Install <strong>RVM: Ruby Version Manager</strong>. This lets you switch versions of Ruby without affecting the system version. <code>curl -L https://get.rvm.io | bash -s stable --ruby</code>.</li>
+</ul>
+
+<h2 id='install_and_run_jekyll'>Install and Run Jekyll</h2>
+
+<ul>
+<li>The Jekyll Wiki is the best source of instructions for installation, but also templating and usage etc. Starting with <a href='https://github.com/mojombo/jekyll/wiki/Install' title='Jekyll Installation'>Installation</a> and moving on to <a href='https://github.com/mojombo/jekyll/wiki/Usage' title='Jekyll Usage'>Usage</a>.</li>
+
+<li>Use <code>gem install jekyll</code> to install Jekyll. If you&#8217;ve got Ruby installed properly this should work.</li>
+
+<li>Once installed, you can run <code>jekyll --server</code> on a folder that is setup with Jekyll template files. If your <code>_config.yml</code> file doesn&#8217;t have server set to auto, you can additionally add it to this command: <code>jekyll --server --auto</code>.</li>
+
+<li>Hit up <a href='http://localhost:4000'>http://localhost:4000</a> and you should have a working site.</li>
+</ul>
+
+<h2 id='command_line_alias'>Command Line Alias</h2>
+
+<p><code>jekyll --server --auto</code> is a long command to type each time. To make this shorter, open the file <code>.bash_profile</code> in your home directory and add an alias. Adding the line <code>alias jsa=&#39;jekyll --server --auto&#39;;</code> means each time you want to run Jekyll you can simply type <code>jsa</code>.</p>
+		
+		
+		<p class="comments">Got a comment? @me on
+
+			
+			<a href="http://twitter.com/jonah.wiaderny">Twitter</a>
+			
+			
+			
+			
+			
+		
+		</p>
+		
+		
+		<!-- Tweet button -->
+		<div class="tweet">
+		<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-count="none" data-dnt="true">Tweet</a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+		</div>
+		
+		</div> <!-- /content -->
+	</div> <!-- /container -->
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-16909425-8']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+<!-- jQuery Infinite Scrolling -->
+<script type='text/javascript' src='/assets/js/libs/jquery.infinitescroll.min.js'></script>
+<script>
+// infinitescroll() is called on the element that surrounds 
+// the items you will be loading more of
+$('ul#posts').infinitescroll({ 
+	navSelector		: "p.pagination",
+					// selector for the paged navigation (it will be hidden)
+	nextSelector	: "p.pagination a.older",
+					// selector for the NEXT link (to page 2)
+	itemSelector	: "#content ul#posts li.post"
+					// selector for all items you'll retrieve
+});
+</script>
+
+</body>
+</html>

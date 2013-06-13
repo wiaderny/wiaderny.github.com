@@ -1,0 +1,671 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8"/>
+	
+	<title> Jonah Wiaderny</title>
+
+	
+	<link rel="alternate" type="application/rss+xml" href="http://feeds.feedburner.com/andytaylor">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
+	<link rel="shortcut icon" href="/assets/images/avatar.png" type="image/x-icon" />
+	
+	<link rel="apple-touch-icon-precomposed" href="/assets/images/avatar.jpg"/>
+	
+	<meta name="description" content="Random Logs" />
+	
+	<!-- jQuery -->
+	<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js'></script>
+	
+	<!-- Custom JS -->
+	<script type='text/javascript' src='/assets/js/custom.js'></script>
+	
+	<!-- Modernizr adding css classes -->
+	<script type='text/javascript' src='/assets/js/libs/modernizr_css_classes.js'></script>
+
+</head>
+<body class="home">
+
+	<div id="masthead">
+		<div class="avatarwrapper">
+			<a href="/"><img src="/assets/avatar.jpg" alt="Jonah Wiaderny" /></a>
+		</div>
+		<h1 class="sitetitle"><a href="/" class="sitetitle">Jonah Wiaderny</a></h1>
+		<p class="description">Random Logs</p>
+		<hr />
+		<ul id="pagenav">
+	<li><a href="/">Weblog</a></li>
+	<li><a href="/archive">Archive</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/curriculum-vitae" class="adn">Curriculum Vit&aelig;</a></li>
+	<li><a href="/colophon">Colophon</a></li>
+	
+	<li><a href="http://feeds.feedburner.com/andytaylor" class="rss">RSS Feed</a></li>
+	
+	
+	
+</ul>
+</div> <!--/masthead-->
+
+	<div class="container">
+		
+	<div id="content">
+		
+		
+	
+		<ul id="posts">
+		  
+		  
+		    <li class="post">
+		    
+		    <h2 class="posttitle"><a href="/notes/install-gnupg-on-mountain-lion/" class="articletitle">Install GnuPG on Mountain Lion</a></h2>
+			<p class="date articledate">May 13, 2013</p>
+		    
+		    
+		    
+		    <p>With the introduction of OS X 10.8 a very handy possibility of using PGP vanished &#8211; although the guys from <a href='https://www.gpgtools.org/'>PGP-Tools</a> are working on an update to make their tool work with the native mail app. However great luck for us there is still the old school possibility of installing <a href='http://www.gnupg.org/'>Gnu Privacy Guard</a> on your local machine. This log will be a (hopefully) handy note on how to install this great pice.</p>
+
+<p>After you have opened your Terminal, you start-off by downloading the desired version (and its corresponding signature) from gnupg.org.</p>
+<div class='highlight'><pre><code class='bash'><span class='nv'>$ </span>curl -O ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-1.4.tar.gz 
+</code></pre></div>
+<p>To ensure the originality of your obtained file you should concider to run following command</p>
+<div class='highlight'><pre><code class='bash'><span class='nv'>$ </span>openssl sha1 gnupg-1.4.12.tar.gz
+</code></pre></div>
+<p>what should yield you a value of <code>790587e440ec7d429b120db7a96a237badc638fd</code>. If it does not, stop here and contact the guys at gnupg. I assume however, that you got a valid distribution. You may untar, change directory and configure your</p>
+<div class='highlight'><pre><code class='bash'><span class='nv'>$ </span>tar -xzf gnupg-1.4.12.tar.gz
+<span class='nv'>$ </span><span class='nb'>cd </span>gnupg-1.4.12 
+<span class='nv'>$ </span>./configure
+</code></pre></div>
+<p>I assume that you do not yield any error when running the tests, so that we are good to go and install with the well known method, namely <code>make</code>, <code>make check</code> and finalize this procedure with <code>sudo make install</code>.</p>
+
+<p>Now that everything is set up, it&#8217;s time to generate some random numbers and afterwards our keys.</p>
+<div class='highlight'><pre><code class='bash'>gpg <span class='o'>(</span>GnuPG<span class='o'>)</span> 1.4; Copyright <span class='o'>(</span>C<span class='o'>)</span> 2012 Free Software Foundation, Inc. 
+This is free software: you are free to change and redistribute it. 
+There is NO WARRANTY, to the extent permitted by law. 
+Bitte wählen Sie, welche Art von Schlüssel Sie möchten: 
+<span class='o'>(</span>1<span class='o'>)</span> RSA und RSA <span class='o'>(</span>voreingestellt<span class='o'>)</span> 
+<span class='o'>(</span>2<span class='o'>)</span> DSA und Elgamal 
+<span class='o'>(</span>3<span class='o'>)</span> DSA <span class='o'>(</span>nur unterschreiben/beglaubigen<span class='o'>)</span> 
+<span class='o'>(</span>4<span class='o'>)</span> RSA <span class='o'>(</span>nur signieren/beglaubigen<span class='o'>)</span> 
+Ihre Auswahl?
+</code></pre></div>
+<p>According to your system language the output will vary. Nevertheless you are free to choose whatever suits your needs most, I have chosen (1). Next steps are pretty straight forward and self explanatory. After the process will be finished you will end up with a generated public and private key. Some important functions for you may be the <code>--list keys</code> option, which yields all available keys in your <code>pubring.pgp</code> file, or the command</p>
+<div class='highlight'><pre><code class='bash'><span class='nv'>$ </span>gpg --armor --export you@youremail.tld
+</code></pre></div>
+<p>This will yield your public key block which you can save and send to your addressees so they will be able to encrypt their messages for you. To import a public key, just use the <code>--import</code> command which should be followed by the key file you want to use. Encrypting a file can be achieved by the first command, decrypting by the second.</p>
+<div class='highlight'><pre><code class='bash'><span class='nv'>$ </span>gpg --output outfile --encrypt --recipient name@domain.tld inputfile 
+<span class='nv'>$ </span>gpg --output inputfile --decrypt outfile
+</code></pre></div>
+		    
+		    </li>
+		  
+		  
+		  
+		    <li class="post">
+		    
+		    <h2 class="posttitle"><a href="/notes/do-not-forget-your-blosxom-conf/" class="articletitle">Don't forget your bloscom config</a></h2>
+			<p class="date articledate">January 11, 2013</p>
+		    
+		    
+		    
+		    <p>To install <a href='http://www.blosxom.com/'>Blosxom</a> on Debian you start in SSH by updating your package-list and requesting the Blosxom package.</p>
+<div class='highlight'><pre><code class='bash'><span class='nv'>$ </span>sudo apt-get update sudo 
+</code></pre></div>
+<p>Configuring is pretty straight forward and you will probably end up with the configuration file in your local <code>cgi-bin</code> folder. Now if you visit your website and it comes to your attention that just the default header and footer is shown, make sure to visit directory <code>/etc/blosxom/</code> and inspect the <code>blosxom.conf</code> file so that it points to the right <code>$data_dir</code>.</p>
+		    
+		    </li>
+		  
+		  
+		  
+		    <li class="post">
+		    
+		    <h2 class="posttitle"><a href="/notes/collaborative-editing-with-markdown/" class="articletitle">Collaborative Editing with Markdown</a></h2>
+			<p class="date articledate">January 11, 2013</p>
+		    
+		    
+		    
+		    <p>Just recently I had to make up my mind about how to collaborate on simple memo files which would be synchronized using <a href='http://db.tt/tfvLVYN'>dropbox</a> across heterogeneous systems. Proprietary file formats would of course drop out. Besides, no one wanted to install an additional program.<sup id='fnref:1'><a href='#fn:1' rel='footnote'>1</a></sup></p>
+
+<p>A very intuitive possibility was to use the great and straightforward <a href='http://daringfireball.net/projects/markdown/syntax'>mardown syntax</a>.<sup id='fnref:2'><a href='#fn:2' rel='footnote'>2</a></sup> By mardown&#8217;s design you are able to compile an input document to an output document with markdown. However, we had three individual memo files, so everyone of us could write into his own <code>.md</code> file and two style files which we wanted to be compiled into one single <code>.html</code> file. For compiling multiple input files into one output file <a href='http://johnmacfarlane.net/pandoc/'>pandoc</a> comes in really handy.</p>
+
+<p>If you are on a Unix/Mac machine you can compile multiple input files to one file by running following commands in a terminal window</p>
+<div class='highlight'><pre><code class='bash'><span class='nv'>$ </span><span class='nb'>cd</span> &lt;YOURDIRECTORY&gt;
+<span class='c'># =&gt; Change directory to where your files are located</span>
+<span class='nv'>$ </span>pandoc *.md &gt; memos.html
+<span class='c'># =&gt; Take all .md files in &lt;YOURDIRECTORY&gt; and compile a single html file</span>
+</code></pre></div>
+<p>Using Windows you might get an input error using the above mentioned command. Therefore it seems better to run following commands in your <code>cmd.exe</code>.</p>
+<div class='highlight'><pre><code class='bash'><span class='nv'>$ </span><span class='nb'>cd</span> &lt;YOURDIRECTORY&gt;
+<span class='c'># =&gt; Change directory to where your files are located</span>
+<span class='nv'>$ </span>pandoc -o memos.html input_1.md input_2.md input_n.md 
+<span class='c'># =&gt; Compile a single .html using all specified input files</span>
+</code></pre></div>
+<p>Using pandoc and dropbox for collaborative editing of simple memos across heterogeneous systems seems to work just fine. However pandoc as a processor is much more powerful and I can only recommend you take a look for yourself.</p>
+<div class='footnotes'><hr /><ol><li id='fn:1'>
+<p>Although there are many great programs for that kind of work, like <a href='http://www.codingmonkeys.de/subethaedit/'>SubEthaEdit</a>, inter alia.</p>
+<a href='#fnref:1' rev='footnote'>&#8617;</a></li><li id='fn:2'>
+<p>I actually use Markdown to produce every note I write on this very website. It is extremely useful and I cannot stress how much I recommend it for plain writing.</p>
+<a href='#fnref:2' rev='footnote'>&#8617;</a></li></ol></div>
+		    
+		    </li>
+		  
+		  
+		  
+		    <li class="post">
+		    
+		    <h2 class="posttitle"><a href="/notes/textile-as-custom-processor-in-marked/" class="articletitle">Textile as a custom processor in Marked</a></h2>
+			<p class="date articledate">January 11, 2013</p>
+		    
+		    
+		    
+		    <p>Just recently a few fellow students were curious how to use <a href='[http://en.wikipedia.org/wiki/Textile_(markup_language)]'>textile</a> as the markup language in <a href='[http://markedapp.com]'>Marked</a>, which is a great app by the way. in the first place you have to have textile, of course. The rest is quite trivial but you need to have Apple Developer Tools to be installed on your local machine.</p>
+
+<ul>
+<li>Download and install perl textile from <a href='[https://github.com/bradchoate/text-textile]'>github</a>.</li>
+
+<li>Run <code>which textile</code> in a terminal to determine your textile path.</li>
+
+<li>Set textile as your custom processor in Marked preferences as shown in the following image.<sup id='fnref:1'><a href='#fn:1' rel='footnote'>1</a></sup></li>
+</ul>
+<img alt='Marked app textile as custom processor ' src='../../assets/images/Bildschirmfoto-2013-01-11-um-21.29.46.png' /><div class='footnotes'><hr /><ol><li id='fn:1'>
+<p>It&#8217;s a good idea to actually tick the checkbox if you want to use textile. I had it off in this screenshot as I mostly stick with the markdown syntax.</p>
+<a href='#fnref:1' rev='footnote'>&#8617;</a></li></ol></div>
+		    
+		    </li>
+		  
+		  
+		  
+		    <li class="post">
+		    
+		    <h2 class="posttitle"><a href="/notes/html-entities-or-decimals/" class="articletitle">HTML Entities or Decimals</a></h2>
+			<p class="date articledate">November 17, 2012</p>
+		    
+		    
+		    
+		    <p>I had issues with the RSS feed for this site. The feed validator was telling me that using a HTML entity like <code>&amp;lsquo;</code> was invalid. I don&#8217;t know much about XML, but it seemed strange; I <em>had</em> escaped the character; I <em>hadn&#8217;t</em> just pasted in a &#8216;curly&#8217; quotation mark.</p>
+
+<p>Turns out XML doesn&#8217;t like some HTML entities. Using <code>&amp;infin;</code> for the infinity symbol isn&#8217;t good enough, you need to use the HTML decimal <code>&amp;#8734;</code>. However, it seems that using <code>&amp;amp;</code> for an ampersand is valid. XML is an indiscriminate beast.</p>
+
+<p>I guess that&#8217;s why <a href='http://daringfireball.net/projects/smartypants/'>SmartyPants</a> et al. convert characters to HTML decimals rather than entities; the decimal will always work, the entity won&#8217;t.</p>
+
+<p>I&#8217;ve updated the <a href='http://stylemanual.org/#html-decimals--shortcuts'>character reference table</a> on Style Manual accordingly.</p>
+		    
+		    </li>
+		  
+		  
+		  
+		    <li class="post">
+		    
+		    <h2 class="linktitle"><a href="http://hellohappy.org/beautiful-web-type/">Beautiful Web Type&#58; Finding the Gems in Google Web Fonts</a>&nbsp;<a href="/notes/beautiful-web-type/" title="Permanent link to: 'Beautiful Web Type&#58; Finding the Gems in Google Web Fonts'" class="infin">&infin;</a></h2>
+		    
+		    
+		    
+		    <p>Google Web Fonts is filled with crummy display faces and incomplete families. There are however, some gems; they&#8217;re just really hard to find. Chad Mazzola:</p>
+
+<blockquote>
+<p>There are over 400 typefaces in the Google web fonts directory. Many of them are awful. But there are also high-quality typefaces that deserve a closer look.</p>
+</blockquote>
+
+<p>Chad put together this&#8212;beautifully typeset&#8212;site as an example of what can be done with typefaces found on Google Web Fonts. Clicking on any example takes you straight to the page where you can grab the code to use each font.</p>
+
+<p>I found all the fonts for <a href='http://stylemanual.org/'>Style Manual</a> using this.</p>
+		    
+		    </li>
+		  
+		  
+		  
+		    <li class="post">
+		    
+		    <h2 class="posttitle"><a href="/notes/access-local-wordpress-on-ipad/" class="articletitle">Access local WordPress on iPad</a></h2>
+			<p class="date articledate">November  9, 2012</p>
+		    
+		    
+		    
+		    <p>While developing web apps I use MAMP to run a server locally on my iMac. Usually I test my websites only locally and use Safari and Chrome, but this time I was curious about if Internet Explorer would survive accessing my website and how well other devices like iPad and iPhone would handle it. So I would try to access my iMac with other devices which are connected to my local network.</p>
+
+<p>The critical point here was the WordPress URL. I will describe briefly how to set it up properly, so that it can be viewed on other devices which are connected to the local network.</p>
+
+<ul>
+<li>Open up Terminal, enter <code>ipconfig getifaddr en0</code> and get your IP.</li>
+
+<li>In MAMPs settings find out your Apache port, which is usually 80 or 8888</li>
+
+<li>Access your wp-admin, navigate to your general settings and change <code>localhost</code> to <code>192.168.1.105:8888</code> if your IP is that arbitrary number I have chosen and 8888 is your Apache port</li>
+</ul>
+
+<p>You are good to go.</p>
+		    
+		    </li>
+		  
+		  
+		  
+		    <li class="post">
+		    
+		    <h2 class="posttitle"><a href="/notes/unix-command-line-usage-notes/" class="articletitle">UNIX Command Line Usage Notes</a></h2>
+			<p class="date articledate">November  3, 2012</p>
+		    
+		    
+		    
+		    <p>This post is essentially the result of watching Dan Benjamin&#8217;s PeepCode screencast, <a href='https://peepcode.com/products/meet-the-command-line' title='Dan Benjamin'>Meet the Command Line</a> and taking bucket-loads of notes.</p>
+
+<p>A few general things to remember about UNIX:</p>
+
+<ul>
+<li>UNIX is most often case sensitive.</li>
+
+<li>UNIX will always override a file without warning.</li>
+
+<li>Help is sometimes <code>help</code>, <code>-h</code> or <code>--help</code></li>
+
+<li><code>Command</code> + <code>K</code> clears the screen.</li>
+
+<li><code>sudo</code> is a command that gives you permissions of a superuser. Allowing you to force something to happen when your user account doesn&#8217;t have permissions.</li>
+
+<li>You need to wrap file and folder names with spaces in &#8220;quotes&#8221;. I.e. <code>cd &quot;Misc Documents&quot;</code></li>
+</ul>
+
+<h2 id='commands'>Commands</h2>
+
+<h3 id='change_directory'>Change Directory</h3>
+
+<ul>
+<li><code>cd directoryname</code> changes the directory to one a level deeper</li>
+
+<li>Hitting tab whilst typing a directory name will attempt to auto-complete it</li>
+
+<li><code>cd ..</code> takes you up a level.</li>
+
+<li><code>cd ../..</code> will take you back two levels.</li>
+
+<li><code>cd ../directoryname</code> will take you back a level and into a folder called directory name.</li>
+
+<li><code>~</code> represents your home directory. Typing <code>cd ~</code> anywhere will take you &#8216;home&#8217; (simply typing <code>cd</code> alone will also take you home). Typing <code>cd /directoryname</code> will take you to a folder within your home directory. I.e. <code>cd ~/dropbox/notes</code></li>
+
+<li><code>cd /</code> takes you to the root of the drive.</li>
+</ul>
+
+<h3 id='directory_listing'>Directory Listing</h3>
+
+<ul>
+<li><code>ls</code> lists everything in the current directory.</li>
+
+<li><code>ls -l</code> gives you a &#8216;long list&#8217;; providing more detail.</li>
+
+<li>adding <code>-a</code> shows hidden files.</li>
+
+<li><code>-h</code> is an abbreviation for &#8216;human readable&#8217;. As file sizes are listed in bytes, this will show them in B, K, M, G.</li>
+
+<li>these can be strung together. I.e. <code>ls -lha</code>. But there isn&#8217;t any point in doing <code>ls -h</code>, as it needs the long list to make the long list human readable.</li>
+
+<li>you can list the contents of the parent directory with <code>ls ..</code> as <code>..</code> represents the parent directory. Just as <code>cd ..</code> takes you to the parent directory.</li>
+
+<li><code>ls -R</code> will show you all files and folders in every level below. But it looks like shit. With &#8216;Tree&#8217; installed you can type <code>tree</code> to see the structure in a more graphical way. See <em>Tree</em>, under <em>Programs</em> for more detail.</li>
+</ul>
+
+<h3 id='showing_the_current_path'>Showing the Current Path</h3>
+
+<p><code>pwd</code> shows the current path. It&#8217;ll output something like:</p>
+
+<pre><code>/Users/andytlr/dropbox/websites</code></pre>
+
+<h3 id='copying_moving_and_renaming_files'>Copying, Moving and Renaming Files</h3>
+
+<ul>
+<li>
+<p><code>cp</code> is the command for copying.</p>
+</li>
+
+<li>
+<p><code>cp -R -v samples my-samples</code> is a copy command. <code>cp</code> is short for copy, it&#8217;s telling it to make a copy of a folder called <code>samples</code> and call it <code>my-samples</code>.</p>
+
+<ul>
+<li>I think <code>-R</code> means <em>recursively</em>, which I think means to make the changes to all child files and folders.</li>
+
+<li>I think <code>-v</code> means <em>verbose</em>. But I don&#8217;t know what that means.</li>
+</ul>
+</li>
+
+<li>
+<p><code>cp filename.txt newfile.txt</code> will copy a single file.</p>
+</li>
+
+<li>
+<p><code>cp filename.txt folder</code> will copy the file to a directory called <code>folder</code>.</p>
+</li>
+
+<li>
+<p><code>mv</code> is the command for moving.</p>
+</li>
+
+<li>
+<p>Moving a file to another file is essentially renaming. I.e. <code>mv file.txt newname.md</code>.</p>
+</li>
+
+<li>
+<p><code>mv newname.md folder</code> will move <code>newname.md</code> to a directory called <code>folder</code>. Just like copying.</p>
+</li>
+
+<li>
+<p><code>mv newname.md ~</code> will move <code>newname.md</code> to your home directory. You could also use <code>/path</code> in place of <code>~</code> to specify an absolute path.</p>
+</li>
+</ul>
+
+<h3 id='showing_the_contents_of_a_file'>Showing the Contents of a File</h3>
+
+<ul>
+<li><code>cat filename.txt</code> will show the contents of filename.txt</li>
+</ul>
+
+<h3 id='saving_and_appending_output_to_a_file'>Saving and Appending Output to a File</h3>
+
+<ul>
+<li><code>tree &gt; tree.txt</code> will make a file called tree.txt with the directory structure.</li>
+
+<li><code>cat file.txt &gt; newfile.txt</code> will take the contents of file.txt and make a new file called newfile.txt with that contents. However, if that file already exists, its contents will be overridden.</li>
+
+<li>Using <code>&gt;&gt;</code> will append the contents instead of overwriting it. <code>cat currentfile.txt &gt;&gt; newfile.txt</code> will put the contents of currentfile.txt at the end of newfile.txt, if newfile.txt doesn&#8217;t exist, it will be created. So unless you specifically want to overwrite a file, it&#8217;s probably saver to use <code>&gt;&gt;</code>.</li>
+</ul>
+
+<h3 id='removing_a_file_or_directory'>Removing a File or Directory</h3>
+
+<ul>
+<li><code>rm filename.txt</code></li>
+
+<li><code>rm filename1.txt filename2.txt</code> to remove more than one file.</li>
+
+<li><code>rm -i filename.txt</code> removes with confirmation.</li>
+
+<li><code>rmdir directoryname</code> is the command to remove a directory. This only works on empty directories.</li>
+
+<li><code>rm -R directoryname</code> removes a directory and contents.</li>
+
+<li><code>mr -f filename.txt</code> force removes a file without a confirmation.</li>
+</ul>
+
+<h3 id='make_a_directory'>Make a Directory</h3>
+
+<ul>
+<li><code>mkdir directoryname</code></li>
+
+<li>To make a directory structure you can use <code>-p</code>. I.e. <code>mkdir -p dir1/dir2/dir3/dir4/dir5</code></li>
+</ul>
+
+<h3 id='make_a_file'>Make a File</h3>
+
+<ul>
+<li>You can create a new text file with <code>cat</code>. <code>cat &gt; newfilename.md</code> will give you a new line in Terminal. Type some contents for the file <code>newfilename.md</code>. To save and exit, start a new line and type <code>Control</code> + <code>D</code>.</li>
+
+<li>It&#8217;s probably easier to just use a text editor. For example <code>nano</code> gives you a fresh document and you can save from within Nano. <code>nano newfilename.md</code> will create a file called <code>newfilename.md</code> and open it in Nano.</li>
+</ul>
+
+<h3 id='pipes'>Pipes</h3>
+
+<p>Pipes let you chain commands together. They&#8217;re represented by <code>|</code>.</p>
+
+<p>If the output of one command could be the input to the next you could use a pipe like <code>command1 | command2</code>.</p>
+
+<h2 id='programs'>Programs</h2>
+
+<h3 id='ssh'>SSH</h3>
+
+<ul>
+<li>To connect to a remote server use <code>ssh username@server</code></li>
+
+<li><code>uname -a</code> will show you details of the server.</li>
+
+<li>Type <code>exit</code> to disconnect.</li>
+</ul>
+
+<h3 id='sftp'>SFTP</h3>
+
+<ul>
+<li>To transfer files to a remote server use <code>sftp username@server</code><sup id='fnref:1'><a href='#fn:1' rel='footnote'>1</a></sup></li>
+
+<li><code>put filename</code> is the command to transfer a file to the server.</li>
+
+<li><code>get filename</code> is the command to transfer a file from the server.</li>
+
+<li>Type <code>exit</code> to disconnect.</li>
+</ul>
+
+<h3 id='tree'>Tree</h3>
+
+<ul>
+<li>Install Tree via Homebrew with <code>brew install tree</code>.</li>
+
+<li>Once installed, typing <code>tree</code> will give you a listing of all the files in the current directory, but also show you all the children in a more graphical way than <code>ls -R</code>.</li>
+
+<li>As with <code>ls</code> you can type <code>tree ..</code> or <code>tree directoryname</code> to see up or down in the structure.</li>
+</ul>
+
+<p>A typical output might look like this:</p>
+
+<pre><code>.
+├── folder1
+│   └── folder2
+│       └── folder3
+│           └── folder4
+└── test1
+    ├── test2
+    │   ├── test2.md
+    │   └── test3
+    │       ├── test.md
+    │       ├── test3.md
+    │       └── test4
+    └── test2.md</code></pre>
+
+<p>But if the structure is deep, like in <code>/</code> or <code>~</code>, it quickly gets out of hand.</p>
+
+<h3 id='more'>More</h3>
+
+<ul>
+<li>Use more with a pipe to show the contents of a file standalone by typing <code>cat filename.txt | more</code>. More will do this for any command that outputs content. This is only useful for big files, as without it, the whole file will be shown and you&#8217;ll be looking at the bottom of the content, not the top.</li>
+
+<li>You can use a <code>&lt;</code> to tell something to take the contents of the following. For example <code>more &lt; filename.txt</code></li>
+</ul>
+
+<h3 id='nano_text_editor'>Nano Text Editor</h3>
+
+<p><code>nano filename.txt</code></p>
+
+<h3 id='word_count'>Word Count</h3>
+
+<p><code>cat filename.txt | wc</code> will show you a word count of the file.</p>
+
+<h3 id='grep'>Grep</h3>
+
+<p><code>cat filename.txt | grep keyword</code> will output only the lines in a file that contain &#8216;keyword&#8217;. This appears to be case sensitive.</p>
+
+<h3 id='gzip_and_tar'>Gzip and TAR</h3>
+
+<ul>
+<li><code>gzip filename.txt</code> will compress a file. It will also remove the original file, unlike in the OS X GUI.</li>
+
+<li><code>gzip -d filename.txt.gz</code> will de-compress the g-zipped file. It will remove the g-zipped file and just retain the uncompressed file.</li>
+</ul>
+
+<p>Gzip will only compress one file, not a folder. For that you need TAR (short for Tape Archive).</p>
+
+<ul>
+<li>To &#8216;make and archive&#8217; of a directory use <code>tar -cvf filename.tar directoryname</code>. The <code>c</code> means create, the <code>v</code> means verbose and <code>f</code> means you want to specify a file name.</li>
+
+<li>By default&#8212;unlike Gzip&#8212;TAR will leave the original directory.</li>
+</ul>
+
+<p>A TAR file is an archive, but it is <em>not</em> compressed.</p>
+
+<ul>
+<li><code>gzip filename.tar</code> to get <code>filename.tar.gz</code></li>
+</ul>
+
+<p>Using the previous TAR command with the <code>-z</code> flag, you can Gzip it at the same time.</p>
+
+<ul>
+<li><code>tar -czvf filename.tgz directoryname</code> (.tgz is short for .tar.gz)</li>
+</ul>
+
+<p>To <strong>expand</strong> a TAR file, you need to do it from a new folder. Otherwise it&#8217;ll dump the contents in the current folder. (It seems like if you compressed a folder, though, that it will expand that folder, rather than it&#8217;s contents. So unless there&#8217;s a folder with the same name in the current directory, you&#8217;re alright.)</p>
+
+<ul>
+<li><code>tar -xzvf ~/filename.tgz</code> will expand the archive <code>filename.tgz</code> from the parent folder into the current folder.</li>
+</ul>
+<div class='footnotes'><hr /><ol><li id='fn:1'>
+<p>It seemed more complicated, but in the last 5min of <a href='https://peepcode.com/products/meet-the-command-line' title='Dan Benjamin'>Dan&#8217;s video</a>, there was a section on Secure Copy (SCP), which is an alternative to SFTP.</p>
+<a href='#fnref:1' rev='footnote'>&#8617;</a></li></ol></div>
+		    
+		    </li>
+		  
+		  
+		  
+		    <li class="post">
+		    
+		    <h2 class="posttitle"><a href="/notes/installing-ruby-and-jekyll/" class="articletitle">Installing Ruby &amp; Jekyll on Mac OS X</a></h2>
+			<p class="date articledate">November  3, 2012</p>
+		    
+		    
+		    
+		    <p>Because of my ignorance for Terminal, I struggled to install Ruby and <a href='https://github.com/mojombo/jekyll' title='Jekyll on GitHub'>Jekyll</a>, so I&#8217;ve written some notes on that process. When I have to do it from scratch again, I&#8217;ll attempt to make them clearer.</p>
+
+<p>I installed so much shit trying to get Jekyll installed, that I don&#8217;t really know what I did. But there was a couple of gotchas. So if I need to do it again, the rough process was what I&#8217;ve listed below. Along the way, <a href='https://gist.github.com/1587643' title='Gist explaining installing Ruby on OS X Lion'>this</a> seemed to be the most straightforward guide I read.</p>
+
+<h2 id='install_ruby_and_dependencies'>Install Ruby and Dependencies</h2>
+
+<ul>
+<li>Download and install <strong>Xcode</strong> from the Mac App Store. Xcode apparently <em>used</em> to come with <strong>Command Line Tools</strong>, but now you have to install them as an extra. Within Xcode, go to <em>Preferences &gt; Downloads</em>, and install them. I installed Xcode figuring it came with these&#8212;I&#8217;m guessing I would have had Ruby installed earlier if I knew about this.</li>
+
+<li>Install <strong>Homebrew</strong>, a package manager. <code>ruby -e &quot;$(curl -fsSkL raw.github.com/mxcl/homebrew/go)&quot;</code> It lets you install stuff easily.</li>
+
+<li>Install <strong>RVM: Ruby Version Manager</strong>. This lets you switch versions of Ruby without affecting the system version. <code>curl -L https://get.rvm.io | bash -s stable --ruby</code>.</li>
+</ul>
+
+<h2 id='install_and_run_jekyll'>Install and Run Jekyll</h2>
+
+<ul>
+<li>The Jekyll Wiki is the best source of instructions for installation, but also templating and usage etc. Starting with <a href='https://github.com/mojombo/jekyll/wiki/Install' title='Jekyll Installation'>Installation</a> and moving on to <a href='https://github.com/mojombo/jekyll/wiki/Usage' title='Jekyll Usage'>Usage</a>.</li>
+
+<li>Use <code>gem install jekyll</code> to install Jekyll. If you&#8217;ve got Ruby installed properly this should work.</li>
+
+<li>Once installed, you can run <code>jekyll --server</code> on a folder that is setup with Jekyll template files. If your <code>_config.yml</code> file doesn&#8217;t have server set to auto, you can additionally add it to this command: <code>jekyll --server --auto</code>.</li>
+
+<li>Hit up <a href='http://localhost:4000'>http://localhost:4000</a> and you should have a working site.</li>
+</ul>
+
+<h2 id='command_line_alias'>Command Line Alias</h2>
+
+<p><code>jekyll --server --auto</code> is a long command to type each time. To make this shorter, open the file <code>.bash_profile</code> in your home directory and add an alias. Adding the line <code>alias jsa=&#39;jekyll --server --auto&#39;;</code> means each time you want to run Jekyll you can simply type <code>jsa</code>.</p>
+		    
+		    </li>
+		  
+		  
+		  
+		    <li class="post">
+		    
+		    <h2 class="posttitle"><a href="/notes/economic-diagrams-with-tikz/" class="articletitle">Economic Diagrams with TikZ</a></h2>
+			<p class="date articledate">October 13, 2012</p>
+		    
+		    
+		    
+		    <p>LaTeX - or more precisely speaking <a href='http://www.ctan.org/pkg/pgf'>TikZ</a> - lets you create really great diagrams for your economic papers. The main difference compared to carelessly embedding images in your document is that you will be creating vector images with TiKz, which are lossless scaleable, what means they won&#8217;t blur - you won&#8217;t see pixels when you scale them up. Another great point which makes me be in favor of vector graphics by TikZ is that they are more accurate compared to their now randomly appearing pixel brothers. </p><h3 id='thefinalproduct'>The final product</h3>
+<p>Lately I was creating the diagram which I attached below. In this task I was focused primarily on some fine details, i.e. the arrowheads, the crosshatching, and the line thickness ratio.</p>
+
+<p><img alt='Economic diagram in LaTeX created with TikZ' src='http://f.cl.ly/items/3m2h0i3U2u1s243O3D1J/din-norm.jpg' /></p>
+<p>Even if this diagram is just of qualitative and not of quantitative nature, it is any the less important for me to have correctly set arrowheads. I must admit at this point, that I consider diagrams which do not feature this detail, as of lacking accuracy. Well set heads, by contrast, demonstrate understanding of the Cartesian coordinate system, for they, being set at the end of each coordinate axis indicate the growth direction of the coordinate itself. A coordinate without correct arrowheads can therefore - in a very consequent way - be considered meaningless and vague.</p><h3 id='customarrowheads'>Custom arrowheads</h3><p>In the first place it was necessary to customize the arrowheads which would be loaded using the default TikZ Library <code>arrows</code>. Beneath I have attached the necessary code to produce finer arrowheads.</p><div class='highlight'><pre><code class='tex'><span class='c'>%-------------------------------------------------------------</span>
+<span class='c'>%       Call arrow library and declare arrowheads</span>
+<span class='c'>%-------------------------------------------------------------</span>
+
+<span class='k'>\usetikzlibrary</span><span class='nb'>{</span>arrows<span class='nb'>}</span>
+
+<span class='k'>\makeatletter</span>
+<span class='k'>\pgfarrowsdeclare</span><span class='nb'>{</span>dinarr<span class='nb'>}{</span>dinarr<span class='nb'>}</span>
+   <span class='nb'>{</span>
+<span class='k'>\pgfutil</span>@tempdima=0.5pt<span class='c'>%</span>
+<span class='k'>\advance\pgfutil</span>@tempdima by.25<span class='k'>\pgflinewidth</span><span class='c'>%</span>
+<span class='k'>\pgfutil</span>@tempdimb=7.29<span class='k'>\pgfutil</span>@tempdima<span class='k'>\advance\pgfutil</span>@tempdimb by.5<span class='k'>\pgflinewidth</span><span class='c'>%</span>
+<span class='k'>\pgfarrowsleftextend</span><span class='nb'>{</span>+-<span class='k'>\pgfutil</span>@tempdimb<span class='nb'>}</span>
+<span class='k'>\pgfutil</span>@tempdimb=.5<span class='k'>\pgfutil</span>@tempdima<span class='k'>\advance\pgfutil</span>@tempdimb by1.6<span class='k'>\pgflinewidth</span><span class='c'>%</span>
+<span class='k'>\pgfarrowsrightextend</span><span class='nb'>{</span>+<span class='k'>\pgfutil</span>@tempdimb<span class='nb'>}</span>
+   <span class='nb'>}</span>
+   <span class='nb'>{</span>
+<span class='k'>\pgfutil</span>@tempdima=0.5pt<span class='c'>%</span>
+<span class='k'>\advance\pgfutil</span>@tempdima by.25<span class='k'>\pgflinewidth</span><span class='c'>%</span>
+<span class='k'>\pgfsetdash</span><span class='nb'>{}{</span>+0pt<span class='nb'>}</span>
+<span class='k'>\pgfsetmiterjoin</span>
+<span class='k'>\pgfpathmoveto</span><span class='nb'>{</span><span class='k'>\pgfpointadd</span><span class='nb'>{</span><span class='k'>\pgfqpoint</span><span class='nb'>{</span>0.5<span class='k'>\pgfutil</span>@tempdima<span class='nb'>}{</span>0pt<span class='nb'>}}</span><span class='c'>%</span>
+<span class='nb'>{</span><span class='k'>\pgfqpoint</span><span class='nb'>{</span>-3mm<span class='nb'>}{</span>0.5mm<span class='nb'>}}}</span>
+<span class='k'>\pgfpathlineto</span><span class='nb'>{</span><span class='k'>\pgfqpoint</span><span class='nb'>{</span>0.5<span class='k'>\pgfutil</span>@tempdima<span class='nb'>}{</span>0<span class='k'>\pgfutil</span>@tempdima<span class='nb'>}}</span>
+<span class='k'>\pgfpathlineto</span><span class='nb'>{</span><span class='k'>\pgfpointadd</span><span class='nb'>{</span><span class='k'>\pgfqpoint</span><span class='nb'>{</span>0.5<span class='k'>\pgfutil</span>@tempdima<span class='nb'>}{</span>0pt<span class='nb'>}}</span><span class='c'>%</span>
+<span class='nb'>{</span><span class='k'>\pgfqpoint</span><span class='nb'>{</span>-3mm<span class='nb'>}{</span>-0.5mm<span class='nb'>}}}</span>
+<span class='k'>\pgfpathclose</span>
+<span class='k'>\pgfusepathqfillstroke</span>
+   <span class='nb'>}</span>
+<span class='k'>\pgfarrowsdeclarereversed</span><span class='nb'>{</span>dinarr reversed<span class='nb'>}{</span>dinarr reversed<span class='nb'>}{</span>dinarr<span class='nb'>}{</span>dinarr<span class='nb'>}</span>
+<span class='k'>\makeatother</span>
+</code></pre></div><p>These arrowheads can be of course altered to specific needs, but this code snippet will produce - if properly inserted - arrowheads which have .5mm in height and 3mm in length. You can alter their appearance by changing the values in <code>\pgfqpoint{-3mm}{0.5mm}</code> and its counterpart two lines below. If you are happy with the appearance you can use them as usual with a command like <code>\draw[-dinarr]</code>.</p><h3 id='customhatching'>Custom hatching</h3><p>Creating a neat hatching was the next task which I was up to. I wanted the hatching to be vertically aligned and 1mm apart. The code was again customized after the <code>pattern</code> library was called.</p><div class='highlight'><pre><code class='tex'><span class='c'>%-------------------------------------------------------------</span>
+<span class='c'>%       Call some libraries and declare vertical hatchings      </span>
+<span class='c'>%-------------------------------------------------------------</span>
+<span class='k'>\usetikzlibrary</span><span class='nb'>{</span>patterns,calc,intersections<span class='nb'>}</span>
+
+<span class='k'>\pgfdeclarepatternformonly</span><span class='nb'>{</span>dinhatch<span class='nb'>}{</span><span class='k'>\pgfpointorigin</span><span class='nb'>}{</span><span class='k'>\pgfqpoint</span><span class='nb'>{</span>1mm<span class='nb'>}</span><span class='c'>%</span>
+<span class='nb'>{</span>100pt<span class='nb'>}}{</span><span class='k'>\pgfqpoint</span><span class='nb'>{</span>1mm<span class='nb'>}{</span>100pt<span class='nb'>}}</span>
+<span class='nb'>{</span>
+  <span class='k'>\pgfsetlinewidth</span><span class='nb'>{</span>0.4pt<span class='nb'>}</span>
+  <span class='k'>\pgfpathmoveto</span><span class='nb'>{</span><span class='k'>\pgfqpoint</span><span class='nb'>{</span>0.5pt<span class='nb'>}{</span>0pt<span class='nb'>}}</span>
+  <span class='k'>\pgfpathlineto</span><span class='nb'>{</span><span class='k'>\pgfqpoint</span><span class='nb'>{</span>0.5pt<span class='nb'>}{</span>100pt<span class='nb'>}}</span>
+  <span class='k'>\pgfusepath</span><span class='nb'>{</span>stroke<span class='nb'>}</span>
+<span class='nb'>}</span>
+</code></pre></div><h3 id='whatsnext'>What&#8217;s next?</h3><p>Having this done, I was ready to finally draw some lines with LaTeX and TikZ. Well, not really. There were still some styles to define, i.e. intercept points, labels, etc. I will continue this note, when I have some more spare time and possibly upload the <code>.tex</code> file as well.</p>
+		    
+		    </li>
+		  
+		        
+		</ul>
+		
+		
+		<p class="pagination">
+		
+			<span class="newer">Newer</span>
+			
+		
+		<span>Page 1 of 2</span>
+		
+		<a class="older" href="/page2">Older</a>
+		
+		</p>
+
+	</div> <!--/content-->
+	</div> <!--/container-->
+	
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-16909425-8']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+<!-- jQuery Infinite Scrolling -->
+<script type='text/javascript' src='/assets/js/libs/jquery.infinitescroll.min.js'></script>
+<script>
+// infinitescroll() is called on the element that surrounds 
+// the items you will be loading more of
+$('ul#posts').infinitescroll({ 
+	navSelector		: "p.pagination",
+					// selector for the paged navigation (it will be hidden)
+	nextSelector	: "p.pagination a.older",
+					// selector for the NEXT link (to page 2)
+	itemSelector	: "#content ul#posts li.post"
+					// selector for all items you'll retrieve
+});
+</script>
+
+</body>
+</html>

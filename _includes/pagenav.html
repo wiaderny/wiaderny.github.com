@@ -1,0 +1,14 @@
+<ul id="pagenav">
+	<li><a href="{{ site.baseurl }}">Weblog</a></li>
+	<li><a href="{{ site.baseurl }}archive">Archive</a></li>
+	<li><a href="{{ site.baseurl }}about">About</a></li>
+	<li><a href="{{ site.baseurl }}curriculum-vitae" class="adn">Curriculum Vit&aelig;</a></li>
+	<li><a href="{{ site.baseurl }}colophon">Colophon</a></li>
+	{% if site.feedburnerurl %}
+	<li><a href="{{ site.feedburnerurl }}" class="rss">RSS Feed</a></li>
+	{% else %}
+	<li><a href="{{ site.baseurl }}feed" class="rss">RSS Feed</a></li>
+	{% endif %}
+	
+	
+</ul>

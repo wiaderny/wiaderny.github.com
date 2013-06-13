@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8"/>
+	
+	<title>Economic Diagrams with TikZ &mdash; Jonah Wiaderny</title>
+
+	
+	<link rel="alternate" type="application/rss+xml" href="http://feeds.feedburner.com/andytaylor">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
+	<link rel="shortcut icon" href="/assets/images/avatar.png" type="image/x-icon" />
+	
+	<link rel="apple-touch-icon-precomposed" href="/assets/images/avatar.jpg"/>
+	
+	<meta name="description" content="Random Logs" />
+	
+	<!-- jQuery -->
+	<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js'></script>
+	
+	<!-- Custom JS -->
+	<script type='text/javascript' src='/assets/js/custom.js'></script>
+	
+	<!-- Modernizr adding css classes -->
+	<script type='text/javascript' src='/assets/js/libs/modernizr_css_classes.js'></script>
+
+</head>
+<body>
+	
+	<div id="masthead">
+		<h2 class="sitetitle"><a href="/" class="sitetitle">Jonah Wiaderny</a></h2>
+		<p class="description">Random Logs</p>
+		<hr />
+		<ul id="pagenav">
+	<li><a href="/">Weblog</a></li>
+	<li><a href="/archive">Archive</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/curriculum-vitae" class="adn">Curriculum Vit&aelig;</a></li>
+	<li><a href="/colophon">Colophon</a></li>
+	
+	<li><a href="http://feeds.feedburner.com/andytaylor" class="rss">RSS Feed</a></li>
+	
+	
+	
+</ul>
+</div> <!--/masthead-->
+
+	
+	<div class="container">
+		
+		<div id="content" class="post">
+	
+		
+		<h1 class="posttitle">Economic Diagrams with TikZ</h1>
+		<p class="date articledate">October 13, 2012</p>
+		
+	
+		<p>LaTeX - or more precisely speaking <a href='http://www.ctan.org/pkg/pgf'>TikZ</a> - lets you create really great diagrams for your economic papers. The main difference compared to carelessly embedding images in your document is that you will be creating vector images with TiKz, which are lossless scaleable, what means they won&#8217;t blur - you won&#8217;t see pixels when you scale them up. Another great point which makes me be in favor of vector graphics by TikZ is that they are more accurate compared to their now randomly appearing pixel brothers. </p><h3 id='thefinalproduct'>The final product</h3>
+<p>Lately I was creating the diagram which I attached below. In this task I was focused primarily on some fine details, i.e. the arrowheads, the crosshatching, and the line thickness ratio.</p>
+
+<p><img alt='Economic diagram in LaTeX created with TikZ' src='http://f.cl.ly/items/3m2h0i3U2u1s243O3D1J/din-norm.jpg' /></p>
+<p>Even if this diagram is just of qualitative and not of quantitative nature, it is any the less important for me to have correctly set arrowheads. I must admit at this point, that I consider diagrams which do not feature this detail, as of lacking accuracy. Well set heads, by contrast, demonstrate understanding of the Cartesian coordinate system, for they, being set at the end of each coordinate axis indicate the growth direction of the coordinate itself. A coordinate without correct arrowheads can therefore - in a very consequent way - be considered meaningless and vague.</p><h3 id='customarrowheads'>Custom arrowheads</h3><p>In the first place it was necessary to customize the arrowheads which would be loaded using the default TikZ Library <code>arrows</code>. Beneath I have attached the necessary code to produce finer arrowheads.</p><div class='highlight'><pre><code class='tex'><span class='c'>%-------------------------------------------------------------</span>
+<span class='c'>%       Call arrow library and declare arrowheads</span>
+<span class='c'>%-------------------------------------------------------------</span>
+
+<span class='k'>\usetikzlibrary</span><span class='nb'>{</span>arrows<span class='nb'>}</span>
+
+<span class='k'>\makeatletter</span>
+<span class='k'>\pgfarrowsdeclare</span><span class='nb'>{</span>dinarr<span class='nb'>}{</span>dinarr<span class='nb'>}</span>
+   <span class='nb'>{</span>
+<span class='k'>\pgfutil</span>@tempdima=0.5pt<span class='c'>%</span>
+<span class='k'>\advance\pgfutil</span>@tempdima by.25<span class='k'>\pgflinewidth</span><span class='c'>%</span>
+<span class='k'>\pgfutil</span>@tempdimb=7.29<span class='k'>\pgfutil</span>@tempdima<span class='k'>\advance\pgfutil</span>@tempdimb by.5<span class='k'>\pgflinewidth</span><span class='c'>%</span>
+<span class='k'>\pgfarrowsleftextend</span><span class='nb'>{</span>+-<span class='k'>\pgfutil</span>@tempdimb<span class='nb'>}</span>
+<span class='k'>\pgfutil</span>@tempdimb=.5<span class='k'>\pgfutil</span>@tempdima<span class='k'>\advance\pgfutil</span>@tempdimb by1.6<span class='k'>\pgflinewidth</span><span class='c'>%</span>
+<span class='k'>\pgfarrowsrightextend</span><span class='nb'>{</span>+<span class='k'>\pgfutil</span>@tempdimb<span class='nb'>}</span>
+   <span class='nb'>}</span>
+   <span class='nb'>{</span>
+<span class='k'>\pgfutil</span>@tempdima=0.5pt<span class='c'>%</span>
+<span class='k'>\advance\pgfutil</span>@tempdima by.25<span class='k'>\pgflinewidth</span><span class='c'>%</span>
+<span class='k'>\pgfsetdash</span><span class='nb'>{}{</span>+0pt<span class='nb'>}</span>
+<span class='k'>\pgfsetmiterjoin</span>
+<span class='k'>\pgfpathmoveto</span><span class='nb'>{</span><span class='k'>\pgfpointadd</span><span class='nb'>{</span><span class='k'>\pgfqpoint</span><span class='nb'>{</span>0.5<span class='k'>\pgfutil</span>@tempdima<span class='nb'>}{</span>0pt<span class='nb'>}}</span><span class='c'>%</span>
+<span class='nb'>{</span><span class='k'>\pgfqpoint</span><span class='nb'>{</span>-3mm<span class='nb'>}{</span>0.5mm<span class='nb'>}}}</span>
+<span class='k'>\pgfpathlineto</span><span class='nb'>{</span><span class='k'>\pgfqpoint</span><span class='nb'>{</span>0.5<span class='k'>\pgfutil</span>@tempdima<span class='nb'>}{</span>0<span class='k'>\pgfutil</span>@tempdima<span class='nb'>}}</span>
+<span class='k'>\pgfpathlineto</span><span class='nb'>{</span><span class='k'>\pgfpointadd</span><span class='nb'>{</span><span class='k'>\pgfqpoint</span><span class='nb'>{</span>0.5<span class='k'>\pgfutil</span>@tempdima<span class='nb'>}{</span>0pt<span class='nb'>}}</span><span class='c'>%</span>
+<span class='nb'>{</span><span class='k'>\pgfqpoint</span><span class='nb'>{</span>-3mm<span class='nb'>}{</span>-0.5mm<span class='nb'>}}}</span>
+<span class='k'>\pgfpathclose</span>
+<span class='k'>\pgfusepathqfillstroke</span>
+   <span class='nb'>}</span>
+<span class='k'>\pgfarrowsdeclarereversed</span><span class='nb'>{</span>dinarr reversed<span class='nb'>}{</span>dinarr reversed<span class='nb'>}{</span>dinarr<span class='nb'>}{</span>dinarr<span class='nb'>}</span>
+<span class='k'>\makeatother</span>
+</code></pre></div><p>These arrowheads can be of course altered to specific needs, but this code snippet will produce - if properly inserted - arrowheads which have .5mm in height and 3mm in length. You can alter their appearance by changing the values in <code>\pgfqpoint{-3mm}{0.5mm}</code> and its counterpart two lines below. If you are happy with the appearance you can use them as usual with a command like <code>\draw[-dinarr]</code>.</p><h3 id='customhatching'>Custom hatching</h3><p>Creating a neat hatching was the next task which I was up to. I wanted the hatching to be vertically aligned and 1mm apart. The code was again customized after the <code>pattern</code> library was called.</p><div class='highlight'><pre><code class='tex'><span class='c'>%-------------------------------------------------------------</span>
+<span class='c'>%       Call some libraries and declare vertical hatchings      </span>
+<span class='c'>%-------------------------------------------------------------</span>
+<span class='k'>\usetikzlibrary</span><span class='nb'>{</span>patterns,calc,intersections<span class='nb'>}</span>
+
+<span class='k'>\pgfdeclarepatternformonly</span><span class='nb'>{</span>dinhatch<span class='nb'>}{</span><span class='k'>\pgfpointorigin</span><span class='nb'>}{</span><span class='k'>\pgfqpoint</span><span class='nb'>{</span>1mm<span class='nb'>}</span><span class='c'>%</span>
+<span class='nb'>{</span>100pt<span class='nb'>}}{</span><span class='k'>\pgfqpoint</span><span class='nb'>{</span>1mm<span class='nb'>}{</span>100pt<span class='nb'>}}</span>
+<span class='nb'>{</span>
+  <span class='k'>\pgfsetlinewidth</span><span class='nb'>{</span>0.4pt<span class='nb'>}</span>
+  <span class='k'>\pgfpathmoveto</span><span class='nb'>{</span><span class='k'>\pgfqpoint</span><span class='nb'>{</span>0.5pt<span class='nb'>}{</span>0pt<span class='nb'>}}</span>
+  <span class='k'>\pgfpathlineto</span><span class='nb'>{</span><span class='k'>\pgfqpoint</span><span class='nb'>{</span>0.5pt<span class='nb'>}{</span>100pt<span class='nb'>}}</span>
+  <span class='k'>\pgfusepath</span><span class='nb'>{</span>stroke<span class='nb'>}</span>
+<span class='nb'>}</span>
+</code></pre></div><h3 id='whatsnext'>What&#8217;s next?</h3><p>Having this done, I was ready to finally draw some lines with LaTeX and TikZ. Well, not really. There were still some styles to define, i.e. intercept points, labels, etc. I will continue this note, when I have some more spare time and possibly upload the <code>.tex</code> file as well.</p>
+		
+		
+		<p class="comments">Got a comment? @me on
+
+			
+			<a href="http://twitter.com/jonah.wiaderny">Twitter</a>
+			
+			
+			
+			
+			
+		
+		</p>
+		
+		
+		<!-- Tweet button -->
+		<div class="tweet">
+		<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-count="none" data-dnt="true">Tweet</a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+		</div>
+		
+		</div> <!-- /content -->
+	</div> <!-- /container -->
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-16909425-8']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+<!-- jQuery Infinite Scrolling -->
+<script type='text/javascript' src='/assets/js/libs/jquery.infinitescroll.min.js'></script>
+<script>
+// infinitescroll() is called on the element that surrounds 
+// the items you will be loading more of
+$('ul#posts').infinitescroll({ 
+	navSelector		: "p.pagination",
+					// selector for the paged navigation (it will be hidden)
+	nextSelector	: "p.pagination a.older",
+					// selector for the NEXT link (to page 2)
+	itemSelector	: "#content ul#posts li.post"
+					// selector for all items you'll retrieve
+});
+</script>
+
+</body>
+</html>

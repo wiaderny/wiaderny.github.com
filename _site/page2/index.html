@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8"/>
+	
+	<title> Jonah Wiaderny</title>
+
+	
+	<link rel="alternate" type="application/rss+xml" href="http://feeds.feedburner.com/andytaylor">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
+	<link rel="shortcut icon" href="/assets/images/avatar.png" type="image/x-icon" />
+	
+	<link rel="apple-touch-icon-precomposed" href="/assets/images/avatar.jpg"/>
+	
+	<meta name="description" content="Random Logs" />
+	
+	<!-- jQuery -->
+	<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js'></script>
+	
+	<!-- Custom JS -->
+	<script type='text/javascript' src='/assets/js/custom.js'></script>
+	
+	<!-- Modernizr adding css classes -->
+	<script type='text/javascript' src='/assets/js/libs/modernizr_css_classes.js'></script>
+
+</head>
+<body class="home">
+
+	<div id="masthead">
+		<div class="avatarwrapper">
+			<a href="/"><img src="/assets/avatar.jpg" alt="Jonah Wiaderny" /></a>
+		</div>
+		<h1 class="sitetitle"><a href="/" class="sitetitle">Jonah Wiaderny</a></h1>
+		<p class="description">Random Logs</p>
+		<hr />
+		<ul id="pagenav">
+	<li><a href="/">Weblog</a></li>
+	<li><a href="/archive">Archive</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/curriculum-vitae" class="adn">Curriculum Vit&aelig;</a></li>
+	<li><a href="/colophon">Colophon</a></li>
+	
+	<li><a href="http://feeds.feedburner.com/andytaylor" class="rss">RSS Feed</a></li>
+	
+	
+	
+</ul>
+</div> <!--/masthead-->
+
+	<div class="container">
+		
+	<div id="content">
+		
+		
+	
+		<ul id="posts">
+		  
+		  
+		    <li class="post">
+		    
+		    <h2 class="posttitle"><a href="/notes/fill-table-space-with-dots-in-latex/" class="articletitle">Fill table space with dots in LaTeX</a></h2>
+			<p class="date articledate">October  6, 2012</p>
+		    
+		    
+		    
+		    <p>While doing some work for the Physical Therapy Office I was faced with a small challenge, for my aim was to fill the space within a table - more precisely the space within two rows - with dots.</p>
+
+<p><img alt='Fill table space with dots in LaTeX' src='../../assets/images/Fill-dots-in-LaTeX.png' /></p>
+<p>At first the answer was pretty obvious: the <code>\dottfill</code> command! But that will not work our properly, for there will remain margins on each side of every row, what will significantly compromise the aesthetics.</p><p>What needed to be done is to set the margins to zero on each side of every row. This has been achieved by modifying the <code>tabular</code> command. Usually your <code>tabular</code> command looks something like this</p><div class='highlight'><pre><code class='tex'><span class='k'>\begin</span><span class='nb'>{</span>tabular<span class='nb'>}{</span>lll<span class='nb'>}</span>
+</code></pre></div>
+<p><p>when you want your rows to be left aligned. But in order to achieve the desired look we need to put an <code>@{}</code> in front of and at the end of each row, what will eliminate the margins.</p></p>
+<p>The tabular command should now look like the one below.</p>
+<p><div class='highlight'><pre><code class='tex'><span class='k'>\begin</span><span class='nb'>{</span>tabular<span class='nb'>}{</span>@<span class='nb'>{}</span>l@<span class='nb'>{}</span>l@<span class='nb'>{}</span>l@<span class='nb'>{}}</span>&lt;/code&gt;&lt;/pre&gt;
+</code></pre></div></p>
+<p>Having this done, the rest should not constitute a challenge anymore. I have added my final code snippet of the invoice I made below.</p><div class='highlight'><pre><code class='tex'><span class='k'>\begin</span><span class='nb'>{</span>table<span class='nb'>}</span>[h]
+<span class='k'>\begin</span><span class='nb'>{</span>tabular<span class='nb'>}{</span>@<span class='nb'>{}</span>l@<span class='nb'>{}</span>l@<span class='nb'>{}</span>l@<span class='nb'>{}</span>r@<span class='nb'>{}</span>r@<span class='nb'>{}</span>r@<span class='nb'>{}</span>r@<span class='nb'>{}}</span>
+<span class='k'>\toprule</span><span class='na'>[1.2pt]</span>
+
+    Anzahl  <span class='nb'>&amp;</span>amp; <span class='k'>\hspace</span><span class='nb'>{</span>4.3em<span class='nb'>}</span> <span class='nb'>&amp;</span>amp; Behandlungstyp <span class='nb'>&amp;</span>amp; 
+    <span class='k'>\multicolumn</span><span class='nb'>{</span>1<span class='nb'>}{</span>@<span class='nb'>{</span><span class='k'>\hspace</span><span class='nb'>{</span>7em<span class='nb'>}}</span>r@<span class='nb'>{}}{}</span> <span class='nb'>&amp;</span>amp; <span class='nb'>&amp;</span>amp; Einzelpreis <span class='nb'>&amp;</span>amp; 
+    <span class='k'>\multicolumn</span><span class='nb'>{</span>1<span class='nb'>}{</span>@<span class='nb'>{</span><span class='k'>\hspace</span><span class='nb'>{</span>9.8em<span class='nb'>}}</span>r@<span class='nb'>{}}{</span>Gesamtpreis<span class='nb'>}</span><span class='k'>\\</span>
+ 
+    <span class='k'>\midrule</span>
+
+    <span class='k'>\multicolumn</span><span class='nb'>{</span>2<span class='nb'>}{</span>@<span class='nb'>{}</span>l@<span class='nb'>{}}{</span><span class='k'>\aa\dotfill</span><span class='nb'>}</span> <span class='nb'>&amp;</span>amp; 
+    <span class='k'>\multicolumn</span><span class='nb'>{</span>4<span class='nb'>}{</span>@<span class='nb'>{}</span>l@<span class='nb'>{}}{</span><span class='k'>\ab\dotfill</span> <span class='k'>\ac</span><span class='nb'>}</span> <span class='nb'>&amp;</span>amp; <span class='k'>\dotfill</span> <span class='k'>\ad\\</span>
+
+    <span class='k'>\multicolumn</span><span class='nb'>{</span>2<span class='nb'>}{</span>@<span class='nb'>{}</span>l@<span class='nb'>{}}{</span><span class='k'>\ba\dotfill</span><span class='nb'>}</span> <span class='nb'>&amp;</span>amp; 
+    <span class='k'>\multicolumn</span><span class='nb'>{</span>4<span class='nb'>}{</span>@<span class='nb'>{}</span>l@<span class='nb'>{}}{</span><span class='k'>\bb\dotfill</span> <span class='k'>\bc</span><span class='nb'>}</span> <span class='nb'>&amp;</span>amp; <span class='k'>\dotfill</span> <span class='k'>\bd\\</span>
+        
+            <span class='k'>\ifdefined\ca</span>
+        
+    <span class='k'>\multicolumn</span><span class='nb'>{</span>2<span class='nb'>}{</span>@<span class='nb'>{}</span>l@<span class='nb'>{}}{</span><span class='k'>\ca\dotfill</span><span class='nb'>}</span> <span class='nb'>&amp;</span>amp; 
+    <span class='k'>\multicolumn</span><span class='nb'>{</span>4<span class='nb'>}{</span>@<span class='nb'>{}</span>l@<span class='nb'>{}}{</span><span class='k'>\cb\dotfill</span> <span class='k'>\cc</span><span class='nb'>}</span> <span class='nb'>&amp;</span>amp; <span class='k'>\dotfill</span> <span class='k'>\cd\\</span>
+        
+            <span class='k'>\else</span>
+            <span class='k'>\fi</span>
+            <span class='k'>\ifdefined\da</span>
+    
+    <span class='k'>\multicolumn</span><span class='nb'>{</span>2<span class='nb'>}{</span>@<span class='nb'>{}</span>l@<span class='nb'>{}}{</span><span class='k'>\da\dotfill</span><span class='nb'>}</span> <span class='nb'>&amp;</span>amp; 
+    <span class='k'>\multicolumn</span><span class='nb'>{</span>4<span class='nb'>}{</span>@<span class='nb'>{}</span>l@<span class='nb'>{}}{</span><span class='k'>\db\dotfill</span> <span class='k'>\dc</span><span class='nb'>}</span> <span class='nb'>&amp;</span>amp; <span class='k'>\dotfill</span> <span class='k'>\dd\\</span>
+        
+            <span class='k'>\else</span>
+            <span class='k'>\fi</span>
+            
+    <span class='k'>\bottomrule</span><span class='na'>[1.2pt]</span><span class='k'>\addlinespace</span><span class='na'>[5pt]</span>
+
+<span class='k'>\multicolumn</span><span class='nb'>{</span>7<span class='nb'>}{</span>@<span class='nb'>{}</span>l@<span class='nb'>{}}{</span>Gesamtforderung<span class='k'>\dotfill</span> <span class='k'>\gesamt</span><span class='nb'>}</span><span class='k'>\\</span>
+<span class='k'>\end</span><span class='nb'>{</span>tabular<span class='nb'>}</span>
+<span class='k'>\end</span><span class='nb'>{</span>table<span class='nb'>}</span>
+</code></pre></div><p>This small change in the <code>tabular</code> command will render - if properly implemented - the output at the top.</p>
+		    
+		    </li>
+		  
+		  
+		  
+		    <li class="post">
+		    
+		    <h2 class="posttitle"><a href="/notes/how-to-exclude-pages-from-wordpress-search/" class="articletitle">How to exclude pages from wordpress search</a></h2>
+			<p class="date articledate">May 14, 2012</p>
+		    
+		    
+		    
+		    <p>By default WordPress returns all posts and pages when an user runs a search. But mostly users are searching for an log entry rather than a static page. To make your search results more relevant consider editing your <code>functions.php</code> file by adding following code:</p>
+<div class='highlight'><pre><code class='javascript'><span class='kd'>function</span> <span class='nx'>SearchFilter</span><span class='p'>(</span><span class='nx'>$query</span><span class='p'>)</span> <span class='p'>{</span>
+<span class='k'>if</span> <span class='p'>(</span><span class='nx'>$query</span><span class='o'>-&gt;</span><span class='nx'>is_search</span><span class='p'>)</span> <span class='p'>{</span>
+<span class='nx'>$query</span><span class='o'>-&gt;</span><span class='nx'>set</span><span class='p'>(</span><span class='s1'>&#39;post_type&#39;</span><span class='p'>,</span> <span class='s1'>&#39;post&#39;</span><span class='p'>);</span>
+<span class='p'>}</span>
+<span class='k'>return</span> <span class='nx'>$query</span><span class='p'>;</span>
+<span class='p'>}</span>
+</code></pre></div>
+<p>add_filter(&#8216;pre_get_posts&#8217;,&#8217;SearchFilter&#8217;); Abovementioned code executes the search and returns only <code>post_type</code> data.</p>
+
+<p>However, to exclude individual pages it might be a good idea to consider the use of the Simply Exclude Plugin by Paul Menard.</p>
+		    
+		    </li>
+		  
+		        
+		</ul>
+		
+		
+		<p class="pagination">
+		
+		
+			
+			<a class="newer" href="/">Newer</a>
+		
+			
+			
+			
+		
+		<span>Page 2 of 2</span>
+		
+		<span class="older">Older</span>
+		
+		</p>
+
+	</div> <!--/content-->
+	</div> <!--/container-->
+	
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-16909425-8']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+<!-- jQuery Infinite Scrolling -->
+<script type='text/javascript' src='/assets/js/libs/jquery.infinitescroll.min.js'></script>
+<script>
+// infinitescroll() is called on the element that surrounds 
+// the items you will be loading more of
+$('ul#posts').infinitescroll({ 
+	navSelector		: "p.pagination",
+					// selector for the paged navigation (it will be hidden)
+	nextSelector	: "p.pagination a.older",
+					// selector for the NEXT link (to page 2)
+	itemSelector	: "#content ul#posts li.post"
+					// selector for all items you'll retrieve
+});
+</script>
+
+</body>
+</html>

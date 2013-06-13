@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8"/>
+	
+	<title>Fill table space with dots in LaTeX &mdash; Jonah Wiaderny</title>
+
+	
+	<link rel="alternate" type="application/rss+xml" href="http://feeds.feedburner.com/andytaylor">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
+	<link rel="shortcut icon" href="/assets/images/avatar.png" type="image/x-icon" />
+	
+	<link rel="apple-touch-icon-precomposed" href="/assets/images/avatar.jpg"/>
+	
+	<meta name="description" content="Random Logs" />
+	
+	<!-- jQuery -->
+	<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js'></script>
+	
+	<!-- Custom JS -->
+	<script type='text/javascript' src='/assets/js/custom.js'></script>
+	
+	<!-- Modernizr adding css classes -->
+	<script type='text/javascript' src='/assets/js/libs/modernizr_css_classes.js'></script>
+
+</head>
+<body>
+	
+	<div id="masthead">
+		<h2 class="sitetitle"><a href="/" class="sitetitle">Jonah Wiaderny</a></h2>
+		<p class="description">Random Logs</p>
+		<hr />
+		<ul id="pagenav">
+	<li><a href="/">Weblog</a></li>
+	<li><a href="/archive">Archive</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/curriculum-vitae" class="adn">Curriculum Vit&aelig;</a></li>
+	<li><a href="/colophon">Colophon</a></li>
+	
+	<li><a href="http://feeds.feedburner.com/andytaylor" class="rss">RSS Feed</a></li>
+	
+	
+	
+</ul>
+</div> <!--/masthead-->
+
+	
+	<div class="container">
+		
+		<div id="content" class="post">
+	
+		
+		<h1 class="posttitle">Fill table space with dots in LaTeX</h1>
+		<p class="date articledate">October  6, 2012</p>
+		
+	
+		<p>While doing some work for the Physical Therapy Office I was faced with a small challenge, for my aim was to fill the space within a table - more precisely the space within two rows - with dots.</p>
+
+<p><img alt='Fill table space with dots in LaTeX' src='../../assets/images/Fill-dots-in-LaTeX.png' /></p>
+<p>At first the answer was pretty obvious: the <code>\dottfill</code> command! But that will not work our properly, for there will remain margins on each side of every row, what will significantly compromise the aesthetics.</p><p>What needed to be done is to set the margins to zero on each side of every row. This has been achieved by modifying the <code>tabular</code> command. Usually your <code>tabular</code> command looks something like this</p><div class='highlight'><pre><code class='tex'><span class='k'>\begin</span><span class='nb'>{</span>tabular<span class='nb'>}{</span>lll<span class='nb'>}</span>
+</code></pre></div>
+<p><p>when you want your rows to be left aligned. But in order to achieve the desired look we need to put an <code>@{}</code> in front of and at the end of each row, what will eliminate the margins.</p></p>
+<p>The tabular command should now look like the one below.</p>
+<p><div class='highlight'><pre><code class='tex'><span class='k'>\begin</span><span class='nb'>{</span>tabular<span class='nb'>}{</span>@<span class='nb'>{}</span>l@<span class='nb'>{}</span>l@<span class='nb'>{}</span>l@<span class='nb'>{}}</span>&lt;/code&gt;&lt;/pre&gt;
+</code></pre></div></p>
+<p>Having this done, the rest should not constitute a challenge anymore. I have added my final code snippet of the invoice I made below.</p><div class='highlight'><pre><code class='tex'><span class='k'>\begin</span><span class='nb'>{</span>table<span class='nb'>}</span>[h]
+<span class='k'>\begin</span><span class='nb'>{</span>tabular<span class='nb'>}{</span>@<span class='nb'>{}</span>l@<span class='nb'>{}</span>l@<span class='nb'>{}</span>l@<span class='nb'>{}</span>r@<span class='nb'>{}</span>r@<span class='nb'>{}</span>r@<span class='nb'>{}</span>r@<span class='nb'>{}}</span>
+<span class='k'>\toprule</span><span class='na'>[1.2pt]</span>
+
+    Anzahl  <span class='nb'>&amp;</span>amp; <span class='k'>\hspace</span><span class='nb'>{</span>4.3em<span class='nb'>}</span> <span class='nb'>&amp;</span>amp; Behandlungstyp <span class='nb'>&amp;</span>amp; 
+    <span class='k'>\multicolumn</span><span class='nb'>{</span>1<span class='nb'>}{</span>@<span class='nb'>{</span><span class='k'>\hspace</span><span class='nb'>{</span>7em<span class='nb'>}}</span>r@<span class='nb'>{}}{}</span> <span class='nb'>&amp;</span>amp; <span class='nb'>&amp;</span>amp; Einzelpreis <span class='nb'>&amp;</span>amp; 
+    <span class='k'>\multicolumn</span><span class='nb'>{</span>1<span class='nb'>}{</span>@<span class='nb'>{</span><span class='k'>\hspace</span><span class='nb'>{</span>9.8em<span class='nb'>}}</span>r@<span class='nb'>{}}{</span>Gesamtpreis<span class='nb'>}</span><span class='k'>\\</span>
+ 
+    <span class='k'>\midrule</span>
+
+    <span class='k'>\multicolumn</span><span class='nb'>{</span>2<span class='nb'>}{</span>@<span class='nb'>{}</span>l@<span class='nb'>{}}{</span><span class='k'>\aa\dotfill</span><span class='nb'>}</span> <span class='nb'>&amp;</span>amp; 
+    <span class='k'>\multicolumn</span><span class='nb'>{</span>4<span class='nb'>}{</span>@<span class='nb'>{}</span>l@<span class='nb'>{}}{</span><span class='k'>\ab\dotfill</span> <span class='k'>\ac</span><span class='nb'>}</span> <span class='nb'>&amp;</span>amp; <span class='k'>\dotfill</span> <span class='k'>\ad\\</span>
+
+    <span class='k'>\multicolumn</span><span class='nb'>{</span>2<span class='nb'>}{</span>@<span class='nb'>{}</span>l@<span class='nb'>{}}{</span><span class='k'>\ba\dotfill</span><span class='nb'>}</span> <span class='nb'>&amp;</span>amp; 
+    <span class='k'>\multicolumn</span><span class='nb'>{</span>4<span class='nb'>}{</span>@<span class='nb'>{}</span>l@<span class='nb'>{}}{</span><span class='k'>\bb\dotfill</span> <span class='k'>\bc</span><span class='nb'>}</span> <span class='nb'>&amp;</span>amp; <span class='k'>\dotfill</span> <span class='k'>\bd\\</span>
+        
+            <span class='k'>\ifdefined\ca</span>
+        
+    <span class='k'>\multicolumn</span><span class='nb'>{</span>2<span class='nb'>}{</span>@<span class='nb'>{}</span>l@<span class='nb'>{}}{</span><span class='k'>\ca\dotfill</span><span class='nb'>}</span> <span class='nb'>&amp;</span>amp; 
+    <span class='k'>\multicolumn</span><span class='nb'>{</span>4<span class='nb'>}{</span>@<span class='nb'>{}</span>l@<span class='nb'>{}}{</span><span class='k'>\cb\dotfill</span> <span class='k'>\cc</span><span class='nb'>}</span> <span class='nb'>&amp;</span>amp; <span class='k'>\dotfill</span> <span class='k'>\cd\\</span>
+        
+            <span class='k'>\else</span>
+            <span class='k'>\fi</span>
+            <span class='k'>\ifdefined\da</span>
+    
+    <span class='k'>\multicolumn</span><span class='nb'>{</span>2<span class='nb'>}{</span>@<span class='nb'>{}</span>l@<span class='nb'>{}}{</span><span class='k'>\da\dotfill</span><span class='nb'>}</span> <span class='nb'>&amp;</span>amp; 
+    <span class='k'>\multicolumn</span><span class='nb'>{</span>4<span class='nb'>}{</span>@<span class='nb'>{}</span>l@<span class='nb'>{}}{</span><span class='k'>\db\dotfill</span> <span class='k'>\dc</span><span class='nb'>}</span> <span class='nb'>&amp;</span>amp; <span class='k'>\dotfill</span> <span class='k'>\dd\\</span>
+        
+            <span class='k'>\else</span>
+            <span class='k'>\fi</span>
+            
+    <span class='k'>\bottomrule</span><span class='na'>[1.2pt]</span><span class='k'>\addlinespace</span><span class='na'>[5pt]</span>
+
+<span class='k'>\multicolumn</span><span class='nb'>{</span>7<span class='nb'>}{</span>@<span class='nb'>{}</span>l@<span class='nb'>{}}{</span>Gesamtforderung<span class='k'>\dotfill</span> <span class='k'>\gesamt</span><span class='nb'>}</span><span class='k'>\\</span>
+<span class='k'>\end</span><span class='nb'>{</span>tabular<span class='nb'>}</span>
+<span class='k'>\end</span><span class='nb'>{</span>table<span class='nb'>}</span>
+</code></pre></div><p>This small change in the <code>tabular</code> command will render - if properly implemented - the output at the top.</p>
+		
+		
+		<p class="comments">Got a comment? @me on
+
+			
+			<a href="http://twitter.com/jonah.wiaderny">Twitter</a>
+			
+			
+			
+			
+			
+		
+		</p>
+		
+		
+		<!-- Tweet button -->
+		<div class="tweet">
+		<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-count="none" data-dnt="true">Tweet</a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+		</div>
+		
+		</div> <!-- /content -->
+	</div> <!-- /container -->
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-16909425-8']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+<!-- jQuery Infinite Scrolling -->
+<script type='text/javascript' src='/assets/js/libs/jquery.infinitescroll.min.js'></script>
+<script>
+// infinitescroll() is called on the element that surrounds 
+// the items you will be loading more of
+$('ul#posts').infinitescroll({ 
+	navSelector		: "p.pagination",
+					// selector for the paged navigation (it will be hidden)
+	nextSelector	: "p.pagination a.older",
+					// selector for the NEXT link (to page 2)
+	itemSelector	: "#content ul#posts li.post"
+					// selector for all items you'll retrieve
+});
+</script>
+
+</body>
+</html>
