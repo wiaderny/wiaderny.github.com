@@ -444,6 +444,12 @@ h1.sitetitle, h2.sitetitle {
 	display: none;
 }
 
+a.hide {
+	   position: absolute !important;
+	   top: -9999px !important;
+	   left: -9999px !important;
+	}
+
 .sitetitle {
 	font-size: 28px;
 	display: block;
