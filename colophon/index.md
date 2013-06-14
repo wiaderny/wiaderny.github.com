@@ -17,7 +17,7 @@ If this site looks goofy in your browser, you’re most likely using a useless b
 [Jekyll]: https://github.com/mojombo/jekyll
 [Proxima Nova Light]: https://typekit.com/fonts/proxima-nova
 [Git]: http://git-scm.com
-[GitHub]: https://github.com/andytlr/andytlr.github.com "Peak about"
+[GitHub]: https://github.com/wiaderny/wiaderny.github.com "Peak about"
 [Markdown]: http://daringfireball.net/projects/markdown/
 [John Gruber]: http://daringfireball.net/
 [Courier New]: http://www.myfonts.com/fonts/microsoft/courier-new/
