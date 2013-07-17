@@ -12,4 +12,4 @@ If you feel in need of additional information about the construction of this web
 [Google+]: https://plus.google.com/101986038840755391471/
 [Flickr]: http://www.flickr.com/wiaderny/
 [LinkedIn]: http://www.linkedin.com/in/jonahwiaderny
-[Twitter]: https://twitter.com/jonahwiaderny
+[Twitter]: http://twitter.com/jonahwiaderny
