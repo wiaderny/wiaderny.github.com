@@ -2,6 +2,7 @@ name: Jonah Wiaderny
 description: Random Logs
 meta-description: Student of Economics at The University of Halle-Wittenberg. Includes CV, research, logs, and software.
 url: http://www.wiaderny.org
+baseurl: http://www.wiaderny.org
 domain: wiaderny.org
 commentlinks: true
 twitter-username: jonahwiaderny

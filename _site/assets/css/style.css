@@ -39,8 +39,8 @@
 
 @font-face {
   font-family: 'ProximaNova';
-  src: url("../fonts/proxima-nova/proximanova-regular-webfont.eot");
-  src: local("Proxima Nova"), local("ProximaNovaRegular"), url("../fonts/proxima-nova/proximanova-regular-webfont.woff") format("woff"), url("../fonts/proxima-nova/proximanova-regular-webfont.ttf") format("truetype"), url("../fonts/proxima-nova/proximanova-regular-webfont.svgz#webfonteneA6i5M") format("svg"), url("../fonts/proxima-nova/proximanova-regular-webfont.svg#webfonteneA6i5M") format("svg");
+  src: url("/assets/type/proximanova-regular-webfont.eot");
+  src: local("Proxima Nova"), local("ProximaNovaRegular"), url("/assets/type/proximanova-regular-webfont.woff") format("woff"), url("/assets/type/proximanova-regular-webfont.ttf") format("truetype"), url("/assets/type/proximanova-regular-webfont.svgz#webfonteneA6i5M") format("svg"), url("/assets/type/proximanova-regular-webfont.svg#webfonteneA6i5M") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -444,6 +444,12 @@ h1.sitetitle, h2.sitetitle {
 	display: none;
 }
 
+a.hide {
+	   position: absolute !important;
+	   top: -9999px !important;
+	   left: -9999px !important;
+	}
+
 .sitetitle {
 	font-size: 28px;
 	display: block;
@@ -514,7 +520,7 @@ ul#posts li.post {
 	padding: 0;
 	margin: 0 0 40px 0;
 	padding: 0 0 40px 0;
-	border-bottom: 4px double #dadada;
+	border-bottom: 1px solid #dadada;
 }
 
 p.pagination .newer {
@@ -555,7 +561,7 @@ p.pagination {
 	color: #555;
 	margin-bottom: 0;
 	text-transform: uppercase;
-	font-size: 12px;
+	font-size: .8em;
 	letter-spacing: 2px;
 }
 
