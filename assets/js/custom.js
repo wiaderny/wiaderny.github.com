@@ -39,9 +39,20 @@ $(document).ready(function () {
 /*-----------------------------------------------------------------------------------*/
 
     $(function randomImage(){
-        var images = ["bg-1.jpg", "bg-2.jpg", "bg-3.jpg", "bg-4.jpg"];
+        var images = ["bg-1.jpg", "bg-2.jpg", "bg-3.jpg", "bg-4.jpg"],
+        randImage = images[Math.floor(Math.random() * images.length)];
 
-        $(".cover-img").css({"background-image": "url(assets/images/" + images[Math.floor(Math.random() * images.length)] + ")"});
+        var fullLink= ("assets/images/" + randImage);
+
+        $("img#preload").attr("src", fullLink);
+
+        $("img#preload").load(function(){
+        
+        $(".cover-img").css({"background-image": "url(assets/images/" + randImage + ")"});
+});
+        
+        
+       
     });
 
 
