@@ -9,7 +9,7 @@ This site is built with [Jekyll], a blog aware, static site generator, and hoste
 
 All the content is written in [Markdown]; [John Gruber]'s excellent text-to-HTML conversion tool for web writers.
 
-It is typeset in [Proxima Nova Light], a beautiful typeface, and [Courier New]. The design is heavily based on the fantastic work of the guys behind [Medium], a service that I emphatically recommend.
+It is typeset in [Proxima Nova Light], a beautiful typeface, and [FF Tisa Pro]. The design is, with exception of small changes, entirely based on the fantastic work of the guys behind [Medium], a service that I emphatically recommend.
 
 The homepage features various images which are all licensed under a Creative Commons License. In particular, the homepage randomly displays one of the following images: The London Shard and City Hall, a photograph by [Nathan Meijer], the Uluwatu Temple in Bali, a photograph taken by [Sean McGrath] and the Matterhorn and Ägerisee, both photographs by [Juan Rubiano].
 
@@ -27,7 +27,7 @@ If this site looks goofy in your browser, you are most likely using a useless br
 [GitHub]: https://github.com/wiaderny/wiaderny.github.com "Peak about"
 [Markdown]: http://daringfireball.net/projects/markdown/
 [John Gruber]: http://daringfireball.net/
-[Courier New]: http://www.myfonts.com/fonts/microsoft/courier-new/
+[FF Tisa Pro]: https://typekit.com/fonts/ff-tisa-web-pro
 [HTML5]: http://www.whatwg.org/specs/web-apps/current-work/
 [CSS]: http://jigsaw.w3.org/css-validator/validator?uri=http://wiaderny.org/assets/css/style.css
 [Nathan Meijer]: http://www.flickr.com/photos/61295396@N08
