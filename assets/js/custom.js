@@ -6,20 +6,29 @@
 
 $(document).ready(function () {
 
+/*-----------------------------------------------------------------------------------*/
+/*  Show and Hide Floating element
+/*-----------------------------------------------------------------------------------*/
+
     $(function (){
 
          var $document = $(".screen-content"),
     $element = $('#floating'),
     className = 'hide-floating';
 
+    $(window).resize(function() {
+
+    if($(window).width() <= 499) {
     $document.scroll(function() {
   $element.toggleClass(className, $document.scrollTop() >= 50);
 });
+}
     if($(window).width() <= 499) {
      $(document).scroll(function() {
   $element.toggleClass(className, $(document).scrollTop() >= 50);
 });
  }
+    }).resize();
 
     });
 
