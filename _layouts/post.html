@@ -1,43 +1,125 @@
 {% include header.html %}
 	
-	{% include masthead_inner.html %}
+
 	
 	<div class="container">
 		
+		<section class="post">
 		<div id="content" class="post">
-	
+		
+		<header class="post-header">
+
+			<div class="post-author-side">
+        <div class="post-author-card">
+            <a class="post-author-image" href="http://www.wiaderny.org" title="Go to the home page of Jonah Wiaderny"><img src=
+            "{{ site.baseurl }}assets/images/avatar_page.png" title="Jonah Wiaderny"></a>
+
+            <div class="post-author-info">
+                <a class="post-author-name" href="http://www.wiaderny.org" rel="author" title="Go to the home page of Jonah Wiaderny">Jonah Wiaderny</a>
+
+                <p>Graduate Student of Banking and Financial Management. Entreprenur. Economist.</p>
+
+                <p></p>
+
+                
+            </div>
+
+             {% if page.update %}
+             <div class="updated">
+             <strong>Updated</strong>
+             <p><time class="update-date">{{ page.update }}</time></p>
+             </div>
+
+             {% endif %}
+            <div class="share">
+
+                    <ul>
+                    	<li><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEF
+kb2JlIElsbHVzdHJhdG9yIDE2LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb2
+46IDYuMDAgQnVpbGQgMCkgIC0tPgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU
+1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcx
+MS5kdGQiPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9Ikljb25zIiB4bWxucz0iaHR0cDovL3d3dy5
+3My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW
+5rIiB4PSIwcHgiIHk9IjBweCIKCSB3aWR0aD0iMjVweCIgaGVpZ2h0PSIyNXB4IiB2aWV3Qm94P
+SIwIDAgMTAwIDEwMCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMTAwIDEwMCIgeG1sOnNw
+YWNlPSJwcmVzZXJ2ZSI+CjxwYXRoIGlkPSJUd2l0dGVyX194MjhfYWx0X3gyOV8iIGZpbGw9IiN
+DNEM0QzQiIGQ9Ik04NC44MDMsNDYuNTY0YzUuMDU1LTAuNDE3LDguNDgzLTIuNzE1LDkuODAzLT
+UuODMzCgljLTEuODIzLDEuMTItNy40ODMsMi4zNDEtMTAuNjA5LDEuMTc4Yy0wLjE1My0wLjczN
+C0wLjMyNC0xLjQzMi0wLjQ5Mi0yLjA2MmMtMi4zODItOC43NDYtMTAuNTM3LTE1Ljc5Mi0xOS4w
+ODItMTQuOTQxCgljMC42OTEtMC4yNzksMS4zOTMtMC41MzksMi4wOTItMC43NzJjMC45NC0wLjM
+zNyw2LjQ1OS0xLjIzNSw1LjU5LTMuMTgzYy0wLjczMi0xLjcxMy03LjQ3NSwxLjI5NS04Ljc0NC
+wxLjY4OAoJYzEuNjc2LTAuNjMsNC40NDctMS43MTQsNC43NDQtMy42NGMtMi41NjcsMC4zNTItN
+S4wODgsMS41NjYtNy4wMzUsMy4zMzFjMC43MDMtMC43NTcsMS4yMzYtMS42NzksMS4zNS0yLjY3
+MgoJYy02Ljg0OCw0LjM3NS0xMC44NDgsMTMuMTk1LTE0LjA4NSwyMS43NWMtMi41NDItMi40NjM
+tNC43OTUtNC40MDMtNi44MTYtNS40OGMtNS42Ny0zLjA0MS0xMi40NDktNi4yMTMtMjMuMDkxLT
+EwLjE2NAoJYy0wLjMyNywzLjUyMSwxLjc0MSw4LjIwMyw3LjcsMTEuMzE2Yy0xLjI5MS0wLjE3M
+y0zLjY1MiwwLjIxMy01LjU0LDAuNjY1YzAuNzY5LDQuMDM0LDMuMjgsNy4zNTcsMTAuMDc5LDgu
+OTY0CgljLTMuMTA3LDAuMjA1LTQuNzEzLDAuOTEyLTYuMTY4LDIuNDM2YzEuNDE1LDIuODA1LDQ
+uODY4LDYuMTA3LDExLjA4LDUuNDI5Yy02LjkwNiwyLjk3Ny0yLjgxNiw4LjQ5LDIuODA0LDcuNj
+Y3CglDMjguNzk0LDcyLjE0MywxMy42NzksNzEuNDE2LDUsNjMuMTM0YzIyLjY2MSwzMC44OCw3M
+S45MjEsMTguMjYzLDc5LjI2Mi0xMS40ODFjNS41LDAuMDQ4LDguNzMzLTEuOTA0LDEwLjczOC00
+LjA1NgoJQzkxLjgzMSw0OC4xMzQsODcuMjM4LDQ3LjU3OCw4NC44MDMsNDYuNTY0eiIvPgo8L3N
+2Zz4="></li>
+                    	<li class="facebook_icon"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXR
+vcjogQWRvYmUgSWxsdXN0cmF0b3IgMTUuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVm
+Vyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL
+0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFRE
+L3N2ZzExLmR0ZCI+CjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iSWNvbnMiIHhtbG5zPSJodHRwOi8
+vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OT
+kveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHdpZHRoPSIxN3B4IiBoZWlnaHQ9IjE3cHgiIHZpZ
+XdCb3g9IjAgMCAxMDAgMTAwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAxMDAg
+MTAwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxwYXRoIGlkPSJGYWNlYm9va19feDI4X2FsdF9
+4MjlfIiBmaWxsPSIjQzRDNEM0IiBkPSJNOTUsMjAuMDAxQzk1LDEyLjExOSw4Ny44ODQsNSw4MC
+w1aC02MEMxMi4xMTYsNSw1LDEyLjExOSw1LDIwLjAwMXY1OS45OTgKCUM1LDg3Ljg4MSwxMi4xM
+TYsOTUsMjAuMDAxLDk1SDUwVjYxSDM5VjQ2aDExdi01Ljg0NEM1MCwzMC4wNzcsNTcuNTY5LDIx
+LDY2Ljg3NSwyMUg3OXYxNUg2Ni44NzVDNjUuNTQ4LDM2LDY0LDM3LjYxMSw2NCw0MC4wMjRWNDY
+KCWgxNXYxNUg2NHYzNGgxNmM3Ljg4NCwwLDE1LTcuMTE5LDE1LTE1LjAwMVYyMC4wMDF6Ii8+Cj
+wvc3ZnPg=="></li>
+                    </ul>
+                </div>
+        </div>
+
+    </div>
+
+    	
+
 		{% if page.link %}
 		<h1 class="linktitle"><a href="{{ page.link }}">{{ page.title }}</a></h1>
 		<p class="date">{{ page.date | date:"%B %e, %Y" }}</p>
 		{% else %}
-		<h1 class="posttitle">{{ page.title }}</h1>
 		<p class="date articledate">{{ page.date | date:"%B %e, %Y" }}</p>
+		<h1 class="posttitle">{{ page.title }}</h1>
+		{% if page.subtitle %}
+		<h2 class="postsubtitle">{{ page.subtitle }}</h2>
 		{% endif %}
-	
-		{{ content }}
 		
+		{% endif %}
+
+		</header>
+
+		<article>
+		<div class="post-content">
+		{{ content }}
+
 		{% if site.commentlinks %}
 		<p class="comments">Got a comment? @me on
 
 			{% if site.twitter-username %}
 			<a href="http://twitter.com/{{ site.twitter-username }}">Twitter</a>
 			{% endif %}
-			
-			{% if site.twitter-username and site.adn-username %}
-			or
-			{% endif %}
-			
-			{% if site.adn-username %}
-			<a href="https://alpha.app.net/{{ site.adn-username }}">App.net</a>
-			{% endif %}
 		
 		</p>
 		{% endif %}
+		</div>
+		</article>
+
+		</section>
+		
 		
 		<!-- Tweet button -->
 		<div class="tweet">
-		<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-count="none" data-dnt="true">Tweet</a>
-		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	<a href="https://twitter.com/share" class="twitter-share-button" data-via="jonahwiaderny" data-size="large" data-count="none" data-dnt="true">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 		</div>
 		
 		</div> <!-- /content -->

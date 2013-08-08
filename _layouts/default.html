@@ -1,35 +1,63 @@
-{% include header.html %}
+{% include header-home.html %}
 
-	{% include masthead_home.html %}
+<div id="container">
+<div class="surface">
+<div class="screen-content">
 
-	<div class="container">
+	<aside class="cover">
+	<div class="cover-table">
+	<div class="cover-row">
+		<div class="cover-img"></div>
+	</div>
+	<div class="cover-row">
+	<div class="cover-body">
+	<div class="cover-body-inner">
+	<span class="cover-avatar"><img src="{{ site.baseurl }}assets/images/avatar_page.png" title="Jonah Wiaderny"></span>
+	<h1 class="cover-title">Jonah Wiaderny</h1>
+	<p class="cover-description">Graduate Student of Banking and Financial Management. Entreprenur. Economist.
+	</p>
+	</div>
+	</div>
+	</div>
+	</div>
+	</aside>
+
+<section class="wrapper">
+	<div class="wrapper-inner">
 		
 	<div id="content">
 		
 		{{ content }}
 	
-		<ul id="posts">
+		
 		  {% for post in paginator.posts %}
 		  {% unless post.draft %}
-		    <li class="post">
+		    <article class="post-item">
 		    {% if post.link %}
-		    <h2 class="linktitle"><a href="{{ post.link }}">{{ post.title }}</a>&nbsp;<a href="{{ post.url }}" title="Permanent link to: '{{ post.title }}'" class="infin">&infin;</a></h2>
+		    <h3 class="linktitle"><a href="{{ post.link }}">{{ post.title }}</a>&nbsp;<a href="{{ post.url }}" title="Permanent link to: '{{ post.title }}'" class="infin">&infin;</a></h3>
 		    {% else %}
-		    <h2 class="posttitle"><a href="{{ BASE_PATH }}{{ post.url }}" class="articletitle">{{ post.title }}</a></h2>
-			<p class="date articledate">{{ post.date | date:"%B %e, %Y" }}</p>
+		    <h3 class="posttitle"><a href="{{ BASE_PATH }}{{ post.url }}" class="articletitle">{{ post.title }}</a></h3>
+			<p class="date articledate home">{{ post.date | date:"%B %e, %Y" }}</p>
 		    {% endif %}
 		    
 		    {% if post.excerpt %}
-	<!-- 	    {{ post.excerpt | markdownify }}
-		    <p><a href="{{ BASE_PATH }}{{ post.url }}">Read article ({{ post.content | number_of_words }} words)</a></p> -->
-		     	{{ post.content }}
+		    <a href="{{ BASE_PATH }}{{ post.url }}" class="excerptlink">
+		    <p>{{ post.exc }}</p>
+		    </a>
+		    
+
+		    <span class="words hide">{{ post.content | number_of_words }}</span>
+		     
+		    
+
+
 		    {% else %}
 		    {{ post.content }}
 		    {% endif %}
-		    </li>
+		    </article>
 		  {% endunless %}
 		  {% endfor %}      
-		</ul>
+		
 		
 		
 		<p class="pagination">
@@ -56,5 +84,10 @@
 
 	</div> <!--/content-->
 	</div> <!--/container-->
+	</section>
+
+	</div>
+	</div>
+</div>
 	
 {% include footer.html %}

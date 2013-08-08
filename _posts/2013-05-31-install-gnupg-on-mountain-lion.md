@@ -2,10 +2,13 @@
 layout: post
 date: 2013-05-13 13:10:55
 title: Install GnuPG on Mountain Lion
+subtitle: For the privacy concerned that don't fear terminal usage
+exc: GPG-Tools was working crazy hard over the last couple of months and finally delivered their GPGMail2 plug-in for the mail app. If you don't want the hassle of a non working encryption when you update to OSX Mavericks, you should go for the terminal version.
+update: August 7, 2013
 ---
 
-With the introduction of OS X 10.8 a very handy possibility of using PGP vanished -- although the guys from [PGP-Tools][1] are working on an update to make their tool work with the native mail app.
-However great luck for us there is still the old school possibility of installing [Gnu Privacy Guard][2] on your local machine. This log will be a (hopefully) handy note on how to install this great pice.
+With the introduction of OS X 10.8 a very handy plugin for the native mail app was rendered unusable -- <del>although the guys from GPG-Tools are working on an update to make their tool work with the native mail app</del> luckily the guys from [GPG-Tools][1] worked hard an finally delivered their GPGMail2 plug-in.
+However, some people might still considering installing [Gnu Privacy Guard][2] on their local machines, to not fall victim to any characteristics of a future OS update. If this sounds like you, this log will (hopefully) be a handy note on how to install this great piece.
 
 After you have opened your Terminal, you start-off by downloading the desired version (and its corresponding signature) from gnupg.org.
 
@@ -13,7 +16,7 @@ After you have opened your Terminal, you start-off by downloading the desired ve
 $ curl -O ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-1.4.tar.gz 
 {% endhighlight %}
 
-To ensure the originality of your obtained file you should concider to run following command 
+To ensure the originality of your obtained file you should consider to run following command 
 
 {% highlight bash %}
 $ openssl sha1 gnupg-1.4.12.tar.gz

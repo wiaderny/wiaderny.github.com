@@ -2,9 +2,10 @@
 layout: post
 title: Fill table space with dots in LaTeX
 published: true
+exc: A quick note on filling the usual blank space in LaTeX tables with dots to create a vintage look.
 ---
 
-While doing some work for the Physical Therapy Office I was faced with a small challenge, for my aim was to fill the space within a table - more precisely the space within two rows - with dots.
+While doing some work for the Physical Therapy Office I was faced with the challenge to fill the space within a table, more precisely the space within two rows, with dots.
 
 ![Fill table space with dots in LaTeX](../../assets/images/Fill-dots-in-LaTeX.png "Fill table space with dots in LaTeX")
 
@@ -65,5 +66,5 @@ While doing some work for the Physical Therapy Office I was faced with a small c
 \end{table}
 {% endhighlight %}
 
-<p>This small change in the <code>tabular</code> command will render - if properly implemented - the output at the top.</p>
+<p>This small change in the <code>tabular</code> command will render, if properly implemented, the output at the top.</p>
 
