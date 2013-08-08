@@ -56,7 +56,20 @@ html, body, #container{
 		left: 10px;
 		z-index: 6;
 		cursor: pointer;
+		opacity: 1;
 	}
+
+	.hide-floating{
+	left: -52px!important;
+	opacity: 0;
+}
+
+#floating, .hide-floating{
+		-webkit-transition: all 0.2s ease-in-out;
+		-moz-transition: all 0.2s ease-in-out;
+		-o-transition: all 0.2s ease-in-out;
+		transition: all 0.2s ease-in-out;
+}
 
 
 	nav.pushmenu > a{
@@ -84,7 +97,7 @@ html, body, #container{
 		overflow:hidden;
 	}
 
-a.hide, span.hide, p.pagination {
+a.hide, span.hide, p.pagination{
 	   position: absolute !important;
 	   top: -9999px !important;
 	   left: -9999px !important;
@@ -144,24 +157,6 @@ content: " ";
 }
 
 
-@-webkit-keyframes loading {
-  from {
-    -webkit-transform:  translate(-2000px);
-    }
-   to {
-    -webkit-transform: translate(100%);
-    }
-}
-
-@-moz-keyframes loading {
-  from {
-    -webkit-transform:  translate(-2000px);
-    }
-   to {
-    -webkit-transform: translate(100%);
-    }
-}
-
 
 /*-----------------------------------------------------------------------------------*/
 /*  Loading Bar
@@ -189,9 +184,9 @@ content: " ";
 .loadingBar {
   height: 3px;
   background: #f2664f;  
-  -webkit-animation: loading 1s ease infinite;
-  -moz-animation: loading 1s ease infinite;
-  animation: loading 1s ease infinite;
+  -webkit-animation: loading 1s ease;
+  -moz-animation: loading 1s ease;
+  animation: loading 1s ease;
   position: fixed;
   top: 0;
   width: 100%;

@@ -6,6 +6,27 @@
 
 $(document).ready(function () {
 
+    $(function (){
+
+         var $document = $(".screen-content"),
+    $element = $('#floating'),
+    className = 'hide-floating';
+
+    $document.scroll(function() {
+  $element.toggleClass(className, $document.scrollTop() >= 50);
+});
+     $(document).scroll(function() {
+  $element.toggleClass(className, $(document).scrollTop() >= 50);
+});
+
+    });
+
+   
+
+/*-----------------------------------------------------------------------------------*/
+/*  Randomize Homepage Image
+/*-----------------------------------------------------------------------------------*/
+
     $(function randomImage(){
         var images = ["bg-1.jpg", "bg-2.jpg", "bg-3.jpg", "bg-4.jpg"];
 
