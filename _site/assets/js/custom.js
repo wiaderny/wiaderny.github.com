@@ -15,9 +15,11 @@ $(document).ready(function () {
     $document.scroll(function() {
   $element.toggleClass(className, $document.scrollTop() >= 50);
 });
+    if($(window).width() <= 499) {
      $(document).scroll(function() {
   $element.toggleClass(className, $(document).scrollTop() >= 50);
 });
+ }
 
     });
 
