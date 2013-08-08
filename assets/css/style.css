@@ -112,6 +112,13 @@ p {
 	color: #fff;
 }
 
+.post-content > hr{
+	display: block;
+	width: 20%;
+	margin: 50px auto 40px auto;
+	border: 1px solid #f2f2f0;
+}
+
 ::selection {
 	background: #f2664f;
 	color: #fff;

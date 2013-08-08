@@ -14,7 +14,7 @@ It is typeset in [Proxima Nova Light], a beautiful typeface, and [FF Tisa Pro]. 
 The homepage features various images which are all licensed under a Creative Commons License. In particular, the homepage randomly displays one of the following images: The London Shard and City Hall, a photograph by [Nathan Meijer], the Uluwatu Temple in Bali, a photograph taken by [Sean McGrath] and the Matterhorn and Ägerisee, both photographs by [Juan Rubiano].
 
 
-**A few words about web standards**
+<hr>
 
 Web standards are important, and this site adheres to them utilizing a mobile first, responsive methodology. Specifically, its HTML markup should validate as [HTML5], and ts layout is constructed using valid [CSS]; not regarding the proprietary attributes, which will most likely not validate.
 
