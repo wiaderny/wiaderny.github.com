@@ -13,7 +13,7 @@ $(document).ready(function () {
 function bit_url(url) {
     
     var u = url,
-        username = "o_nqsn6keu6",
+        un = "o_nqsn6keu6",
         k = "R_6d28544c4fe09562b99f25797e9511f8",
         t = document.title.slice(0,-17);
 
@@ -22,7 +22,7 @@ function bit_url(url) {
         data: {
             longUrl: u,
             apiKey: k,
-            login: username
+            login: un
         },
         dataType: "jsonp",
         success: function (v) {
@@ -40,6 +40,7 @@ $("a.twitter").click(function (e) {
     var urltest = urlRegex.test(url);
     if (urltest) {
         bit_url(url);
+        window.open("http://twitter.com/share?url=", "twitsharer", "toolbar=0,status=0,width=626,height=436");
     } else {
         console.log("Bad URL");
     }
