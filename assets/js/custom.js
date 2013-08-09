@@ -68,8 +68,9 @@ function bit_url(url) {
         },
         dataType: "jsonp",
         success: function (v) {
-            var bit_url = v.data.url;
-            alert(bit_url);
+            var s = v.data.url;
+            alert(s);
+            window.open("http://twitter.com/share?url=" + encodeURIComponent(s) + "&text=" + encodeURIComponent(t) + "&via=jonahwiaderny", "twitsharer", "toolbar=0,status=0,width=626,height=436");
         }
     });
 }
