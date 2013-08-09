@@ -57,7 +57,7 @@ function bit_url(url) {
 //bit_url function
 function bit_url(url) {
     var url = url;
-    var username = "o_nqsn6keu6"; // bit.ly username
+    var username = "o_nqsn6keu6"; 
     var key = "R_6d28544c4fe09562b99f25797e9511f8";
     t = document.title.slice(0,-17);
 
@@ -71,7 +71,7 @@ function bit_url(url) {
         dataType: "jsonp",
         success: function (v) {
             var s = v.data.url;
-            window.open("http://twitter.com/share?url=" + encodeURIComponent(s) + "&text=" + encodeURIComponent(t) + "&via=jonahwiaderny", "twitsharer", "toolbar=0,status=0,width=626,height=436");
+            window.open("http://twitter.com/share?url=" + s + "&text=" + encodeURIComponent(t) + "&via=jonahwiaderny", "twitsharer", "toolbar=0,status=0,width=626,height=436");
         }
     });
 }
