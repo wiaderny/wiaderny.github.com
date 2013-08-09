@@ -12,6 +12,8 @@ At the same time I have to admit that I got used to WordPress and was too jovial
 
 It just had everything I wanted from a CMS, not more and not less. In fact, it is very versatile, extremely lightweight and gets along without PHP and Databases, which was just great because I could switch to static hosting. On top of that, Jekyll allows to write content in Markdown, which is superb because it let's you focus on what you write rather than how it looks and you can write in your favorite text-app. Of course, that also means, that all of your content is stored in plain text files and not in Databases.
 
+Now there is not really anything new or unique in the way I set up this blog. In fact, I just followed the documentation, which is really comprehensive. You should probably take a look on the official [Jekyll wiki page](https://github.com/mojombo/jekyll/wiki).
+
 ### Preparing for the migration
 
 The migration process is really simple. You need to install `hpricot` by running `gem install hpricot` if it isn't already installed on your machine. Then you can export your WordPress blog using the build-in export utility. I assume you saved your file as `wordpress.xml`. Finally, run the command below and the system will generate a `.markdown` file per post.
@@ -21,11 +23,12 @@ $ ruby -rubygems -e 'require "jekyll/jekyll-import/wordpressdotcom";
   JekyllImport::WordpressDotCom.process({ :source => "wordpress.xml" })'
 {% endhighlight %}
 
-Now that you have separate `.markdown` files for each post, you can start to set up your blog.
+Now that you have separate `.markdown` files for each post, you can start to set up your blog. 
 
-### Setting Jekyll up on github
 
-After registering on github, set up a new repository named username.github.com in your profile. If you are completely new to Jekyll, you could give Jekyll-Bootstrap a try by running the following in your terminal.
+### Setting Jekyll up on GitHub
+
+After registering on GitHub, set up a new repository named username.github.com in your profile. If you are completely new to Jekyll, you could give Jekyll-Bootstrap a try by running the following in your terminal.
 
 {% highlight bash %}
 $ git clone https://github.com/plusjade/jekyll-bootstrap.git username.github.com
@@ -36,7 +39,7 @@ $ git push origin master
 
 You should receive an email after a few minutes which will inform you about the successful build. Browse to username.github.com to take a look.
 
-If you want to set up Jekyll-Bootstrap locally, you can do so by running the following command. After that you can browse to http://localhost:4000 and take a look.
+If you want to set up Jekyll-Bootstrap locally you should have Jekyll installed, and then run the following command. After that you can browse to http://localhost:4000 and take a look.
 
 {% highlight bash %}
 $ git clone https://github.com/plusjade/jekyll-bootstrap.git
