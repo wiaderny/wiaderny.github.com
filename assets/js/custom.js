@@ -7,6 +7,21 @@
 $(document).ready(function () {
 
 /*-----------------------------------------------------------------------------------*/
+/*  Twitter sharing element
+/*-----------------------------------------------------------------------------------*/
+
+    $(function twitter() {
+    $("a.twitter").click(function (e) {
+        e.preventDefault();
+
+        var l = window.location,
+            t = document.title.slice(0,-17);
+
+        window.open("http://twitter.com/share?url=" + encodeURIComponent(l) + "&text=" + encodeURIComponent(t) + "&via=jonahwiaderny", "twitsharer", "toolbar=0,status=0,width=626,height=436");
+    });
+});
+
+/*-----------------------------------------------------------------------------------*/
 /*  Show and Hide Floating element
 /*-----------------------------------------------------------------------------------*/
 
