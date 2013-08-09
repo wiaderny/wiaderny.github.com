@@ -70,6 +70,7 @@ function bit_url(url) {
         success: function (v) {
             var bit_url = v.data.url;
             window.open("http://twitter.com/share?url=" + encodeURIComponent(s) + "&text=" + encodeURIComponent(t) + "&via=jonahwiaderny", "twitsharer", "toolbar=0,status=0,width=626,height=436");
+            alert("success");
         }
     });
 }
