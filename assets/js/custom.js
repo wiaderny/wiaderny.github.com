@@ -71,7 +71,8 @@ function bit_url(url) {
         dataType: "jsonp",
         success: function (v) {
             var s = v.data.url;
-            window.open("http://twitter.com/share?url=" + s + "&text=" + encodeURIComponent(t) + "&via=jonahwiaderny", "twitsharer", "toolbar=0,status=0,width=626,height=436");
+            alert(encodeURIComponent(s));
+            /*window.open("http://twitter.com/share?url=" + s + "&text=" + encodeURIComponent(t) + "&via=jonahwiaderny", "twitsharer", "toolbar=0,status=0,width=626,height=436");*/
         }
     });
 }
