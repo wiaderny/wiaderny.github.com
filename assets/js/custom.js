@@ -59,6 +59,8 @@ function bit_url(url) {
     var url = url;
     var username = "o_nqsn6keu6"; // bit.ly username
     var key = "R_6d28544c4fe09562b99f25797e9511f8";
+    t = document.title.slice(0,-17);
+
     $.ajax({
         url: "http://api.bit.ly/v3/shorten",
         data: {
@@ -69,7 +71,6 @@ function bit_url(url) {
         dataType: "jsonp",
         success: function (v) {
             var s = v.data.url;
-            alert(s);
             window.open("http://twitter.com/share?url=" + encodeURIComponent(s) + "&text=" + encodeURIComponent(t) + "&via=jonahwiaderny", "twitsharer", "toolbar=0,status=0,width=626,height=436");
         }
     });
