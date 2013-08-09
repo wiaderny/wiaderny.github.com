@@ -7,19 +7,87 @@
 $(document).ready(function () {
 
 /*-----------------------------------------------------------------------------------*/
-/*  Twitter sharing element
+/*  Bit.ly on-the-fly shortening and twitter sharing element
 /*-----------------------------------------------------------------------------------*/
 
-    $(function twitter() {
+
+/*
+function bit_url(url) {
+    var url = url;
+    var username = "o_nqsn6keu6"; // bit.ly username
+    var key = "R_6d28544c4fe09562b99f25797e9511f8";
+    $.ajax({
+        url: "http://api.bit.ly/v3/shorten",
+        data: {
+            longUrl: url,
+            apiKey: key,
+            login: username
+        },
+        dataType: "jsonp",
+        success: function (v) {
+            var bit_url = v.data.url;
+            alert(bit_url);
+        }
+    });
+}
+
+
     $("a.twitter").click(function (e) {
         e.preventDefault();
+    
+    var url = window.location.toString();
+    var urlRegex = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    var urltest = urlRegex.test(url);
+    if (urltest) {
+        bit_url(url);
+    } else {
+        alert("Bad URL");
+    }
+
 
         var l = window.location,
             t = document.title.slice(0,-17);
 
-        window.open("http://twitter.com/share?url=" + encodeURIComponent(l) + "&text=" + encodeURIComponent(t) + "&via=jonahwiaderny", "twitsharer", "toolbar=0,status=0,width=626,height=436");
+/*window.open("http://twitter.com/share?url=" + encodeURIComponent(s) + "&text=" + encodeURIComponent(t) + "&via=jonahwiaderny", "twitsharer", "toolbar=0,status=0,width=626,height=436");
+
+        
+    });*/
+
+
+function bit_url(url) {
+    var url = url,
+        un = "o_nqsn6keu6",
+        k = "R_6d28544c4fe09562b99f25797e9511f8",
+        t = document.title.slice(0,-17);
+
+    $.ajax({
+        url: "http://api.bit.ly/v3/shorten",
+        data: {
+            longUrl: url,
+            apiKey: k,
+            login: un
+        },
+        dataType: "jsonp",
+        success: function (v) {
+            var s = v.data.url;
+
+            window.open("http://twitter.com/share?url=" + encodeURIComponent(s) + "&text=" + encodeURIComponent(t) + "&via=jonahwiaderny", "twitsharer", "toolbar=0,status=0,width=626,height=436");
+        }
     });
-});
+}
+
+
+$("a.twitter").click(function (e) {
+        e.preventDefault();
+    var url = window.location.toString();
+    var urlRegex = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    var urltest = urlRegex.test(url);
+    if (urltest) {
+        bit_url(url);
+    }
+});   
+
+    
 
 /*-----------------------------------------------------------------------------------*/
 /*  Show and Hide Floating element
