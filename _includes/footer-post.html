@@ -1,0 +1,52 @@
+<footer class="post-footer">
+ <div id="related-posts">
+
+  {% for related in site.related_posts limit:3 %}
+    <div class="related-post">
+     <span class="words hide">{{ related.content | number_of_words }}</span>
+    <a class="read-next-title" href="{{ related.url }}">{{ related.title }}</a>
+    <p class="date articledate related-post-meta">{{ related.date | date:"%B %e, %Y" }}</p>
+        <p class="read-next-exc"><span class="relpost">{{ related.exc }}</span><a class="read-next-link" href="{{ related.url }}" target="_top">Continue Reading</a>
+        </p>
+    </div>
+
+  {% endfor %}
+
+</div> 
+  
+</footer>
+
+    
+
+{% if site.google-analytics-tracking-id %}
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', '{{ site.google-analytics-tracking-id }}']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+{% endif %}
+
+<!-- jQuery Infinite Scrolling -->
+<script type='text/javascript' src='{{ site.baseurl }}assets/js/libs/jquery.infinitescroll.min.js'></script>
+<script>
+// infinitescroll() is called on the element that surrounds 
+// the items you will be loading more of
+$('ul#posts').infinitescroll({ 
+	navSelector		: "p.pagination",
+					// selector for the paged navigation (it will be hidden)
+	nextSelector	: "p.pagination a.older",
+					// selector for the NEXT link (to page 2)
+	itemSelector	: "#content ul#posts li.post"
+					// selector for all items you'll retrieve
+});
+</script>
+<a class="hide" rel="author" href="https://plus.google.com/101986038840755391471">Jonah Wiaderny</a>
+<div class="loadingBar"></div>
+</body>
+</html>

@@ -11,8 +11,7 @@ All the content is written in [Markdown]; [John Gruber]'s excellent text-to-HTML
 
 It is typeset in [Proxima Nova Light], a beautiful typeface, and [FF Tisa Pro]. The design is, with exception of small changes, entirely based on the fantastic work of the guys behind [Medium], a service that I emphatically recommend.
 
-The homepage features various images which are all licensed under a Creative Commons License. In particular, the homepage randomly displays one of the following images: The London Shard and City Hall, a photograph by [Nathan Meijer], the Uluwatu Temple in Bali, a photograph taken by [Sean McGrath] and the Matterhorn and Ägerisee, both photographs by [Juan Rubiano].
-
+The homepage features various images which are all licensed under a Creative Commons License. In particular, the homepage randomly displays one of the following images: The London Shard and City Hall, a photograph by [Nathan Meijer], the Uluwatu Temple in Bali, a photograph taken by [Sean McGrath], the Yosemite valley taken by [Justin Kern] and the Matterhorn and Ägerisee, both photographs by [Juan Rubiano].
 
 <hr>
 
@@ -34,3 +33,4 @@ If this site looks goofy in your browser, you are most likely using a useless br
 [Sean McGrath]: http://www.flickr.com/photos/52798669@N00
 [Juan Rubiano]: http://www.flickr.com/photos/32126508@N00
 [Medium]: http://wwww.medium.com
+[Justin Kern]: http://www.flickr.com/photos/justinwkern/

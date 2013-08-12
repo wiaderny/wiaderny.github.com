@@ -6,6 +6,33 @@
 
 $(document).ready(function () {
 
+
+/*-----------------------------------------------------------------------------------*/
+/*  Read next functionality
+/*-----------------------------------------------------------------------------------*/
+
+    $(function(){
+
+        if(window.location.pathname.indexOf("notes") > -1){
+
+            $("p.read-next-exc:eq(1),p.read-next-exc:eq(2)").remove();
+            $(".read-next-title:eq(1),.read-next-title:eq(2)").addClass("read-next-small");
+            $(".related-post:eq(0)").addClass("read-next-primary").after("<div class='secondary-container'></div>");
+            $(".related-post:eq(1),.related-post:eq(2)").addClass("read-next-secondary").prependTo(".secondary-container");
+            $("p.related-post-meta:eq(1),p.related-post-meta:eq(2)").addClass("articledate-secondary");
+        
+        $("span.relpost").each(function(i){
+
+            var l = $(this).text().length;
+
+            if(l>130)
+            {
+              $(this).text($(this).text().substr(0,130)+'...');
+            }
+                                        }); 
+                                                        }
+    });
+
 /*-----------------------------------------------------------------------------------*/
 /*  Block Crappy Internet Explorer. Sorry.
 /*-----------------------------------------------------------------------------------*/
@@ -55,8 +82,6 @@ $("a.twitter").click(function (e) {
     }
 });   
 
-    
-
 /*-----------------------------------------------------------------------------------*/
 /*  Show and Hide Floating element
 /*-----------------------------------------------------------------------------------*/
@@ -83,14 +108,12 @@ $("a.twitter").click(function (e) {
 
     });
 
-   
-
 /*-----------------------------------------------------------------------------------*/
 /*  Randomize Homepage Image
 /*-----------------------------------------------------------------------------------*/
 
     $(function randomImage(){
-        var images = ["bg-1.jpg", "bg-2.jpg", "bg-3.jpg", "bg-4.jpg"],
+        var images = ["bg-1.jpg", "bg-2.jpg", "bg-3.jpg", "bg-4.jpg", "bg-5.jpg"],
         randImage = images[Math.floor(Math.random() * images.length)];
 
         var fullLink= ("assets/images/" + randImage);
@@ -105,7 +128,6 @@ $("a.twitter").click(function (e) {
         
        
     });
-
 
 /*-----------------------------------------------------------------------------------*/
 /*  Slide Menu
@@ -171,53 +193,30 @@ $("a.twitter").click(function (e) {
 
     $.fn.readingTime = function () {
 
-        //Common reading speeds
         var readingSpeed = {
             slow: 150,
             average: 200,
             fast: 250
         };
 
-        //Set deafults
         var defaults = {
 
-            //Set read-rate - Deafult is national average
             wordsPerMinute: readingSpeed.average,
-
             minSuffix: " min read",
-
             secSuffix: " sec read",
-
-            //Set the MMSS separator - Default is colon
-            separator: ":",
-
-            //Set the container class
             containerClass: "reading-time"
         };
 
         //Extend default options with those provided
         var options = $.extend(defaults, options);
 
-        //Apply to each article
         return this.each(function () {
 
-            var $this = $(this);
-            var o = options;
-
-            //Get article word-count
-
-            if ($("span.words").length) {
-                var wordCount = $this.find("span.words").html();
-            } else {
-
-                var wordCount = $this.text().split(" ").length;
-            }
-
-            //Calculate estimated reading time based on default/user WPM rate
-            var minutes = Math.floor(wordCount / o.wordsPerMinute);
-            var seconds = Math.floor(wordCount % o.wordsPerMinute / (o.wordsPerMinute / 60));
-
-            //Prettify estimate
+            var $this = $(this),
+                o = options
+                wordCount = $this.find("span.words").html(),
+                minutes = Math.floor(wordCount / o.wordsPerMinute),
+                seconds = Math.floor(wordCount % o.wordsPerMinute / (o.wordsPerMinute / 60));
 
             if (minutes > 0) {
 
@@ -227,16 +226,14 @@ $("a.twitter").click(function (e) {
 
                 var estimate = seconds;
                 estimate += o.secSuffix;
-
             };
 
-            //Display estimated reading time for article
             $this.find("p.date.articledate").append('<span class="' + o.containerClass + '">' + estimate + '</span>');
         });
 
     };
 
-    $("article.post-item, #content.post").readingTime();
+    $("article.post-item, #content.post, .related-post").readingTime();
 
 /*-----------------------------------------------------------------------------------*/
 /*  Add break after duration in CV and show on hover
