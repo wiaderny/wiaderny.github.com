@@ -15,22 +15,21 @@ $(document).ready(function () {
 
         if(window.location.pathname.indexOf("notes") > -1){
 
-            $("p.read-next-exc:eq(1),p.read-next-exc:eq(2)").remove();
-            $(".read-next-title:eq(1),.read-next-title:eq(2)").addClass("read-next-small");
-            $(".related-post:eq(0)").addClass("read-next-primary").after("<div class='secondary-container'></div>");
-            $(".related-post:eq(1),.related-post:eq(2)").addClass("read-next-secondary").prependTo(".secondary-container");
-            $("p.related-post-meta:eq(1),p.related-post-meta:eq(2)").addClass("articledate-secondary");
-        
-        $("span.relpost").each(function(i){
+        	var h = $("p.read-next-exc"),
+        		i = $(".read-next-title"),
+        		j = $(".related-post"),
+        		k = $("p.related-post-meta"),
+        		l = $("span.relpost");
 
-            var l = $(this).text().length;
-
-            if(l>130)
-            {
-              $(this).text($(this).text().substr(0,130)+'...');
-            }
-                                        }); 
-                                                        }
+            
+            h.not(":first").remove();
+            i.not(":first").addClass("read-next-small");
+            j.eq(0).addClass("read-next-primary").after("<div class='secondary-container'></div>");
+            j.not(":first").addClass("read-next-secondary").prependTo(".secondary-container");
+            k.not(":first").addClass("articledate-secondary");
+            
+            l.first().text(l.text().substr(0,130)+'...');
+    }
     });
 
 /*-----------------------------------------------------------------------------------*/
@@ -116,11 +115,9 @@ $("a.twitter").click(function (e) {
         var images = ["bg-1.jpg", "bg-2.jpg", "bg-3.jpg", "bg-4.jpg", "bg-5.jpg"],
         randImage = images[Math.floor(Math.random() * images.length)];
 
-        var fullLink= ("assets/images/" + randImage);
+        var f = ("assets/images/" + randImage);
 
-        $("img#preload").attr("src", fullLink);
-
-        $("img#preload").load(function(){
+        $("img#preload").attr("src", f).load(function(){
         
         $(".cover-img").css({"background-image": "url(assets/images/" + randImage + ")"});
 });
@@ -180,10 +177,12 @@ $("a.twitter").click(function (e) {
 /*-----------------------------------------------------------------------------------*/
 
     $(function () {
+    	var i = $("h1.posttitle");
+
         if ($("h2.postsubtitle").length) {
-            $("h1.posttitle").css("margin-bottom", "-8px");
+            i.css("margin-bottom", "-8px");
         } else {
-            $("h1.posttitle").css("margin-bottom", "20px");
+            i.css("margin-bottom", "20px");
         }
     });
 
@@ -239,47 +238,15 @@ $("a.twitter").click(function (e) {
 /*  Add break after duration in CV and show on hover
 /*-----------------------------------------------------------------------------------*/
 
+	if(window.location.pathname.indexOf("curriculum-vitae") > -1){
+
     $("span.duration").after("<br />");
     $("p").hover(function () {
         $(this).find("span.duration").fadeIn("slow");
     }, function () {
         $(this).find("span.duration").fadeOut("slow");
     });
-
-/*-----------------------------------------------------------------------------------*/
-/*  Responsive Menu
-/*-----------------------------------------------------------------------------------*/
-
-    var header,
-        menu,
-        menuButton;
-
-
-    header = $("#masthead");
-    menu = $("ul#pagenav");
-    menuButton = $("<div class='menubutton'><a href='#'><span></span><span></span><span></span></a></div>");
-    menuButton.click(showMenu);
-    header.append(menuButton);
-
-
-    function showMenu(event) {
-        if (menu.is(":visible")) menu.slideUp({
-            complete: function () {
-                $(this).css('display', '');
-            }
-        });
-        else menu.slideDown();
-    }
-
-/*-----------------------------------------------------------------------------------*/
-/*  Prevents # being appended to URL and jumping to the top of the page because of the # anchor.
-/*-----------------------------------------------------------------------------------*/
-
-    $(function () {
-        $(".menubutton").click(function (event) {
-            event.preventDefault();
-        });
-    });
+}
 
 /*-----------------------------------------------------------------------------------*/
 /*  Active Nav Class
