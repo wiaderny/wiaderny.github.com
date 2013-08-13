@@ -14,6 +14,6 @@ Just recently a few fellow students were curious how to use [textile][1] as the 
 
 It's a good idea to actually tick the check-box if you want to use textile. I had it off in this screen-shot as I mostly stick with the markdown syntax. 
 
-[1]: [http://en.wikipedia.org/wiki/Textile_(markup_language)]
-[2]: [http://markedapp.com]
-[3]: [https://github.com/bradchoate/text-textile]
+[1]: http://en.wikipedia.org/wiki/Textile_(markup_language)
+[2]: http://markedapp.com
+[3]: https://github.com/bradchoate/text-textile

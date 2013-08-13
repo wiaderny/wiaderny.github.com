@@ -32,5 +32,5 @@ If this site looks goofy in your browser, you are most likely using a useless br
 [Nathan Meijer]: http://www.flickr.com/photos/61295396@N08
 [Sean McGrath]: http://www.flickr.com/photos/52798669@N00
 [Juan Rubiano]: http://www.flickr.com/photos/32126508@N00
-[Medium]: http://wwww.medium.com
+[Medium]: http://www.medium.com
 [Justin Kern]: http://www.flickr.com/photos/justinwkern/
