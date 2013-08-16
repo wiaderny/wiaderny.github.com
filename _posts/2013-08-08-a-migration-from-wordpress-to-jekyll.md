@@ -3,12 +3,14 @@ layout: post
 date: 2013-08-08 12:00:00
 title: A migration from WordPress to Jekyll
 subtitle: How my website found a cozy home on github
+image: jekyll.png
+caption: dummy
 exc: After some fine years with WordPress I decided to move to something more lightweight. My hosting contract would end in a few days so I spent some time and migrated from WordPress to Jekyll. Here is how I did it.
 ---
 
 The time with WordPress was fine. I don't deny it. However, every now and then it occurred to me that this otherwise great CMS was somehow bloated, not light enough, with too many features that I would never use and which distracted me more than supported me whenever I just wanted to take a quick note from time to time.
 
-At the same time I have to admit that I got used to WordPress and was too jovial to migrate the whole system. After all, I heard of other systems but they all required PHP, Databases and weren't lightweight either. Motivated by an expiring agreement with my hosting-provider, I decided to quarry for alternatives and ended up with what seemed to be just perfect. I learned about Jekyll and liked it from the beginning. 
+At the same time I have to admit that I got used to WordPress and was too jovial to migrate the whole system. After all, I heard of other systems but they all required PHP, Databases and weren't lightweight either. Finally, WordPress' security hasn't been its best asset since the beginnings. Motivated by an expiring agreement with my hosting-provider, I decided to quarry for alternatives and ended up with what seemed to be just perfect. I learned about Jekyll and liked it from the beginning. 
 
 It just had everything I wanted from a CMS, not more and not less. In fact, it is very versatile, extremely lightweight and gets along without PHP and Databases, which was just great because I could switch to static hosting. On top of that, Jekyll allows to write content in Markdown, which is superb because it let's you focus on what you write rather than how it looks and you can write in your favorite text-app. Of course, that also means, that all of your content is stored in plain text files and not in Databases.
 
@@ -39,7 +41,7 @@ $ git push origin master
 
 You should receive an email after a few minutes which will inform you about the successful build. Browse to username.github.com to take a look.
 
-If you want to set up Jekyll-Bootstrap locally you should have Jekyll installed, and then run the following command. After that you can browse to http://localhost:4000 and take a look.
+If you want to set up Jekyll-Bootstrap locally you should have Jekyll installed, and then run the command below. After that you can browse to http://localhost:4000 and take a look.
 
 {% highlight bash %}
 $ git clone https://github.com/plusjade/jekyll-bootstrap.git

@@ -185,8 +185,8 @@
 	100% { -webkit-transform: translate(100%); }
 }
 @keyframes loading {
-	0%   { -webkit-transform:  translate(-100%); }
-	100% { -webkit-transform: translate(100%); }
+	0%   { transform:  translate(-100%); }
+	100% { transform: translate(100%); }
 }
 
 .loadingBar {
@@ -488,6 +488,49 @@ footer.post-footer{
 	height: auto;
 }
 
+.top-post-image{
+	max-width: 100%;
+	margin-top: 0;
+	position: relative;
+	left: 0;
+	overflow: hidden;
+}
+
+.top-post-image-header{
+	background: #333;
+	max-height: 537px;
+	line-height: 0;
+}
+
+.top-post-image-header-ratio{
+	display: block;
+	height: auto;
+	width: 100%;
+}
+
+.top-post-image-header-cover{
+	position: absolute;
+	width: 100%;
+	top: 0;
+}
+
+.top-post-image-caption{
+	font-family: "ProximaNovaRgBold";
+	-webkit-border-top-left-radius: 4px;
+	-moz-border-radius-topleft: 4px;
+	border-top-left-radius: 4px;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	padding: 10px 15px;
+	color: white;
+	z-index: 5;
+	background: rgba(0, 0, 0, 0.5);
+	font-size: 10px;
+	text-transform: uppercase;
+	text-align: right;
+	max-width: 80%;
+}
 /*-----------------------------------------------------------------------------------*/
 /*  Titlepage
 /*-----------------------------------------------------------------------------------*/
@@ -629,7 +672,7 @@ footer.post-footer{
 /*-----------------------------------------------------------------------------------*/
 /*  1. Big Screen
 /*-----------------------------------------------------------------------------------*/
-@media (min-width: 1300px){
+@media (min-width: 1200px){
 
 	/*	Author caption-side: */
 

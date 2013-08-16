@@ -15,11 +15,11 @@ $(document).ready(function () {
 
         if(window.location.pathname.indexOf("notes") > -1){
 
-        	var h = $("p.read-next-exc"),
-        		i = $(".read-next-title"),
-        		j = $(".related-post"),
-        		k = $("p.related-post-meta"),
-        		l = $("span.relpost");
+            var h = $("p.read-next-exc"),
+                i = $(".read-next-title"),
+                j = $(".related-post"),
+                k = $("p.related-post-meta"),
+                l = $("span.relpost");
 
             
             h.not(":first").remove();
@@ -79,7 +79,7 @@ $("a.twitter").click(function (e) {
     } else {
         console.log("Bad URL");
     }
-});   
+});
 
 /*-----------------------------------------------------------------------------------*/
 /*  Show and Hide Floating element
@@ -143,8 +143,7 @@ $("a.twitter").click(function (e) {
 
             var container = $("nav.pushmenu");
 
-            if (!container.is(e.target) // if the target of the click isn't the container...
-                && container.has(e.target).length === 0) // ... nor a descendant of the container
+            if (!container.is(e.target) && container.has(e.target).length === 0)
             {
                 container.removeClass("pushmenu-open");
                 $("body").removeClass("bodypushed");
@@ -173,17 +172,24 @@ $("a.twitter").click(function (e) {
     });
 
 /*-----------------------------------------------------------------------------------*/
-/*  Add H1 margin if H2 not present
+/*  Add H1 margin if H2 not present, remove margin if post has a top image
 /*-----------------------------------------------------------------------------------*/
 
     $(function () {
-    	var i = $("h1.posttitle");
+        var i = $("h1.posttitle"),
+            j = $(".top-post-image-caption");
 
-        if ($("h2.postsubtitle").length) {
-            i.css("margin-bottom", "-8px");
-        } else {
-            i.css("margin-bottom", "20px");
+        $("h2.postsubtitle").length ? i.css("margin-bottom", "-8px") : i.css("margin-bottom", "20px");
+
+        if($(".top-post-image").length){
+            $("section.post").css("padding-top", "0");
+            $(".post-header").css("margin", "50px auto 0 auto");
         }
+
+        if(j.text() == "dummy"){
+            j.addClass("hide");
+        }
+        
     });
 
 /*-----------------------------------------------------------------------------------*/
@@ -192,15 +198,9 @@ $("a.twitter").click(function (e) {
 
     $.fn.readingTime = function () {
 
-        var readingSpeed = {
-            slow: 150,
-            average: 200,
-            fast: 250
-        };
-
         var defaults = {
 
-            wordsPerMinute: readingSpeed.average,
+            wordsPerMinute: 200,
             minSuffix: " min read",
             secSuffix: " sec read",
             containerClass: "reading-time"
@@ -212,20 +212,11 @@ $("a.twitter").click(function (e) {
         return this.each(function () {
 
             var $this = $(this),
-                o = options
+                o = options,
                 wordCount = $this.find("span.words").html(),
                 minutes = Math.floor(wordCount / o.wordsPerMinute),
-                seconds = Math.floor(wordCount % o.wordsPerMinute / (o.wordsPerMinute / 60));
-
-            if (minutes > 0) {
-
-                var estimate = minutes;
-                estimate += o.minSuffix;
-            } else {
-
-                var estimate = seconds;
-                estimate += o.secSuffix;
-            };
+                seconds = Math.floor(wordCount % o.wordsPerMinute / (o.wordsPerMinute / 60)),
+                estimate = (minutes > 0) ? minutes + o.minSuffix : seconds + o.secSuffix;
 
             $this.find("p.date.articledate").append('<span class="' + o.containerClass + '">' + estimate + '</span>');
         });
@@ -238,7 +229,7 @@ $("a.twitter").click(function (e) {
 /*  Add break after duration in CV and show on hover
 /*-----------------------------------------------------------------------------------*/
 
-	if(window.location.pathname.indexOf("curriculum-vitae") > -1){
+    if(window.location.pathname.indexOf("curriculum-vitae") > -1){
 
     $("span.duration").after("<br />");
     $("p").hover(function () {

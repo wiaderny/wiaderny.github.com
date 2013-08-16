@@ -3,6 +3,8 @@ layout: post
 date: 2013-05-13 13:10:55
 title: Install GnuPG on Mountain Lion
 subtitle: For the privacy concerned that don't fear terminal usage
+image: gnu-on-ml.jpg
+caption: dummy
 exc: GPG-Tools was working crazy hard over the last couple of months and finally delivered their GPGMail2 plug-in for the mail app. If you don't want the hassle of a non working encryption when you update to OSX Mavericks, you should go for the terminal version.
 update: August 7, 2013
 ---

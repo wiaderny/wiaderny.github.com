@@ -6,7 +6,18 @@
 		
 		<section class="post">
 		<div id="content" class="post">
-		
+
+     {% if page.image %}
+    <div class="top-post-image">
+    <div class="top-post-image-header">
+    <img class="top-post-image-header-ratio" src="data:image/gif;base64,R0lGODlhMgAVAPAAAP///wAAACH5BAEAAAAALAAAAAAyABUAAAIfhI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8dTAQA7">
+    <img class="top-post-image-header-cover" src="{{ site.baseurl }}assets/images/post-images/{{ page.image }}">
+    </div> 
+     {% if page.caption %}
+    <div class="top-post-image-caption">{{ page.caption }}</div></div>
+     {% endif %}
+		 {% endif %}
+
 		<header class="post-header">
 
 			<div class="post-author-side">

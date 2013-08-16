@@ -9,15 +9,15 @@ This site is built with [Jekyll], a blog aware, static site generator, and hoste
 
 All the content is written in [Markdown]; [John Gruber]'s excellent text-to-HTML conversion tool for web writers.
 
-It is typeset in [Proxima Nova Light], a beautiful typeface, and [FF Tisa Pro]. The design is, with exception of small changes, entirely based on the fantastic work of the guys behind [Medium], a service that I emphatically recommend.
+It is typeset in [Proxima Nova Light], and the italic version of [FF Tisa Pro]. The design is, with exception of small changes, entirely based on the fantastic work of the guys behind [Medium], a web writing service that I emphatically recommend.
 
-The homepage features various images which are all licensed under a Creative Commons License. In particular, the homepage randomly displays one of the following images: The London Shard and City Hall, a photograph by [Nathan Meijer], the Uluwatu Temple in Bali, a photograph taken by [Sean McGrath], the Yosemite valley taken by [Justin Kern] and the Matterhorn and Ägerisee, both photographs by [Juan Rubiano].
+The homepage features various images which are all licensed under a Creative Commons License. In particular, one of the following images is randomly displayed: The London Shard and City Hall, a photograph by [Nathan Meijer], the Uluwatu Temple in Bali, a photograph taken by [Sean McGrath], the Yosemite valley taken by [Justin Kern] and the Matterhorn and Ägerisee, both photographs by [Juan Rubiano].
 
 <hr>
 
-Web standards are important, and this site adheres to them utilizing a mobile first, responsive methodology. Specifically, its HTML markup should validate as [HTML5], and ts layout is constructed using valid [CSS]; not regarding the proprietary attributes, which will most likely not validate.
+Web standards are important, and this site adheres to them utilizing a responsive methodology. Specifically, its HTML markup should validate as [HTML5], and ts layout is constructed using valid [CSS]; not regarding the proprietary attributes, which will most likely not validate.
 
-If this site looks goofy in your browser, you are most likely using a useless browser that doesn’t support web standards. Internet Explorer, I’m looking in your direction. Please do not complain about this. If, however, you are using a modern, standards-compliant browser and have trouble viewing or reading this website, please do let me know.
+Internet Explorer is unfortunately a useless browser that does not support web standards and hence is blocked on this site. If you are viewing this site, you are using a modern, standards-compliant browser. Should you experience any troubles in viewing or reading this website, please do let me know.
 
 [GitHub]: http://pages.github.com
 [Jekyll]: https://github.com/mojombo/jekyll
