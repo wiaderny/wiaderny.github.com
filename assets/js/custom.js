@@ -119,7 +119,7 @@ $("a.twitter").click(function (e) {
 
         $("img#preload").attr("src", f).load(function(){
         
-        $(".cover-img").css({"background-image": "url(assets/images/" + randImage + ")"});
+        $(".cover-img").hide().css({"background-image": "url(assets/images/" + randImage + ")"}).fadeIn("slow");
 });
         
         

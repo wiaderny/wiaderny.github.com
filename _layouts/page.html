@@ -1,66 +1,81 @@
 {% include header.html %}
-	
 
-	
-	<div class="container">
-		
-		<section class="post">
-		<div id="content" class="post">
-		
-		<header class="post-header">
 
-			<div class="post-author-side">
-        <div class="post-author-card">
-            <a class="post-author-image"href="http://www.wiaderny.org" title="Go to the profile of Jonah Wiaderny"><img src=
-            "{{ site.baseurl }}assets/images/avatar_page.png" title="Jonah Wiaderny"></a>
 
-            <div class="post-author-info">
-                <a class="post-author-name" href="http://www.wiaderny.org" rel="author" title="Go to the profile of Jonah Wiaderny">Jonah Wiaderny</a>
+<div class="container">
 
-                <p>Graduate Student of Banking and Financial Management. Entreprenur. Economist.</p>
+    <section class="post">
+        <div id="content" class="post">
 
-                <p></p>
+            <header class="post-header">
 
-                
-            </div>
+                <div class="post-author-side">
+                    <div class="post-author-card">
+                        <a class="post-author-image" href="http://www.wiaderny.org" title="Go to the profile of Jonah Wiaderny">
+                            <img src="{{ site.baseurl }}assets/images/avatar_page.png" title="Jonah Wiaderny">
+                        </a>
 
-             {% if page.update %}
-             <div class="updated">
-             <strong>Updated</strong>
-             <p><time class="update-date">{{ page.update }}</time></p>
-             </div>
+                        <div class="post-author-info">
+                            <a class="post-author-name" href="http://www.wiaderny.org" rel="author" title="Go to the profile of Jonah Wiaderny">Jonah Wiaderny</a>
 
-             {% endif %}
-        </div>
+                            <p>Graduate Student of Banking and Financial Management. Entreprenur. Economist.</p>
+
+                            <p></p>
+
+
+                        </div>
+
+                        {% if page.update %}
+                        <div class="updated">
+                            <strong>Updated</strong>
+                            <p>
+                                <time class="update-date">{{ page.update }}</time>
+                            </p>
+                        </div>
+
+                        {% endif %} 
+
+                        {% if page.downloads %}
+                        <div class="downloads">
+                            <strong>Downloads</strong>
+                            <p>
+                                {{ page.downloads }}
+                            </p>
+                        </div>
+
+                        {% endif %}
+
+                    </div>
+
+                </div>
+
+
+
+                {% if page.link %}
+                <h1 class="linktitle"><a href="{{ page.link }}">{{ page.title }}</a>
+                </h1>
+                <p class="date">{{ page.date | date:"%B %e, %Y" }}</p>
+                {% else %}
+                <p class="date articledate">{{ page.date | date:"%B %e, %Y" }}</p>
+                <h1 class="posttitle">{{ page.title }}</h1>
+                {% if page.subtitle %}
+                <h2 class="postsubtitle">{{ page.subtitle }}</h2>
+                {% endif %} {% endif %}
+
+            </header>
+
+            <article>
+                <div class="post-content">
+                    {{ content }}
+                    <span class="words hide">{{ content | number_of_words }}</span>
+                </div>
+            </article>
+
+    </section>
 
     </div>
-
-    	
-
-		{% if page.link %}
-		<h1 class="linktitle"><a href="{{ page.link }}">{{ page.title }}</a></h1>
-		<p class="date">{{ page.date | date:"%B %e, %Y" }}</p>
-		{% else %}
-		<p class="date articledate">{{ page.date | date:"%B %e, %Y" }}</p>
-		<h1 class="posttitle">{{ page.title }}</h1>
-		{% if page.subtitle %}
-		<h2 class="postsubtitle">{{ page.subtitle }}</h2>
-		{% endif %}
-		
-		{% endif %}
-
-		</header>
-
-		<article>
-		<div class="post-content">
-		{{ content }}
-		<span class="words hide">{{ content | number_of_words }}</span>
-		</div>
-		</article>
-
-		</section>
-		
-		</div> <!-- /content -->
-	</div> <!-- /container -->
+    <!-- /content -->
+</div>
+<!-- /container -->
 
 {% include footer.html %}

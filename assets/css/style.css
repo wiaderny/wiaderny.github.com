@@ -733,7 +733,7 @@ footer.post-footer{
 		word-wrap: break-word;
 	}
 
-	.updated{
+	.updated, .downloads{
 		position: relative;
 		padding: 20px 0 0 0;
 		top: auto;
@@ -743,7 +743,7 @@ footer.post-footer{
 		font-size: 14px;
 	}
 
-	.updated:before, .share::before {
+	.updated:before, .share:before, .downloads:before {
 		content: '';
 		width: 55px;
 		height: 1px;

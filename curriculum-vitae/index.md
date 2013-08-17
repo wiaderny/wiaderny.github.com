@@ -4,9 +4,10 @@ title: Curriculum Vit&aelig;
 class: cv
 date: 2012-01-01 23:16:44
 update: May 3, 2013
+downloads: <a href="../assets/data/wiaderny_cv_pub.pdf">Curriculum Vitæ as .pdf</a>
 ---
 
-The most recent version of my CV, right below this paragraph and also available for <a class="download" title="Download PDF-Version" href="../assets/data/wiaderny_cv_pub.pdf">download</a>, although it is currently not up to date. The private section and the reference section are omitted in this public version.
+The most recent version of my public CV can be found right below this paragraph. In contrast, the private version additionally features a private section and a reference section, which are omitted here.
 
 
 
