@@ -189,6 +189,10 @@ $("a.twitter").click(function (e) {
         if(j.text() == "dummy"){
             j.addClass("hide");
         }
+
+        $(".top-post-image-header-cover").hide().load(function (){
+            $(this).fadeIn("slow");
+        });
         
     });
 
