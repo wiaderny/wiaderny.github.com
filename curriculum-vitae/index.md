@@ -3,7 +3,7 @@ layout: page
 title: Curriculum Vit&aelig;
 class: cv
 date: 2012-01-01 23:16:44
-update: May 3, 2013
+update: Oct 24, 2013
 downloads: <a href="../assets/data/wiaderny_cv_pub.pdf">Curriculum Vitæ as .pdf</a>
 ---
 
@@ -16,7 +16,7 @@ __University of Liechtenstein, Vaduz__<span class="duration">2013 to present</sp
 Anticipate completion of M.Sc. in Banking and Financial Management in 2015.
 
 __Martin-Luther-University, Halle-Wittenberg__<span class="duration">2010 to 2013</span>
-B.Sc. in Economics; partially earned through the thesis "An empirical analysis of the determinants of tax morale" advised by Prof. Dr. Heinz P. Galler
+B.Sc. in Economics; Thesis title: "An empirical analysis of the determinants of tax morale"; Advisor: Prof. Dr. Heinz P. Galler
 
 __Justus-von-Liebig Gymnasium, Göppingen__<span class="duration">2005 to 2010</span>
 A-level in English, Ethics, Mathematics and Chemistry & Dietetics.
