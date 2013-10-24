@@ -60,7 +60,7 @@ Libertarian Ethics with Dr. David Gordon<span class="duration">2011 (Oct.-Dec.)<
 Capitalism and Socialism with Ass.- Prof. Dr. Art Carden<span class="duration">2011 (Mar.-May)</span>
 
 **Memberships**<br/>
-Econometric Society, Royal Economic Society, Ludwig-von-Mises Institute
+American Finance Association, Econometric Society, Royal Economic Society, Ludwig-von-Mises Institute
 
 ###Skills
 **Problem Solving**<br/>
