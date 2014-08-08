@@ -112,7 +112,7 @@ $("a.twitter").click(function (e) {
 /*-----------------------------------------------------------------------------------*/
 
     $(function randomImage(){
-        var images = ["bg-1.jpg", "bg-2.jpg", "bg-3.jpg", "bg-4.jpg", "bg-5.jpg"],
+        var images = ["bg-1.jpg", "bg-2.jpg", "bg-3.jpg", "bg-4.jpg"],
         randImage = images[Math.floor(Math.random() * images.length)];
 
         var f = ("assets/images/" + randImage);

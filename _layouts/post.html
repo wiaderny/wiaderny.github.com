@@ -28,7 +28,7 @@
             <div class="post-author-info">
                 <a class="post-author-name" href="http://www.wiaderny.org" rel="author" title="Go to the home page of Jonah Wiaderny">Jonah Wiaderny</a>
 
-                <p>Graduate Student of Banking and Financial Management. Entreprenur. Economist.</p>
+                <p>Banking and Financial Management Graduate. Specializing in IB.</p>
 
                 <p></p>
 
@@ -129,6 +129,12 @@ wvc3ZnPg==">
 		<article>
 		<div class="post-content">
 		{{ content }}
+        {% if page.disclaimer %}
+        <hr class="section-divider">
+        <p class="disclaimer">
+            Disclaimer: Under no circumstances does the information on this website represent a recommendation to buy or sell stocks. The author is not registered as an investment adviser, may or may not hold positions in the securities mentioned in this article and relies upon the 'publisher's exclusion' from the definition of 'investment adviser' as provided under Section 202(a)(11) of the Investment Advisers Act of 1940 and corresponding state securities laws. All dividend payout and date information on this website is for information purposes only. The accuracy of any dividend dates or payout amounts is not guaranteed. Always check with your broker first before purchasing any security.
+        </p>
+        {% endif %}
 		</div>
 		</article>
     <span class="words hide">{{ content | number_of_words }}</span>

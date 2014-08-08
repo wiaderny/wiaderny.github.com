@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8"/>
 
-	<title>Fill table space with dots in LaTeX &mdash; Jonah Wiaderny</title>
+	<title>A swift evaluation of McDonald's &mdash; Jonah Wiaderny</title>
 
 	
 	<link rel="alternate" type="application/rss+xml" href="/feed">
@@ -128,6 +128,15 @@ wzMy4zNjksMjEuMjYzeiIvPgoJCTwvZz4KCTwvZz4KPC9nPgo8L3N2Zz4=">
 		<div id="content" class="post">
 
      
+    <div class="top-post-image">
+    <div class="top-post-image-header">
+    <img class="top-post-image-header-ratio" src="data:image/gif;base64,R0lGODlhMgAVAPAAAP///wAAACH5BAEAAAAALAAAAAAyABUAAAIfhI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8dTAQA7">
+    <img class="top-post-image-header-cover" src="/assets/images/post-images/mcd.jpg">
+    </div> 
+     
+    <div class="top-post-image-caption">dummy</div></div>
+     
+		 
 
 		<header class="post-header">
 
@@ -218,8 +227,10 @@ wvc3ZnPg==">
     	
 
 		
-		<p class="date articledate">October  6, 2012</p>
-		<h1 class="posttitle">Fill table space with dots in LaTeX</h1>
+		<p class="date articledate">August  7, 2014</p>
+		<h1 class="posttitle">A swift evaluation of McDonald's</h1>
+		
+		<h2 class="postsubtitle">Should you still be lovin' the dividend aristocrat?</h2>
 		
 		
 		
@@ -228,56 +239,58 @@ wvc3ZnPg==">
 
 		<article>
 		<div class="post-content">
-		<p>While doing some work for the Physical Therapy Office I was faced with the challenge to fill the space within a table, more precisely the space within two rows, with dots.</p>
+		<p>In retrospective, the IEO giant McDonald&#8217;s (<a href='https://www.google.com/finance?q=mcd'>NYSE:MCD</a>) has managed to consecutively increase its dividend payments throughout the last 29 years. As of today, it appears more likely than not, that the company will even further increase its dividend payments in September. While last years dividend yield had its high on December 12 with 4.13% it is questionable to which extent this year might come in that range and it seems appropriate to take a look at the history of the present company. This article will, however, is not a full and wholesome valuation of McDonald&#8217;s and does not feature any standard or sophisticated models, but is rather a glance at some key points.</p>
 
-<p><img alt='Fill table space with dots in LaTeX' src='../../assets/images/Fill-dots-in-LaTeX.png' /></p>
-<p>At first the answer was pretty obvious: the <code>\dottfill</code> command! But that will not work our properly, for there will remain margins on each side of every row, what will significantly compromise the aesthetics.</p><p>What needed to be done is to set the margins to zero on each side of every row. This has been achieved by modifying the <code>tabular</code> command. Usually your <code>tabular</code> command looks something like this</p><div class='highlight'><pre><code class='tex'><span class='k'>\begin</span><span class='nb'>{</span>tabular<span class='nb'>}{</span>lll<span class='nb'>}</span>
-</code></pre></div>
-<p><p>when you want your rows to be left aligned. But in order to achieve the desired look we need to put an <code>@{}</code> in front of and at the end of each row, what will eliminate the margins.</p></p>
-<p>The tabular command should now look like the one below.</p>
-<p><div class='highlight'><pre><code class='tex'><span class='k'>\begin</span><span class='nb'>{</span>tabular<span class='nb'>}{</span>@<span class='nb'>{}</span>l@<span class='nb'>{}</span>l@<span class='nb'>{}</span>l@<span class='nb'>{}}</span>&lt;/code&gt;&lt;/pre&gt;
-</code></pre></div></p>
-<p>Having this done, the rest should not constitute a challenge anymore. I have added my final code snippet of the invoice I made below.</p><div class='highlight'><pre><code class='tex'><span class='k'>\begin</span><span class='nb'>{</span>table<span class='nb'>}</span>[h]
-<span class='k'>\begin</span><span class='nb'>{</span>tabular<span class='nb'>}{</span>@<span class='nb'>{}</span>l@<span class='nb'>{}</span>l@<span class='nb'>{}</span>l@<span class='nb'>{}</span>r@<span class='nb'>{}</span>r@<span class='nb'>{}</span>r@<span class='nb'>{}</span>r@<span class='nb'>{}}</span>
-<span class='k'>\toprule</span><span class='na'>[1.2pt]</span>
+<h3 id='historical_dividend_tenor'>Historical Dividend Tenor</h3>
 
-    Anzahl  <span class='nb'>&amp;</span>amp; <span class='k'>\hspace</span><span class='nb'>{</span>4.3em<span class='nb'>}</span> <span class='nb'>&amp;</span>amp; Behandlungstyp <span class='nb'>&amp;</span>amp; 
-    <span class='k'>\multicolumn</span><span class='nb'>{</span>1<span class='nb'>}{</span>@<span class='nb'>{</span><span class='k'>\hspace</span><span class='nb'>{</span>7em<span class='nb'>}}</span>r@<span class='nb'>{}}{}</span> <span class='nb'>&amp;</span>amp; <span class='nb'>&amp;</span>amp; Einzelpreis <span class='nb'>&amp;</span>amp; 
-    <span class='k'>\multicolumn</span><span class='nb'>{</span>1<span class='nb'>}{</span>@<span class='nb'>{</span><span class='k'>\hspace</span><span class='nb'>{</span>9.8em<span class='nb'>}}</span>r@<span class='nb'>{}}{</span>Gesamtpreis<span class='nb'>}</span><span class='k'>\\</span>
- 
-    <span class='k'>\midrule</span>
+<p>Taking an admiring glimpse at the wonderful figure below should give every serious dividend investor shining eyes and a bright smile wishing to have a portfolio fully loaded with such high-quality companies. <a href='https://www.google.com/finance?q=mcd'>MCD</a> managed to continuously increase its dividend payments from 1988 to 2014. Please note that the graph below is log-scaled as indicated. Oh, and if you ever wondered why the minimum dividend appears to be $0, it was $0.003 on December 21, 1988.</p>
+<img alt='Historical Dividend Tenor for MCD' src='../../assets/images/mcd-dividends.png' />
+<h3 id='historical_earnings_per_share_trend'>Historical Earnings per Share Trend</h3>
 
-    <span class='k'>\multicolumn</span><span class='nb'>{</span>2<span class='nb'>}{</span>@<span class='nb'>{}</span>l@<span class='nb'>{}}{</span><span class='k'>\aa\dotfill</span><span class='nb'>}</span> <span class='nb'>&amp;</span>amp; 
-    <span class='k'>\multicolumn</span><span class='nb'>{</span>4<span class='nb'>}{</span>@<span class='nb'>{}</span>l@<span class='nb'>{}}{</span><span class='k'>\ab\dotfill</span> <span class='k'>\ac</span><span class='nb'>}</span> <span class='nb'>&amp;</span>amp; <span class='k'>\dotfill</span> <span class='k'>\ad\\</span>
+<p>Without any doubt, a sustained rise in dividend growth has to go hand in hand with a steady increase in earnings per share, otherwise the former could and would simply not occur. In essence, it is fairly easy to see that for a steady growth in dividends, the company in question should increase their number of profitable branches and moreover have a management with a favorable opinion to pay its shareholders dividends. Since McDonald&#8217;s opened its doors at the first branch in 1940, it grew to more than 35k branches and 70M customers today employing over 440k people across the whole globe. Admittedly, I do not remember one city which I visited nationally or internationally where a McDonald&#8217;s branch was not at least once present.</p>
 
-    <span class='k'>\multicolumn</span><span class='nb'>{</span>2<span class='nb'>}{</span>@<span class='nb'>{}</span>l@<span class='nb'>{}}{</span><span class='k'>\ba\dotfill</span><span class='nb'>}</span> <span class='nb'>&amp;</span>amp; 
-    <span class='k'>\multicolumn</span><span class='nb'>{</span>4<span class='nb'>}{</span>@<span class='nb'>{}</span>l@<span class='nb'>{}}{</span><span class='k'>\bb\dotfill</span> <span class='k'>\bc</span><span class='nb'>}</span> <span class='nb'>&amp;</span>amp; <span class='k'>\dotfill</span> <span class='k'>\bd\\</span>
+<p>Now the graph below very neatly illustrates the continuous increase in EPS from March 1985 to June 2014. Except two downs, which are not unexpected in this time-frame, McDonald&#8217;s EPS has continued to slope upward for the last decades.</p>
+<img alt='Historical EPS for MCD' src='../../assets/images/mcd-eps.png' />
+<h3 id='is_the_payout_ratio_worrisome'>Is the Payout Ratio Worrisome?</h3>
+
+<p>Clearly, an increasing concern for any dividend investor is the increasing percentage of dividends that McDonald&#8217;s has paid from its earnings, meaning that those increasing dividend payments come rather from sharing more earnings with the shareholder than from an actual profit growth.</p>
+
+<p>As of today, the dividend payout ratio has reached 58%. To pay even higher dividends McDonald&#8217;s should now try to increase its EPS to stay somewhat sustainable.</p>
+<img alt='Historical Dividend Payout Ratio for MCD' src='../../assets/images/mcd-dividend-payout-ratio.png' />
+<h3 id='current_events_in_china'>Current Events in China</h3>
+
+<p>Last Friday, it was announced that McDonald&#8217;s and other restaurants had purchased tainted meat from a China supplier. Many restaurants are only serving fish as the problem is sorted out. While at first it did not seem to become a concern, it now appears that these supply issues have put McDonald&#8217;s forecast dated July 22 for relatively flat global same-store sales in 2014 at risk. Since the company had to cut ties with the Shanghai based supplier, the results in China, Japan and certain other markets experienced a negative impact. &#8220;The affected markets represent approximately 10% of global systemwide sales and negatively impacted the segment&#8217;s July comparable sales by over 700 basis points. Going forward, McDonald&#8217;s is undertaking recovery strategies to restore customers&#8217; trust and confidence.&#8221; (<a href='http://news.mcdonalds.com/Corporate/Press-Releases/Financial-Release?xmlreleaseid=123054'>Source</a>).</p>
+
+<p>Contrasting this event, McCafe gives McDonald&#8217;s a strong presence in the specialty coffee segment, which is currently dominated by premium coffee chain Starbucks (<a href='https://www.google.com/finance?q=NASDAQ%3ASBUX'>NASDAQ:SBUX</a>). In this regard McDonald&#8217;s has been able to keep competitive prices and healthy margins due to many factors including outstanding supply chain and store network.</p>
+
+<p>However, it is also important to note, that currently <a href='https://www.google.com/finance?q=mcd'>MCD</a> is experiencing a poor growth in both USA and Canada, while the total growth is still positive. Analysts&#8217; estimates for &#8216;14 and &#8216;15 EPS are as of today $5.62, and $6.09, respectively.</p>
+
+<h3 id='pe_and_dividend_yield_valuation'>P/E and Dividend Yield Valuation</h3>
+
+<p>In an attempt to quickly assess the quality of a prospective long-term candidate it is a good idea to examine trends of P/E and dividend yield in retrospective. These two indicators often manage to partially reveal how valuable an investment idea is.</p>
+
+<p>While the dividend yield spans over a band of 3.72%, ranging from 1.37% to 5.09%, it shows a continuous increase in dividend yields over the last ten years. The average of this time-frame is 2.8% compared to the current dividend yield of 3.47%. Assuming now that the dividend payout were to be increased by two cents per quarter, the dividend yield would increase to a level of 3.55% and if the share price were to even further decline, presumably to $92.00, the dividend yield would then be 3.60% which is quite decent for a high-quality stock like McDonald&#8217;s.</p>
+<img alt='Historical 10yr Dividend Yield for MCD' src='../../assets/images/mcd-dividend-yield.png' />
+<p>McDonald&#8217;s P/E chart is currently displaying a P/E of 16.824, which seems to be quite fair. Following estimates for 2015, the P/E ratio drops to approximately 15.5, ceteris paribus, which is an enjoyable trend but still not a bargain at all. It would be favorable to see a reversal of the lately started uptrend in P/E and probably one could even dare to dream to observe a convergence toward the 1985 minimum of 10.93.</p>
+<img alt='Historical P/E Ratio for MCD' src='../../assets/images/mcd-pe.png' />
+<p>Comparing McDonald&#8217;s to its peers in the restaurants industry sector regarding its P/E ratio, it ranks seventh. However, McDonald&#8217;s is a large cap company while the rest are all small caps which should explain the difference.</p>
+<img alt='P/E Ratio Ranking in the Restaurants Industry Sector' src='../../assets/images/mcd-pe-ranking.png' />
+<h3 id='some_technical_aspects'>Some Technical Aspects</h3>
+
+<p>A casual look at some technical aspects can sometimes add value to a fundamental analysis, especially to a brief one like the present. The chart below neatly illustrates support and resistance levels and displays the current relative strength index. Currently, the support levels are in a range between $90 and $92 and, moreover, a 14-day-RSI of over 23 indicate that the shares are currently oversold. Breaking the support level could well be regarded as a strategic entry point to increase shares or to enter a fist position.</p>
+<img alt='MCD RSI(14) appears to be oversold' src='../../assets/images/mcd-tech.png' />
+<h3 id='the_bottom_line'>The bottom line</h3>
+
+<p>Without any doubt a high-ranking company as McDonald&#8217;s, especially with it history of 38 years of consecutive dividend enhancements and a management which is highly committed to pay a large amount to its shareholders, appears to deserve a placement in each dividend investors portfolio. Especially regarding the probable increase in dividends, this stock&#8217;s price can be regarded to be in quite a fair range. As of this writing, a starting investor might grab a first share for just over $93. Based on its fundamental value, I would assess the share as a buy for long-term dividend investors.</p>
         
-            <span class='k'>\ifdefined\ca</span>
-        
-    <span class='k'>\multicolumn</span><span class='nb'>{</span>2<span class='nb'>}{</span>@<span class='nb'>{}</span>l@<span class='nb'>{}}{</span><span class='k'>\ca\dotfill</span><span class='nb'>}</span> <span class='nb'>&amp;</span>amp; 
-    <span class='k'>\multicolumn</span><span class='nb'>{</span>4<span class='nb'>}{</span>@<span class='nb'>{}</span>l@<span class='nb'>{}}{</span><span class='k'>\cb\dotfill</span> <span class='k'>\cc</span><span class='nb'>}</span> <span class='nb'>&amp;</span>amp; <span class='k'>\dotfill</span> <span class='k'>\cd\\</span>
-        
-            <span class='k'>\else</span>
-            <span class='k'>\fi</span>
-            <span class='k'>\ifdefined\da</span>
-    
-    <span class='k'>\multicolumn</span><span class='nb'>{</span>2<span class='nb'>}{</span>@<span class='nb'>{}</span>l@<span class='nb'>{}}{</span><span class='k'>\da\dotfill</span><span class='nb'>}</span> <span class='nb'>&amp;</span>amp; 
-    <span class='k'>\multicolumn</span><span class='nb'>{</span>4<span class='nb'>}{</span>@<span class='nb'>{}</span>l@<span class='nb'>{}}{</span><span class='k'>\db\dotfill</span> <span class='k'>\dc</span><span class='nb'>}</span> <span class='nb'>&amp;</span>amp; <span class='k'>\dotfill</span> <span class='k'>\dd\\</span>
-        
-            <span class='k'>\else</span>
-            <span class='k'>\fi</span>
-            
-    <span class='k'>\bottomrule</span><span class='na'>[1.2pt]</span><span class='k'>\addlinespace</span><span class='na'>[5pt]</span>
-
-<span class='k'>\multicolumn</span><span class='nb'>{</span>7<span class='nb'>}{</span>@<span class='nb'>{}</span>l@<span class='nb'>{}}{</span>Gesamtforderung<span class='k'>\dotfill</span> <span class='k'>\gesamt</span><span class='nb'>}</span><span class='k'>\\</span>
-<span class='k'>\end</span><span class='nb'>{</span>tabular<span class='nb'>}</span>
-<span class='k'>\end</span><span class='nb'>{</span>table<span class='nb'>}</span>
-</code></pre></div><p>This small change in the <code>tabular</code> command will render, if properly implemented, the output at the top.</p>
+        <hr class="section-divider">
+        <p class="disclaimer">
+            Disclaimer: Under no circumstances does the information on this website represent a recommendation to buy or sell stocks. The author is not registered as an investment adviser, may or may not hold positions in the securities mentioned in this article and relies upon the 'publisher's exclusion' from the definition of 'investment adviser' as provided under Section 202(a)(11) of the Investment Advisers Act of 1940 and corresponding state securities laws. All dividend payout and date information on this website is for information purposes only. The accuracy of any dividend dates or payout amounts is not guaranteed. Always check with your broker first before purchasing any security.
+        </p>
         
 		</div>
 		</article>
-    <span class="words hide">417</span>
+    <span class="words hide">1174</span>
 		</section>
 		
 		</div> <!-- /content -->
@@ -288,16 +301,7 @@ wvc3ZnPg==">
 
   
     <div class="related-post">
-     <span class="words hide">1166</span>
-    <a class="read-next-title" href="/notes/a-current-evaluation-of-mcdonalds/">A swift evaluation of McDonald's</a>
-    <p class="date articledate related-post-meta">August  7, 2014</p>
-        <p class="read-next-exc"><span class="relpost">After some fine years with WordPress I decided to move to something more lightweight. My hosting contract would end in a few days so I spent some time and migrated from WordPress to Jekyll. Here is how I did it.</span><a class="read-next-link" href="/notes/a-current-evaluation-of-mcdonalds/" target="_top">Continue Reading</a>
-        </p>
-    </div>
-
-  
-    <div class="related-post">
-     <span class="words hide">561</span>
+     <span class="words hide">564</span>
     <a class="read-next-title" href="/notes/a-migration-from-wordpress-to-jekyll/">A migration from WordPress to Jekyll</a>
     <p class="date articledate related-post-meta">August  8, 2013</p>
         <p class="read-next-exc"><span class="relpost">After some fine years with WordPress I decided to move to something more lightweight. My hosting contract would end in a few days so I spent some time and migrated from WordPress to Jekyll. Here is how I did it.</span><a class="read-next-link" href="/notes/a-migration-from-wordpress-to-jekyll/" target="_top">Continue Reading</a>
@@ -306,10 +310,19 @@ wvc3ZnPg==">
 
   
     <div class="related-post">
-     <span class="words hide">504</span>
+     <span class="words hide">505</span>
     <a class="read-next-title" href="/notes/install-gnupg-on-mountain-lion/">Install GnuPG on Mountain Lion</a>
     <p class="date articledate related-post-meta">May 13, 2013</p>
         <p class="read-next-exc"><span class="relpost">GPG-Tools was working crazy hard over the last couple of months and finally delivered their GPGMail2 plug-in for the mail app. If you don't want the hassle of a non working encryption when you update to OSX Mavericks, you should go for the terminal version.</span><a class="read-next-link" href="/notes/install-gnupg-on-mountain-lion/" target="_top">Continue Reading</a>
+        </p>
+    </div>
+
+  
+    <div class="related-post">
+     <span class="words hide">135</span>
+    <a class="read-next-title" href="/notes/do-not-forget-your-blosxom-conf/">Don't forget Blosxom</a>
+    <p class="date articledate related-post-meta">January 11, 2013</p>
+        <p class="read-next-exc"><span class="relpost">Blosxom is a simple content management system written in Perl by Rael Dornfest. If you are new to this system, you might experience the same problem I had with the layout. This quick note should not be a how-to but rather a hint to setting up the blosxom.config correctly.</span><a class="read-next-link" href="/notes/do-not-forget-your-blosxom-conf/" target="_top">Continue Reading</a>
         </p>
     </div>
 
