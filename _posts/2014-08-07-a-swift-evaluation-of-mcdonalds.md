@@ -5,7 +5,7 @@ title: A swift evaluation of McDonald's
 subtitle: Should you still be lovin' the dividend aristocrat? 
 image: mcd.jpg
 caption: dummy
-exc: After some fine years with WordPress I decided to move to something more lightweight. My hosting contract would end in a few days so I spent some time and migrated from WordPress to Jekyll. Here is how I did it.
+exc: In retrospective, the IEO giant McDonald's (NYSE:MCD) has managed to consecutively increase its dividend payments throughout the last 29 years. As of today, it appears more likely than not, that the company will even further increase its dividend payments in September.
 disclaimer: yes
 ---
 
