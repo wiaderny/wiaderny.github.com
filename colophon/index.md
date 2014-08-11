@@ -5,6 +5,7 @@ date: 2013-01-01 23:16:44
 update: August 8, 2013
 ---
 
+
 This site is built with [Jekyll], a blog aware, static site generator, and hosted on [GitHub]. The source code is version controlled with [Git] and stored on [GitHub].
 
 All the content is written in [Markdown]; [John Gruber]'s excellent text-to-HTML conversion tool for web writers.
@@ -13,8 +14,8 @@ It is typeset in [Proxima Nova Light], and the italic version of [FF Tisa Pro]. 
 
 The homepage features various images which are all licensed under a Creative Commons License. In particular, one of the following images is randomly displayed: The London Shard and City Hall, a photograph by [Nathan Meijer], the Uluwatu Temple in Bali, a photograph taken by [Sean McGrath], the Yosemite valley taken by [Justin Kern] and the Matterhorn and Ägerisee, both photographs by [Juan Rubiano].
 
-<hr>
 
+###Some words on browser use
 Web standards are important, and this site adheres to them utilizing a responsive methodology. Specifically, its HTML markup should validate as [HTML5], and ts layout is constructed using valid [CSS]; not regarding the proprietary attributes, which will most likely not validate.
 
 Internet Explorer is unfortunately a useless browser that does not support web standards and hence is blocked on this site. If you are viewing this site, you are using a modern, standards-compliant browser. Should you experience any troubles in viewing or reading this website, please do let me know.
