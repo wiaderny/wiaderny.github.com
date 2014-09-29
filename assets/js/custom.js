@@ -38,7 +38,7 @@ $(document).ready(function () {
 
 if (/MSIE (\d+\.\d+);/.test(navigator.userAgent)) { 
     var ieversion = new Number(RegExp.$1) 
-    if (ieversion >= 5) document.write("You're using Internet Explorer, which is probably the worst browser on earth. This website uses modern web standards, something that is totally alien to the Internet Explorer. If you are forced to use it because you are at work, you should probably work. If you are at home get a modern browser like <a href='https://www.google.com/chrome/'>Google Chrome</a>, that complies to standards to see this page.")
+    if (ieversion >= 5) document.write("This website uses modern web standards, which are unfortunately totally alien to the Internet Explorer. If you wish to view this website, a modern browser like <a href='https://www.google.com/chrome/'>Google Chrome</a>, that complies to standards is recommended to see this page. Thank you for your understanding.")
 }
 
 /*-----------------------------------------------------------------------------------*/
