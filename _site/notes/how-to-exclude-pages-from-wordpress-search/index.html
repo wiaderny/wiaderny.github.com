@@ -229,17 +229,20 @@ wvc3ZnPg==">
 		<article>
 		<div class="post-content">
 		<p>By default WordPress returns all posts and pages when an user runs a search. However, most of the time users are searching for an log entry rather than a static page. To make your search results more relevant consider editing your <code>functions.php</code> file by adding following code:</p>
-<div class='highlight'><pre><code class='javascript'><span class='kd'>function</span> <span class='nx'>SearchFilter</span><span class='p'>(</span><span class='nx'>$query</span><span class='p'>)</span> <span class='p'>{</span>
-<span class='k'>if</span> <span class='p'>(</span><span class='nx'>$query</span><span class='o'>-&gt;</span><span class='nx'>is_search</span><span class='p'>)</span> <span class='p'>{</span>
-<span class='nx'>$query</span><span class='o'>-&gt;</span><span class='nx'>set</span><span class='p'>(</span><span class='s1'>&#39;post_type&#39;</span><span class='p'>,</span> <span class='s1'>&#39;post&#39;</span><span class='p'>);</span>
-<span class='p'>}</span>
-<span class='k'>return</span> <span class='nx'>$query</span><span class='p'>;</span>
-<span class='p'>}</span>
-<span class='nx'>add_filter</span><span class='p'>(</span><span class='s1'>&#39;pre_get_posts&#39;</span><span class='p'>,</span><span class='s1'>&#39;SearchFilter&#39;</span><span class='p'>);</span>
+
+<div class="highlight"><pre><code class="javascript"><span class="kd">function</span> <span class="nx">SearchFilter</span><span class="p">(</span><span class="nx">$query</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">$query</span><span class="o">-&gt;</span><span class="nx">is_search</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">$query</span><span class="o">-&gt;</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;post_type&#39;</span><span class="p">,</span> <span class="s1">&#39;post&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">return</span> <span class="nx">$query</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">add_filter</span><span class="p">(</span><span class="s1">&#39;pre_get_posts&#39;</span><span class="p">,</span><span class="s1">&#39;SearchFilter&#39;</span><span class="p">);</span>
 </code></pre></div>
+
 <p>Abovementioned code executes the search and returns only <code>post_type</code> data.</p>
 
 <p>However, to exclude individual pages it might be a good idea to consider the use of the Simply Exclude Plugin by Paul Menard.</p>
+
         
 		</div>
 		</article>
@@ -251,6 +254,15 @@ wvc3ZnPg==">
 
 <footer class="post-footer">
  <div id="related-posts">
+
+  
+    <div class="related-post">
+     <span class="words hide">742</span>
+    <a class="read-next-title" href="/notes/three-basic-books-for-investment-banking-candidates/">Three basic books for investment banking candidates</a>
+    <p class="date articledate related-post-meta">January 16, 2015</p>
+        <p class="read-next-exc"><span class="relpost">You want to break into Wall Street or investment banking in general? Then you better get a great network and solid communication skills. But you also need to be quite well read in order to leave behind other aspiring bankers. Which books do you have to read?</span><a class="read-next-link" href="/notes/three-basic-books-for-investment-banking-candidates/" target="_top">Continue Reading</a>
+        </p>
+    </div>
 
   
     <div class="related-post">
@@ -267,15 +279,6 @@ wvc3ZnPg==">
     <a class="read-next-title" href="/notes/a-migration-from-wordpress-to-jekyll/">A migration from WordPress to Jekyll</a>
     <p class="date articledate related-post-meta">August  8, 2013</p>
         <p class="read-next-exc"><span class="relpost">After some fine years with WordPress I decided to move to something more lightweight. My hosting contract would end in a few days so I spent some time and migrated from WordPress to Jekyll. Here is how I did it.</span><a class="read-next-link" href="/notes/a-migration-from-wordpress-to-jekyll/" target="_top">Continue Reading</a>
-        </p>
-    </div>
-
-  
-    <div class="related-post">
-     <span class="words hide">504</span>
-    <a class="read-next-title" href="/notes/install-gnupg-on-mountain-lion/">Install GnuPG on Mountain Lion</a>
-    <p class="date articledate related-post-meta">May 13, 2013</p>
-        <p class="read-next-exc"><span class="relpost">GPG-Tools was working crazy hard over the last couple of months and finally delivered their GPGMail2 plug-in for the mail app. If you don't want the hassle of a non working encryption when you update to OSX Mavericks, you should go for the terminal version.</span><a class="read-next-link" href="/notes/install-gnupg-on-mountain-lion/" target="_top">Continue Reading</a>
         </p>
     </div>
 
@@ -317,5 +320,14 @@ $('ul#posts').infinitescroll({
 </script>
 <a class="hide" rel="author" href="https://plus.google.com/101986038840755391471">Jonah Wiaderny</a>
 <div class="loadingBar"></div>
+<script type="text/javascript">
+  var vglnk = { key: '8a178baf6f71cb928579aa792874a1a9' };
+
+  (function(d, t) {
+    var s = d.createElement(t); s.type = 'text/javascript'; s.async = true;
+    s.src = '//cdn.viglink.com/api/vglnk.js';
+    var r = d.getElementsByTagName(t)[0]; r.parentNode.insertBefore(s, r);
+  }(document, 'script'));
+</script>
 </body>
 </html>

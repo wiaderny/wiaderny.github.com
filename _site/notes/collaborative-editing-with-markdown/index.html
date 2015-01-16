@@ -230,23 +230,29 @@ wvc3ZnPg==">
 
 		<article>
 		<div class="post-content">
-		<p>Just recently I had to make up my mind about how to collaborate on simple memo files which would be synchronized using <a href='http://db.tt/tfvLVYN'>dropbox</a> across heterogeneous systems. Proprietary file formats would of course drop out. Besides, no one wanted to install an additional program.</p>
+		<p>Just recently I had to make up my mind about how to collaborate on simple memo files which would be synchronized using <a href="http://db.tt/tfvLVYN">dropbox</a> across heterogeneous systems. Proprietary file formats would of course drop out. Besides, no one wanted to install an additional program.</p>
 
-<p>A very intuitive possibility was to use the great and straightforward <a href='http://daringfireball.net/projects/markdown/syntax'>mardown syntax</a>. By mardown&#8217;s design you are able to compile an input document to an output document with markdown. However, we had three individual memo files, so everyone of us could write into his own <code>.md</code> file and two style files which we wanted to be compiled into one single <code>.html</code> file. For compiling multiple input files into one output file <a href='http://johnmacfarlane.net/pandoc/'>pandoc</a> comes in really handy.</p>
+<p>A very intuitive possibility was to use the great and straightforward <a href="http://daringfireball.net/projects/markdown/syntax">mardown syntax</a>. By mardown’s design you are able to compile an input document to an output document with markdown. However, we had three individual memo files, so everyone of us could write into his own <code>.md</code> file and two style files which we wanted to be compiled into one single <code>.html</code> file. For compiling multiple input files into one output file <a href="http://johnmacfarlane.net/pandoc/">pandoc</a> comes in really handy.</p>
 
 <p>If you are on a Unix/Mac machine you can compile multiple input files to one file by running following commands in a terminal window</p>
-<div class='highlight'><pre><code class='bash'><span class='nv'>$ </span><span class='nb'>cd</span> &lt;YOURDIRECTORY&gt;
-<span class='c'># =&gt; Change directory to where your files are located</span>
-<span class='nv'>$ </span>pandoc *.md &gt; memos.html
-<span class='c'># =&gt; Take all .md files in &lt;YOURDIRECTORY&gt; and compile a single html file</span>
+
+<div class="highlight"><pre><code class="bash"><span class="nv">$ </span><span class="nb">cd</span> &lt;YOURDIRECTORY&gt;
+<span class="c"># =&gt; Change directory to where your files are located</span>
+<span class="nv">$ </span>pandoc *.md &gt; memos.html
+<span class="c"># =&gt; Take all .md files in &lt;YOURDIRECTORY&gt; and compile a single html file</span>
 </code></pre></div>
+
 <p>Using Windows you might get an input error using the above mentioned command. Therefore it seems better to run following commands in your <code>cmd.exe</code>.</p>
-<div class='highlight'><pre><code class='bash'><span class='nv'>$ </span><span class='nb'>cd</span> &lt;YOURDIRECTORY&gt;
-<span class='c'># =&gt; Change directory to where your files are located</span>
-<span class='nv'>$ </span>pandoc -o memos.html input_1.md input_2.md input_n.md 
-<span class='c'># =&gt; Compile a single .html using all specified input files</span>
+
+<div class="highlight"><pre><code class="bash"><span class="nv">$ </span><span class="nb">cd</span> &lt;YOURDIRECTORY&gt;
+<span class="c"># =&gt; Change directory to where your files are located</span>
+<span class="nv">$ </span>pandoc -o memos.html input_1.md input_2.md input_n.md 
+<span class="c"># =&gt; Compile a single .html using all specified input files</span>
 </code></pre></div>
+
 <p>Using pandoc and dropbox for collaborative editing of simple memos across heterogeneous systems seems to work just fine. However pandoc as a processor is much more powerful and I can only recommend you take a look for yourself.</p>
+
+
         
 		</div>
 		</article>
@@ -258,6 +264,15 @@ wvc3ZnPg==">
 
 <footer class="post-footer">
  <div id="related-posts">
+
+  
+    <div class="related-post">
+     <span class="words hide">742</span>
+    <a class="read-next-title" href="/notes/three-basic-books-for-investment-banking-candidates/">Three basic books for investment banking candidates</a>
+    <p class="date articledate related-post-meta">January 16, 2015</p>
+        <p class="read-next-exc"><span class="relpost">You want to break into Wall Street or investment banking in general? Then you better get a great network and solid communication skills. But you also need to be quite well read in order to leave behind other aspiring bankers. Which books do you have to read?</span><a class="read-next-link" href="/notes/three-basic-books-for-investment-banking-candidates/" target="_top">Continue Reading</a>
+        </p>
+    </div>
 
   
     <div class="related-post">
@@ -274,15 +289,6 @@ wvc3ZnPg==">
     <a class="read-next-title" href="/notes/a-migration-from-wordpress-to-jekyll/">A migration from WordPress to Jekyll</a>
     <p class="date articledate related-post-meta">August  8, 2013</p>
         <p class="read-next-exc"><span class="relpost">After some fine years with WordPress I decided to move to something more lightweight. My hosting contract would end in a few days so I spent some time and migrated from WordPress to Jekyll. Here is how I did it.</span><a class="read-next-link" href="/notes/a-migration-from-wordpress-to-jekyll/" target="_top">Continue Reading</a>
-        </p>
-    </div>
-
-  
-    <div class="related-post">
-     <span class="words hide">504</span>
-    <a class="read-next-title" href="/notes/install-gnupg-on-mountain-lion/">Install GnuPG on Mountain Lion</a>
-    <p class="date articledate related-post-meta">May 13, 2013</p>
-        <p class="read-next-exc"><span class="relpost">GPG-Tools was working crazy hard over the last couple of months and finally delivered their GPGMail2 plug-in for the mail app. If you don't want the hassle of a non working encryption when you update to OSX Mavericks, you should go for the terminal version.</span><a class="read-next-link" href="/notes/install-gnupg-on-mountain-lion/" target="_top">Continue Reading</a>
         </p>
     </div>
 
@@ -324,5 +330,14 @@ $('ul#posts').infinitescroll({
 </script>
 <a class="hide" rel="author" href="https://plus.google.com/101986038840755391471">Jonah Wiaderny</a>
 <div class="loadingBar"></div>
+<script type="text/javascript">
+  var vglnk = { key: '8a178baf6f71cb928579aa792874a1a9' };
+
+  (function(d, t) {
+    var s = d.createElement(t); s.type = 'text/javascript'; s.async = true;
+    s.src = '//cdn.viglink.com/api/vglnk.js';
+    var r = d.getElementsByTagName(t)[0]; r.parentNode.insertBefore(s, r);
+  }(document, 'script'));
+</script>
 </body>
 </html>

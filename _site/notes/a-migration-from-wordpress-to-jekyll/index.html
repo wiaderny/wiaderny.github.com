@@ -239,44 +239,52 @@ wvc3ZnPg==">
 
 		<article>
 		<div class="post-content">
-		<p>The time with WordPress was fine. I don&#8217;t deny it. However, every now and then it occurred to me that this otherwise great CMS was somehow bloated, not light enough, with too many features that I would never use and which distracted me more than supported me whenever I just wanted to take a quick note from time to time.</p>
+		<p>The time with WordPress was fine. I don’t deny it. However, every now and then it occurred to me that this otherwise great CMS was somehow bloated, not light enough, with too many features that I would never use and which distracted me more than supported me whenever I just wanted to take a quick note from time to time.</p>
 
-<p>At the same time I have to admit that I got used to WordPress and was too jovial to migrate the whole system. After all, I heard of other systems but they all required PHP, Databases and weren&#8217;t lightweight either. Finally, WordPress&#8217; security hasn&#8217;t been its best asset since the beginnings. Motivated by an expiring agreement with my hosting-provider, I decided to quarry for alternatives and ended up with what seemed to be just perfect. I learned about Jekyll and liked it from the beginning.</p>
+<p>At the same time I have to admit that I got used to WordPress and was too jovial to migrate the whole system. After all, I heard of other systems but they all required PHP, Databases and weren’t lightweight either. Finally, WordPress’ security hasn’t been its best asset since the beginnings. Motivated by an expiring agreement with my hosting-provider, I decided to quarry for alternatives and ended up with what seemed to be just perfect. I learned about Jekyll and liked it from the beginning. </p>
 
-<p>It just had everything I wanted from a CMS, not more and not less. In fact, it is very versatile, extremely lightweight and gets along without PHP and Databases, which was just great because I could switch to static hosting. On top of that, Jekyll allows to write content in Markdown, which is superb because it let&#8217;s you focus on what you write rather than how it looks and you can write in your favorite text-app. Of course, that also means, that all of your content is stored in plain text files and not in Databases.</p>
+<p>It just had everything I wanted from a CMS, not more and not less. In fact, it is very versatile, extremely lightweight and gets along without PHP and Databases, which was just great because I could switch to static hosting. On top of that, Jekyll allows to write content in Markdown, which is superb because it let’s you focus on what you write rather than how it looks and you can write in your favorite text-app. Of course, that also means, that all of your content is stored in plain text files and not in Databases.</p>
 
-<p>Now there is not really anything new or unique in the way I set up this blog. In fact, I just followed the documentation, which is really comprehensive. You should probably take a look on the official <a href='https://github.com/mojombo/jekyll/wiki'>Jekyll wiki page</a>.</p>
+<p>Now there is not really anything new or unique in the way I set up this blog. In fact, I just followed the documentation, which is really comprehensive. You should probably take a look on the official <a href="https://github.com/mojombo/jekyll/wiki">Jekyll wiki page</a>.</p>
 
-<h3 id='preparing_for_the_migration'>Preparing for the migration</h3>
+<h3 id="preparing-for-the-migration">Preparing for the migration</h3>
 
-<p>The migration process is really simple. You need to install <code>hpricot</code> by running <code>gem install hpricot</code> if it isn&#8217;t already installed on your machine. Then you can export your WordPress blog using the build-in export utility. I assume you saved your file as <code>wordpress.xml</code>. Finally, run the command below and the system will generate a <code>.markdown</code> file per post.</p>
-<div class='highlight'><pre><code class='bash'><span class='nv'>$ </span>ruby -rubygems -e <span class='s1'>&#39;require &quot;jekyll/jekyll-import/wordpressdotcom&quot;;</span>
-<span class='s1'>  JekyllImport::WordpressDotCom.process({ :source =&gt; &quot;wordpress.xml&quot; })&#39;</span>
+<p>The migration process is really simple. You need to install <code>hpricot</code> by running <code>gem install hpricot</code> if it isn’t already installed on your machine. Then you can export your WordPress blog using the build-in export utility. I assume you saved your file as <code>wordpress.xml</code>. Finally, run the command below and the system will generate a <code>.markdown</code> file per post.</p>
+
+<div class="highlight"><pre><code class="bash"><span class="nv">$ </span>ruby -rubygems -e <span class="s1">&#39;require &quot;jekyll/jekyll-import/wordpressdotcom&quot;;</span>
+<span class="s1">  JekyllImport::WordpressDotCom.process({ :source =&gt; &quot;wordpress.xml&quot; })&#39;</span>
 </code></pre></div>
-<p>Now that you have separate <code>.markdown</code> files for each post, you can start to set up your blog.</p>
 
-<h3 id='setting_jekyll_up_on_github'>Setting Jekyll up on GitHub</h3>
+<p>Now that you have separate <code>.markdown</code> files for each post, you can start to set up your blog. </p>
+
+<h3 id="setting-jekyll-up-on-github">Setting Jekyll up on GitHub</h3>
 
 <p>After registering on GitHub, set up a new repository named username.github.com in your profile. If you are completely new to Jekyll, you could give Jekyll-Bootstrap a try by running the following in your terminal.</p>
-<div class='highlight'><pre><code class='bash'><span class='nv'>$ </span>git clone https://github.com/plusjade/jekyll-bootstrap.git username.github.com
-<span class='nv'>$ </span><span class='nb'>cd </span>username.github.com
-<span class='nv'>$ </span>git remote <span class='nb'>set</span>-url origin git@github.com:username/username.github.com.git
-<span class='nv'>$ </span>git push origin master
+
+<div class="highlight"><pre><code class="bash"><span class="nv">$ </span>git clone https://github.com/plusjade/jekyll-bootstrap.git username.github.com
+<span class="nv">$ </span><span class="nb">cd </span>username.github.com
+<span class="nv">$ </span>git remote <span class="nb">set</span>-url origin git@github.com:username/username.github.com.git
+<span class="nv">$ </span>git push origin master
 </code></pre></div>
+
 <p>You should receive an email after a few minutes which will inform you about the successful build. Browse to username.github.com to take a look.</p>
 
 <p>If you want to set up Jekyll-Bootstrap locally you should have Jekyll installed, and then run the command below. After that you can browse to http://localhost:4000 and take a look.</p>
-<div class='highlight'><pre><code class='bash'><span class='nv'>$ </span>git clone https://github.com/plusjade/jekyll-bootstrap.git
-<span class='nv'>$ </span><span class='nb'>cd </span>jekyll-bootstrap
-<span class='nv'>$ </span>jekyll serve -w
+
+<div class="highlight"><pre><code class="bash"><span class="nv">$ </span>git clone https://github.com/plusjade/jekyll-bootstrap.git
+<span class="nv">$ </span><span class="nb">cd </span>jekyll-bootstrap
+<span class="nv">$ </span>jekyll serve -w
 </code></pre></div>
+
 <p>Put all of your <code>.markdown</code> files in the <code>_post</code> folder and refresh your page to see Jekyll in action.</p>
 
 <p>I will continue this post once I find some time. Until then, I wish you success with setting up your Jekyll powered blog.</p>
+
+
         
 		</div>
 		</article>
-    <span class="words hide">564</span>
+    <span class="words hide">566</span>
 		</section>
 		
 		</div> <!-- /content -->
@@ -284,6 +292,15 @@ wvc3ZnPg==">
 
 <footer class="post-footer">
  <div id="related-posts">
+
+  
+    <div class="related-post">
+     <span class="words hide">742</span>
+    <a class="read-next-title" href="/notes/three-basic-books-for-investment-banking-candidates/">Three basic books for investment banking candidates</a>
+    <p class="date articledate related-post-meta">January 16, 2015</p>
+        <p class="read-next-exc"><span class="relpost">You want to break into Wall Street or investment banking in general? Then you better get a great network and solid communication skills. But you also need to be quite well read in order to leave behind other aspiring bankers. Which books do you have to read?</span><a class="read-next-link" href="/notes/three-basic-books-for-investment-banking-candidates/" target="_top">Continue Reading</a>
+        </p>
+    </div>
 
   
     <div class="related-post">
@@ -296,19 +313,10 @@ wvc3ZnPg==">
 
   
     <div class="related-post">
-     <span class="words hide">505</span>
+     <span class="words hide">508</span>
     <a class="read-next-title" href="/notes/install-gnupg-on-mountain-lion/">Install GnuPG on Mountain Lion</a>
     <p class="date articledate related-post-meta">May 13, 2013</p>
         <p class="read-next-exc"><span class="relpost">GPG-Tools was working crazy hard over the last couple of months and finally delivered their GPGMail2 plug-in for the mail app. If you don't want the hassle of a non working encryption when you update to OSX Mavericks, you should go for the terminal version.</span><a class="read-next-link" href="/notes/install-gnupg-on-mountain-lion/" target="_top">Continue Reading</a>
-        </p>
-    </div>
-
-  
-    <div class="related-post">
-     <span class="words hide">135</span>
-    <a class="read-next-title" href="/notes/do-not-forget-your-blosxom-conf/">Don't forget Blosxom</a>
-    <p class="date articledate related-post-meta">January 11, 2013</p>
-        <p class="read-next-exc"><span class="relpost">Blosxom is a simple content management system written in Perl by Rael Dornfest. If you are new to this system, you might experience the same problem I had with the layout. This quick note should not be a how-to but rather a hint to setting up the blosxom.config correctly.</span><a class="read-next-link" href="/notes/do-not-forget-your-blosxom-conf/" target="_top">Continue Reading</a>
         </p>
     </div>
 
@@ -350,5 +358,14 @@ $('ul#posts').infinitescroll({
 </script>
 <a class="hide" rel="author" href="https://plus.google.com/101986038840755391471">Jonah Wiaderny</a>
 <div class="loadingBar"></div>
+<script type="text/javascript">
+  var vglnk = { key: '8a178baf6f71cb928579aa792874a1a9' };
+
+  (function(d, t) {
+    var s = d.createElement(t); s.type = 'text/javascript'; s.async = true;
+    s.src = '//cdn.viglink.com/api/vglnk.js';
+    var r = d.getElementsByTagName(t)[0]; r.parentNode.insertBefore(s, r);
+  }(document, 'script'));
+</script>
 </body>
 </html>

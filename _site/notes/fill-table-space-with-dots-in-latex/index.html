@@ -230,54 +230,69 @@ wvc3ZnPg==">
 		<div class="post-content">
 		<p>While doing some work for the Physical Therapy Office I was faced with the challenge to fill the space within a table, more precisely the space within two rows, with dots.</p>
 
-<p><img alt='Fill table space with dots in LaTeX' src='../../assets/images/Fill-dots-in-LaTeX.png' /></p>
-<p>At first the answer was pretty obvious: the <code>\dottfill</code> command! But that will not work our properly, for there will remain margins on each side of every row, what will significantly compromise the aesthetics.</p><p>What needed to be done is to set the margins to zero on each side of every row. This has been achieved by modifying the <code>tabular</code> command. Usually your <code>tabular</code> command looks something like this</p><div class='highlight'><pre><code class='tex'><span class='k'>\begin</span><span class='nb'>{</span>tabular<span class='nb'>}{</span>lll<span class='nb'>}</span>
+<p><img src="../../assets/images/Fill-dots-in-LaTeX.png" alt="Fill table space with dots in LaTeX" title="Fill table space with dots in LaTeX" /></p>
+
+<p>At first the answer was pretty obvious: the <code>\dottfill</code> command! But that will not work our properly, for there will remain margins on each side of every row, what will significantly compromise the aesthetics.</p>
+
+<p>What needed to be done is to set the margins to zero on each side of every row. This has been achieved by modifying the <code>tabular</code> command. Usually your <code>tabular</code> command looks something like this</p>
+
+<div class="highlight"><pre><code class="tex"><span class="k">\begin</span><span class="nb">{</span>tabular<span class="nb">}{</span>lll<span class="nb">}</span>
 </code></pre></div>
-<p><p>when you want your rows to be left aligned. But in order to achieve the desired look we need to put an <code>@{}</code> in front of and at the end of each row, what will eliminate the margins.</p></p>
+
+<p>when you want your rows to be left aligned. But in order to achieve the desired look we need to put an <code>@{}</code> in front of and at the end of each row, what will eliminate the margins.</p>
+
 <p>The tabular command should now look like the one below.</p>
-<p><div class='highlight'><pre><code class='tex'><span class='k'>\begin</span><span class='nb'>{</span>tabular<span class='nb'>}{</span>@<span class='nb'>{}</span>l@<span class='nb'>{}</span>l@<span class='nb'>{}</span>l@<span class='nb'>{}}</span>&lt;/code&gt;&lt;/pre&gt;
-</code></pre></div></p>
-<p>Having this done, the rest should not constitute a challenge anymore. I have added my final code snippet of the invoice I made below.</p><div class='highlight'><pre><code class='tex'><span class='k'>\begin</span><span class='nb'>{</span>table<span class='nb'>}</span>[h]
-<span class='k'>\begin</span><span class='nb'>{</span>tabular<span class='nb'>}{</span>@<span class='nb'>{}</span>l@<span class='nb'>{}</span>l@<span class='nb'>{}</span>l@<span class='nb'>{}</span>r@<span class='nb'>{}</span>r@<span class='nb'>{}</span>r@<span class='nb'>{}</span>r@<span class='nb'>{}}</span>
-<span class='k'>\toprule</span><span class='na'>[1.2pt]</span>
 
-    Anzahl  <span class='nb'>&amp;</span>amp; <span class='k'>\hspace</span><span class='nb'>{</span>4.3em<span class='nb'>}</span> <span class='nb'>&amp;</span>amp; Behandlungstyp <span class='nb'>&amp;</span>amp; 
-    <span class='k'>\multicolumn</span><span class='nb'>{</span>1<span class='nb'>}{</span>@<span class='nb'>{</span><span class='k'>\hspace</span><span class='nb'>{</span>7em<span class='nb'>}}</span>r@<span class='nb'>{}}{}</span> <span class='nb'>&amp;</span>amp; <span class='nb'>&amp;</span>amp; Einzelpreis <span class='nb'>&amp;</span>amp; 
-    <span class='k'>\multicolumn</span><span class='nb'>{</span>1<span class='nb'>}{</span>@<span class='nb'>{</span><span class='k'>\hspace</span><span class='nb'>{</span>9.8em<span class='nb'>}}</span>r@<span class='nb'>{}}{</span>Gesamtpreis<span class='nb'>}</span><span class='k'>\\</span>
+<div class="highlight"><pre><code class="tex"><span class="k">\begin</span><span class="nb">{</span>tabular<span class="nb">}{</span>@<span class="nb">{}</span>l@<span class="nb">{}</span>l@<span class="nb">{}</span>l@<span class="nb">{}}</span>&lt;/code&gt;&lt;/pre&gt;
+</code></pre></div>
+
+<p>Having this done, the rest should not constitute a challenge anymore. I have added my final code snippet of the invoice I made below.</p>
+
+<div class="highlight"><pre><code class="tex"><span class="k">\begin</span><span class="nb">{</span>table<span class="nb">}</span>[h]
+<span class="k">\begin</span><span class="nb">{</span>tabular<span class="nb">}{</span>@<span class="nb">{}</span>l@<span class="nb">{}</span>l@<span class="nb">{}</span>l@<span class="nb">{}</span>r@<span class="nb">{}</span>r@<span class="nb">{}</span>r@<span class="nb">{}</span>r@<span class="nb">{}}</span>
+<span class="k">\toprule</span><span class="na">[1.2pt]</span>
+
+    Anzahl  <span class="nb">&amp;</span>amp; <span class="k">\hspace</span><span class="nb">{</span>4.3em<span class="nb">}</span> <span class="nb">&amp;</span>amp; Behandlungstyp <span class="nb">&amp;</span>amp; 
+    <span class="k">\multicolumn</span><span class="nb">{</span>1<span class="nb">}{</span>@<span class="nb">{</span><span class="k">\hspace</span><span class="nb">{</span>7em<span class="nb">}}</span>r@<span class="nb">{}}{}</span> <span class="nb">&amp;</span>amp; <span class="nb">&amp;</span>amp; Einzelpreis <span class="nb">&amp;</span>amp; 
+    <span class="k">\multicolumn</span><span class="nb">{</span>1<span class="nb">}{</span>@<span class="nb">{</span><span class="k">\hspace</span><span class="nb">{</span>9.8em<span class="nb">}}</span>r@<span class="nb">{}}{</span>Gesamtpreis<span class="nb">}</span><span class="k">\\</span>
  
-    <span class='k'>\midrule</span>
+    <span class="k">\midrule</span>
 
-    <span class='k'>\multicolumn</span><span class='nb'>{</span>2<span class='nb'>}{</span>@<span class='nb'>{}</span>l@<span class='nb'>{}}{</span><span class='k'>\aa\dotfill</span><span class='nb'>}</span> <span class='nb'>&amp;</span>amp; 
-    <span class='k'>\multicolumn</span><span class='nb'>{</span>4<span class='nb'>}{</span>@<span class='nb'>{}</span>l@<span class='nb'>{}}{</span><span class='k'>\ab\dotfill</span> <span class='k'>\ac</span><span class='nb'>}</span> <span class='nb'>&amp;</span>amp; <span class='k'>\dotfill</span> <span class='k'>\ad\\</span>
+    <span class="k">\multicolumn</span><span class="nb">{</span>2<span class="nb">}{</span>@<span class="nb">{}</span>l@<span class="nb">{}}{</span><span class="k">\aa\dotfill</span><span class="nb">}</span> <span class="nb">&amp;</span>amp; 
+    <span class="k">\multicolumn</span><span class="nb">{</span>4<span class="nb">}{</span>@<span class="nb">{}</span>l@<span class="nb">{}}{</span><span class="k">\ab\dotfill</span> <span class="k">\ac</span><span class="nb">}</span> <span class="nb">&amp;</span>amp; <span class="k">\dotfill</span> <span class="k">\ad\\</span>
 
-    <span class='k'>\multicolumn</span><span class='nb'>{</span>2<span class='nb'>}{</span>@<span class='nb'>{}</span>l@<span class='nb'>{}}{</span><span class='k'>\ba\dotfill</span><span class='nb'>}</span> <span class='nb'>&amp;</span>amp; 
-    <span class='k'>\multicolumn</span><span class='nb'>{</span>4<span class='nb'>}{</span>@<span class='nb'>{}</span>l@<span class='nb'>{}}{</span><span class='k'>\bb\dotfill</span> <span class='k'>\bc</span><span class='nb'>}</span> <span class='nb'>&amp;</span>amp; <span class='k'>\dotfill</span> <span class='k'>\bd\\</span>
+    <span class="k">\multicolumn</span><span class="nb">{</span>2<span class="nb">}{</span>@<span class="nb">{}</span>l@<span class="nb">{}}{</span><span class="k">\ba\dotfill</span><span class="nb">}</span> <span class="nb">&amp;</span>amp; 
+    <span class="k">\multicolumn</span><span class="nb">{</span>4<span class="nb">}{</span>@<span class="nb">{}</span>l@<span class="nb">{}}{</span><span class="k">\bb\dotfill</span> <span class="k">\bc</span><span class="nb">}</span> <span class="nb">&amp;</span>amp; <span class="k">\dotfill</span> <span class="k">\bd\\</span>
         
-            <span class='k'>\ifdefined\ca</span>
+            <span class="k">\ifdefined\ca</span>
         
-    <span class='k'>\multicolumn</span><span class='nb'>{</span>2<span class='nb'>}{</span>@<span class='nb'>{}</span>l@<span class='nb'>{}}{</span><span class='k'>\ca\dotfill</span><span class='nb'>}</span> <span class='nb'>&amp;</span>amp; 
-    <span class='k'>\multicolumn</span><span class='nb'>{</span>4<span class='nb'>}{</span>@<span class='nb'>{}</span>l@<span class='nb'>{}}{</span><span class='k'>\cb\dotfill</span> <span class='k'>\cc</span><span class='nb'>}</span> <span class='nb'>&amp;</span>amp; <span class='k'>\dotfill</span> <span class='k'>\cd\\</span>
+    <span class="k">\multicolumn</span><span class="nb">{</span>2<span class="nb">}{</span>@<span class="nb">{}</span>l@<span class="nb">{}}{</span><span class="k">\ca\dotfill</span><span class="nb">}</span> <span class="nb">&amp;</span>amp; 
+    <span class="k">\multicolumn</span><span class="nb">{</span>4<span class="nb">}{</span>@<span class="nb">{}</span>l@<span class="nb">{}}{</span><span class="k">\cb\dotfill</span> <span class="k">\cc</span><span class="nb">}</span> <span class="nb">&amp;</span>amp; <span class="k">\dotfill</span> <span class="k">\cd\\</span>
         
-            <span class='k'>\else</span>
-            <span class='k'>\fi</span>
-            <span class='k'>\ifdefined\da</span>
+            <span class="k">\else</span>
+            <span class="k">\fi</span>
+            <span class="k">\ifdefined\da</span>
     
-    <span class='k'>\multicolumn</span><span class='nb'>{</span>2<span class='nb'>}{</span>@<span class='nb'>{}</span>l@<span class='nb'>{}}{</span><span class='k'>\da\dotfill</span><span class='nb'>}</span> <span class='nb'>&amp;</span>amp; 
-    <span class='k'>\multicolumn</span><span class='nb'>{</span>4<span class='nb'>}{</span>@<span class='nb'>{}</span>l@<span class='nb'>{}}{</span><span class='k'>\db\dotfill</span> <span class='k'>\dc</span><span class='nb'>}</span> <span class='nb'>&amp;</span>amp; <span class='k'>\dotfill</span> <span class='k'>\dd\\</span>
+    <span class="k">\multicolumn</span><span class="nb">{</span>2<span class="nb">}{</span>@<span class="nb">{}</span>l@<span class="nb">{}}{</span><span class="k">\da\dotfill</span><span class="nb">}</span> <span class="nb">&amp;</span>amp; 
+    <span class="k">\multicolumn</span><span class="nb">{</span>4<span class="nb">}{</span>@<span class="nb">{}</span>l@<span class="nb">{}}{</span><span class="k">\db\dotfill</span> <span class="k">\dc</span><span class="nb">}</span> <span class="nb">&amp;</span>amp; <span class="k">\dotfill</span> <span class="k">\dd\\</span>
         
-            <span class='k'>\else</span>
-            <span class='k'>\fi</span>
+            <span class="k">\else</span>
+            <span class="k">\fi</span>
             
-    <span class='k'>\bottomrule</span><span class='na'>[1.2pt]</span><span class='k'>\addlinespace</span><span class='na'>[5pt]</span>
+    <span class="k">\bottomrule</span><span class="na">[1.2pt]</span><span class="k">\addlinespace</span><span class="na">[5pt]</span>
 
-<span class='k'>\multicolumn</span><span class='nb'>{</span>7<span class='nb'>}{</span>@<span class='nb'>{}</span>l@<span class='nb'>{}}{</span>Gesamtforderung<span class='k'>\dotfill</span> <span class='k'>\gesamt</span><span class='nb'>}</span><span class='k'>\\</span>
-<span class='k'>\end</span><span class='nb'>{</span>tabular<span class='nb'>}</span>
-<span class='k'>\end</span><span class='nb'>{</span>table<span class='nb'>}</span>
-</code></pre></div><p>This small change in the <code>tabular</code> command will render, if properly implemented, the output at the top.</p>
+<span class="k">\multicolumn</span><span class="nb">{</span>7<span class="nb">}{</span>@<span class="nb">{}</span>l@<span class="nb">{}}{</span>Gesamtforderung<span class="k">\dotfill</span> <span class="k">\gesamt</span><span class="nb">}</span><span class="k">\\</span>
+<span class="k">\end</span><span class="nb">{</span>tabular<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>table<span class="nb">}</span>
+</code></pre></div>
+
+<p>This small change in the <code>tabular</code> command will render, if properly implemented, the output at the top.</p>
+
+
         
 		</div>
 		</article>
-    <span class="words hide">417</span>
+    <span class="words hide">428</span>
 		</section>
 		
 		</div> <!-- /content -->
@@ -285,6 +300,15 @@ wvc3ZnPg==">
 
 <footer class="post-footer">
  <div id="related-posts">
+
+  
+    <div class="related-post">
+     <span class="words hide">742</span>
+    <a class="read-next-title" href="/notes/three-basic-books-for-investment-banking-candidates/">Three basic books for investment banking candidates</a>
+    <p class="date articledate related-post-meta">January 16, 2015</p>
+        <p class="read-next-exc"><span class="relpost">You want to break into Wall Street or investment banking in general? Then you better get a great network and solid communication skills. But you also need to be quite well read in order to leave behind other aspiring bankers. Which books do you have to read?</span><a class="read-next-link" href="/notes/three-basic-books-for-investment-banking-candidates/" target="_top">Continue Reading</a>
+        </p>
+    </div>
 
   
     <div class="related-post">
@@ -301,15 +325,6 @@ wvc3ZnPg==">
     <a class="read-next-title" href="/notes/a-migration-from-wordpress-to-jekyll/">A migration from WordPress to Jekyll</a>
     <p class="date articledate related-post-meta">August  8, 2013</p>
         <p class="read-next-exc"><span class="relpost">After some fine years with WordPress I decided to move to something more lightweight. My hosting contract would end in a few days so I spent some time and migrated from WordPress to Jekyll. Here is how I did it.</span><a class="read-next-link" href="/notes/a-migration-from-wordpress-to-jekyll/" target="_top">Continue Reading</a>
-        </p>
-    </div>
-
-  
-    <div class="related-post">
-     <span class="words hide">504</span>
-    <a class="read-next-title" href="/notes/install-gnupg-on-mountain-lion/">Install GnuPG on Mountain Lion</a>
-    <p class="date articledate related-post-meta">May 13, 2013</p>
-        <p class="read-next-exc"><span class="relpost">GPG-Tools was working crazy hard over the last couple of months and finally delivered their GPGMail2 plug-in for the mail app. If you don't want the hassle of a non working encryption when you update to OSX Mavericks, you should go for the terminal version.</span><a class="read-next-link" href="/notes/install-gnupg-on-mountain-lion/" target="_top">Continue Reading</a>
         </p>
     </div>
 
@@ -351,5 +366,14 @@ $('ul#posts').infinitescroll({
 </script>
 <a class="hide" rel="author" href="https://plus.google.com/101986038840755391471">Jonah Wiaderny</a>
 <div class="loadingBar"></div>
+<script type="text/javascript">
+  var vglnk = { key: '8a178baf6f71cb928579aa792874a1a9' };
+
+  (function(d, t) {
+    var s = d.createElement(t); s.type = 'text/javascript'; s.async = true;
+    s.src = '//cdn.viglink.com/api/vglnk.js';
+    var r = d.getElementsByTagName(t)[0]; r.parentNode.insertBefore(s, r);
+  }(document, 'script'));
+</script>
 </body>
 </html>

@@ -228,77 +228,82 @@ wvc3ZnPg==">
 
 		<article>
 		<div class="post-content">
-		<p>LaTeX, or more precisely speaking <a href='http://www.ctan.org/pkg/pgf'>TikZ</a>, lets you create really great diagrams for your economic papers. The main difference compared to carelessly embedding images in your document is that you will be creating vector images with TiKz, which are lossless scaleable, what means they won&#8217;t blur and you won&#8217;t see pixels when you scale them up. Another great point which makes me be in favor of vector graphics by TikZ is that they are more accurate compared to their now randomly appearing pixel brothers.</p>
+		<p>LaTeX, or more precisely speaking <a href="http://www.ctan.org/pkg/pgf">TikZ</a>, lets you create really great diagrams for your economic papers. The main difference compared to carelessly embedding images in your document is that you will be creating vector images with TiKz, which are lossless scaleable, what means they won’t blur and you won’t see pixels when you scale them up. Another great point which makes me be in favor of vector graphics by TikZ is that they are more accurate compared to their now randomly appearing pixel brothers.</p>
 
-<h3 id='the_final_product'>The final product</h3>
+<h3 id="the-final-product">The final product</h3>
 
 <p>Lately I was creating the diagram which I attached below. In this task I was focused primarily on some fine details, i.e. the arrowheads, the crosshatching, and the line thickness ratio.</p>
 
-<p><img alt='Economic diagram in LaTeX created with TikZ' src='http://f.cl.ly/items/3m2h0i3U2u1s243O3D1J/din-norm.jpg' /></p>
+<p><img src="http://f.cl.ly/items/3m2h0i3U2u1s243O3D1J/din-norm.jpg" alt="Economic diagram in LaTeX created with TikZ" title="Economic diagram in LaTeX created with TikZ" /></p>
 
 <p>Even if this diagram is just of qualitative and not of quantitative nature, it is any the less important for me to have correctly set arrowheads. I must admit at this point, that I consider diagrams which do not feature this detail, as of lacking accuracy. Well set heads, by contrast, demonstrate understanding of the Cartesian coordinate system, for they, being set at the end of each coordinate axis indicate the growth direction of the coordinate itself. A coordinate without correct arrowheads can therefore, in a very consequent way, be considered meaningless and vague.</p>
 
-<h3 id='custom_arrowheads'>Custom arrowheads</h3>
+<h3 id="custom-arrowheads">Custom arrowheads</h3>
 
 <p>In the first place it was necessary to customize the arrowheads which would be loaded using the default TikZ Library <code>arrows</code>. Beneath I have attached the necessary code to produce finer arrowheads.</p>
-<div class='highlight'><pre><code class='tex'><span class='c'>%-------------------------------------------------------------</span>
-<span class='c'>%       Call arrow library and declare arrowheads</span>
-<span class='c'>%-------------------------------------------------------------</span>
 
-<span class='k'>\usetikzlibrary</span><span class='nb'>{</span>arrows<span class='nb'>}</span>
+<div class="highlight"><pre><code class="tex"><span class="c">%-------------------------------------------------------------</span>
+<span class="c">%       Call arrow library and declare arrowheads</span>
+<span class="c">%-------------------------------------------------------------</span>
 
-<span class='k'>\makeatletter</span>
-<span class='k'>\pgfarrowsdeclare</span><span class='nb'>{</span>dinarr<span class='nb'>}{</span>dinarr<span class='nb'>}</span>
-   <span class='nb'>{</span>
-<span class='k'>\pgfutil</span>@tempdima=0.5pt<span class='c'>%</span>
-<span class='k'>\advance\pgfutil</span>@tempdima by.25<span class='k'>\pgflinewidth</span><span class='c'>%</span>
-<span class='k'>\pgfutil</span>@tempdimb=7.29<span class='k'>\pgfutil</span>@tempdima<span class='k'>\advance\pgfutil</span>@tempdimb by.5<span class='k'>\pgflinewidth</span><span class='c'>%</span>
-<span class='k'>\pgfarrowsleftextend</span><span class='nb'>{</span>+-<span class='k'>\pgfutil</span>@tempdimb<span class='nb'>}</span>
-<span class='k'>\pgfutil</span>@tempdimb=.5<span class='k'>\pgfutil</span>@tempdima<span class='k'>\advance\pgfutil</span>@tempdimb by1.6<span class='k'>\pgflinewidth</span><span class='c'>%</span>
-<span class='k'>\pgfarrowsrightextend</span><span class='nb'>{</span>+<span class='k'>\pgfutil</span>@tempdimb<span class='nb'>}</span>
-   <span class='nb'>}</span>
-   <span class='nb'>{</span>
-<span class='k'>\pgfutil</span>@tempdima=0.5pt<span class='c'>%</span>
-<span class='k'>\advance\pgfutil</span>@tempdima by.25<span class='k'>\pgflinewidth</span><span class='c'>%</span>
-<span class='k'>\pgfsetdash</span><span class='nb'>{}{</span>+0pt<span class='nb'>}</span>
-<span class='k'>\pgfsetmiterjoin</span>
-<span class='k'>\pgfpathmoveto</span><span class='nb'>{</span><span class='k'>\pgfpointadd</span><span class='nb'>{</span><span class='k'>\pgfqpoint</span><span class='nb'>{</span>0.5<span class='k'>\pgfutil</span>@tempdima<span class='nb'>}{</span>0pt<span class='nb'>}}</span><span class='c'>%</span>
-<span class='nb'>{</span><span class='k'>\pgfqpoint</span><span class='nb'>{</span>-3mm<span class='nb'>}{</span>0.5mm<span class='nb'>}}}</span>
-<span class='k'>\pgfpathlineto</span><span class='nb'>{</span><span class='k'>\pgfqpoint</span><span class='nb'>{</span>0.5<span class='k'>\pgfutil</span>@tempdima<span class='nb'>}{</span>0<span class='k'>\pgfutil</span>@tempdima<span class='nb'>}}</span>
-<span class='k'>\pgfpathlineto</span><span class='nb'>{</span><span class='k'>\pgfpointadd</span><span class='nb'>{</span><span class='k'>\pgfqpoint</span><span class='nb'>{</span>0.5<span class='k'>\pgfutil</span>@tempdima<span class='nb'>}{</span>0pt<span class='nb'>}}</span><span class='c'>%</span>
-<span class='nb'>{</span><span class='k'>\pgfqpoint</span><span class='nb'>{</span>-3mm<span class='nb'>}{</span>-0.5mm<span class='nb'>}}}</span>
-<span class='k'>\pgfpathclose</span>
-<span class='k'>\pgfusepathqfillstroke</span>
-   <span class='nb'>}</span>
-<span class='k'>\pgfarrowsdeclarereversed</span><span class='nb'>{</span>dinarr reversed<span class='nb'>}{</span>dinarr reversed<span class='nb'>}{</span>dinarr<span class='nb'>}{</span>dinarr<span class='nb'>}</span>
-<span class='k'>\makeatother</span>
+<span class="k">\usetikzlibrary</span><span class="nb">{</span>arrows<span class="nb">}</span>
+
+<span class="k">\makeatletter</span>
+<span class="k">\pgfarrowsdeclare</span><span class="nb">{</span>dinarr<span class="nb">}{</span>dinarr<span class="nb">}</span>
+   <span class="nb">{</span>
+<span class="k">\pgfutil</span>@tempdima=0.5pt<span class="c">%</span>
+<span class="k">\advance\pgfutil</span>@tempdima by.25<span class="k">\pgflinewidth</span><span class="c">%</span>
+<span class="k">\pgfutil</span>@tempdimb=7.29<span class="k">\pgfutil</span>@tempdima<span class="k">\advance\pgfutil</span>@tempdimb by.5<span class="k">\pgflinewidth</span><span class="c">%</span>
+<span class="k">\pgfarrowsleftextend</span><span class="nb">{</span>+-<span class="k">\pgfutil</span>@tempdimb<span class="nb">}</span>
+<span class="k">\pgfutil</span>@tempdimb=.5<span class="k">\pgfutil</span>@tempdima<span class="k">\advance\pgfutil</span>@tempdimb by1.6<span class="k">\pgflinewidth</span><span class="c">%</span>
+<span class="k">\pgfarrowsrightextend</span><span class="nb">{</span>+<span class="k">\pgfutil</span>@tempdimb<span class="nb">}</span>
+   <span class="nb">}</span>
+   <span class="nb">{</span>
+<span class="k">\pgfutil</span>@tempdima=0.5pt<span class="c">%</span>
+<span class="k">\advance\pgfutil</span>@tempdima by.25<span class="k">\pgflinewidth</span><span class="c">%</span>
+<span class="k">\pgfsetdash</span><span class="nb">{}{</span>+0pt<span class="nb">}</span>
+<span class="k">\pgfsetmiterjoin</span>
+<span class="k">\pgfpathmoveto</span><span class="nb">{</span><span class="k">\pgfpointadd</span><span class="nb">{</span><span class="k">\pgfqpoint</span><span class="nb">{</span>0.5<span class="k">\pgfutil</span>@tempdima<span class="nb">}{</span>0pt<span class="nb">}}</span><span class="c">%</span>
+<span class="nb">{</span><span class="k">\pgfqpoint</span><span class="nb">{</span>-3mm<span class="nb">}{</span>0.5mm<span class="nb">}}}</span>
+<span class="k">\pgfpathlineto</span><span class="nb">{</span><span class="k">\pgfqpoint</span><span class="nb">{</span>0.5<span class="k">\pgfutil</span>@tempdima<span class="nb">}{</span>0<span class="k">\pgfutil</span>@tempdima<span class="nb">}}</span>
+<span class="k">\pgfpathlineto</span><span class="nb">{</span><span class="k">\pgfpointadd</span><span class="nb">{</span><span class="k">\pgfqpoint</span><span class="nb">{</span>0.5<span class="k">\pgfutil</span>@tempdima<span class="nb">}{</span>0pt<span class="nb">}}</span><span class="c">%</span>
+<span class="nb">{</span><span class="k">\pgfqpoint</span><span class="nb">{</span>-3mm<span class="nb">}{</span>-0.5mm<span class="nb">}}}</span>
+<span class="k">\pgfpathclose</span>
+<span class="k">\pgfusepathqfillstroke</span>
+   <span class="nb">}</span>
+<span class="k">\pgfarrowsdeclarereversed</span><span class="nb">{</span>dinarr reversed<span class="nb">}{</span>dinarr reversed<span class="nb">}{</span>dinarr<span class="nb">}{</span>dinarr<span class="nb">}</span>
+<span class="k">\makeatother</span>
 </code></pre></div>
+
 <p>These arrowheads can be of course altered to specific needs, but this code snippet will produce - if properly inserted - arrowheads which have .5mm in height and 3mm in length. You can alter their appearance by changing the values in <code>\pgfqpoint{-3mm}{0.5mm}</code> and its counterpart two lines below. If you are happy with the appearance you can use them as usual with a command like <code>\draw[-dinarr]</code>.</p>
 
-<h3 id='custom_hatching'>Custom hatching</h3>
+<h3 id="custom-hatching">Custom hatching</h3>
 
 <p>Creating a neat hatching was the next task which I was up to. I wanted the hatching to be vertically aligned and 1mm apart. The code was again customized after the <code>pattern</code> library was called.</p>
-<div class='highlight'><pre><code class='tex'><span class='c'>%-------------------------------------------------------------</span>
-<span class='c'>%       Call some libraries and declare vertical hatchings      </span>
-<span class='c'>%-------------------------------------------------------------</span>
-<span class='k'>\usetikzlibrary</span><span class='nb'>{</span>patterns,calc,intersections<span class='nb'>}</span>
 
-<span class='k'>\pgfdeclarepatternformonly</span><span class='nb'>{</span>dinhatch<span class='nb'>}{</span><span class='k'>\pgfpointorigin</span><span class='nb'>}{</span><span class='k'>\pgfqpoint</span><span class='nb'>{</span>1mm<span class='nb'>}</span><span class='c'>%</span>
-<span class='nb'>{</span>100pt<span class='nb'>}}{</span><span class='k'>\pgfqpoint</span><span class='nb'>{</span>1mm<span class='nb'>}{</span>100pt<span class='nb'>}}</span>
-<span class='nb'>{</span>
-  <span class='k'>\pgfsetlinewidth</span><span class='nb'>{</span>0.4pt<span class='nb'>}</span>
-  <span class='k'>\pgfpathmoveto</span><span class='nb'>{</span><span class='k'>\pgfqpoint</span><span class='nb'>{</span>0.5pt<span class='nb'>}{</span>0pt<span class='nb'>}}</span>
-  <span class='k'>\pgfpathlineto</span><span class='nb'>{</span><span class='k'>\pgfqpoint</span><span class='nb'>{</span>0.5pt<span class='nb'>}{</span>100pt<span class='nb'>}}</span>
-  <span class='k'>\pgfusepath</span><span class='nb'>{</span>stroke<span class='nb'>}</span>
-<span class='nb'>}</span>
+<div class="highlight"><pre><code class="tex"><span class="c">%-------------------------------------------------------------</span>
+<span class="c">%       Call some libraries and declare vertical hatchings      </span>
+<span class="c">%-------------------------------------------------------------</span>
+<span class="k">\usetikzlibrary</span><span class="nb">{</span>patterns,calc,intersections<span class="nb">}</span>
+
+<span class="k">\pgfdeclarepatternformonly</span><span class="nb">{</span>dinhatch<span class="nb">}{</span><span class="k">\pgfpointorigin</span><span class="nb">}{</span><span class="k">\pgfqpoint</span><span class="nb">{</span>1mm<span class="nb">}</span><span class="c">%</span>
+<span class="nb">{</span>100pt<span class="nb">}}{</span><span class="k">\pgfqpoint</span><span class="nb">{</span>1mm<span class="nb">}{</span>100pt<span class="nb">}}</span>
+<span class="nb">{</span>
+  <span class="k">\pgfsetlinewidth</span><span class="nb">{</span>0.4pt<span class="nb">}</span>
+  <span class="k">\pgfpathmoveto</span><span class="nb">{</span><span class="k">\pgfqpoint</span><span class="nb">{</span>0.5pt<span class="nb">}{</span>0pt<span class="nb">}}</span>
+  <span class="k">\pgfpathlineto</span><span class="nb">{</span><span class="k">\pgfqpoint</span><span class="nb">{</span>0.5pt<span class="nb">}{</span>100pt<span class="nb">}}</span>
+  <span class="k">\pgfusepath</span><span class="nb">{</span>stroke<span class="nb">}</span>
+<span class="nb">}</span>
 </code></pre></div>
-<h3 id='whats_next'>What&#8217;s next?</h3>
+
+<h3 id="what8217s-next">What’s next?</h3>
 
 <p>Having this done, I was ready to finally draw some lines with LaTeX and TikZ. Well, not really. There were still some styles to define, i.e. intercept points, labels, etc. I will continue this note, when I have some more spare time and possibly upload the <code>.tex</code> file as well.</p>
+
         
 		</div>
 		</article>
-    <span class="words hide">618</span>
+    <span class="words hide">625</span>
 		</section>
 		
 		</div> <!-- /content -->
@@ -306,6 +311,15 @@ wvc3ZnPg==">
 
 <footer class="post-footer">
  <div id="related-posts">
+
+  
+    <div class="related-post">
+     <span class="words hide">742</span>
+    <a class="read-next-title" href="/notes/three-basic-books-for-investment-banking-candidates/">Three basic books for investment banking candidates</a>
+    <p class="date articledate related-post-meta">January 16, 2015</p>
+        <p class="read-next-exc"><span class="relpost">You want to break into Wall Street or investment banking in general? Then you better get a great network and solid communication skills. But you also need to be quite well read in order to leave behind other aspiring bankers. Which books do you have to read?</span><a class="read-next-link" href="/notes/three-basic-books-for-investment-banking-candidates/" target="_top">Continue Reading</a>
+        </p>
+    </div>
 
   
     <div class="related-post">
@@ -322,15 +336,6 @@ wvc3ZnPg==">
     <a class="read-next-title" href="/notes/a-migration-from-wordpress-to-jekyll/">A migration from WordPress to Jekyll</a>
     <p class="date articledate related-post-meta">August  8, 2013</p>
         <p class="read-next-exc"><span class="relpost">After some fine years with WordPress I decided to move to something more lightweight. My hosting contract would end in a few days so I spent some time and migrated from WordPress to Jekyll. Here is how I did it.</span><a class="read-next-link" href="/notes/a-migration-from-wordpress-to-jekyll/" target="_top">Continue Reading</a>
-        </p>
-    </div>
-
-  
-    <div class="related-post">
-     <span class="words hide">504</span>
-    <a class="read-next-title" href="/notes/install-gnupg-on-mountain-lion/">Install GnuPG on Mountain Lion</a>
-    <p class="date articledate related-post-meta">May 13, 2013</p>
-        <p class="read-next-exc"><span class="relpost">GPG-Tools was working crazy hard over the last couple of months and finally delivered their GPGMail2 plug-in for the mail app. If you don't want the hassle of a non working encryption when you update to OSX Mavericks, you should go for the terminal version.</span><a class="read-next-link" href="/notes/install-gnupg-on-mountain-lion/" target="_top">Continue Reading</a>
         </p>
     </div>
 
@@ -372,5 +377,14 @@ $('ul#posts').infinitescroll({
 </script>
 <a class="hide" rel="author" href="https://plus.google.com/101986038840755391471">Jonah Wiaderny</a>
 <div class="loadingBar"></div>
+<script type="text/javascript">
+  var vglnk = { key: '8a178baf6f71cb928579aa792874a1a9' };
+
+  (function(d, t) {
+    var s = d.createElement(t); s.type = 'text/javascript'; s.async = true;
+    s.src = '//cdn.viglink.com/api/vglnk.js';
+    var r = d.getElementsByTagName(t)[0]; r.parentNode.insertBefore(s, r);
+  }(document, 'script'));
+</script>
 </body>
 </html>
