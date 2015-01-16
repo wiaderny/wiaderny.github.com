@@ -6,6 +6,8 @@ subtitle: Get these books if you are just starting out
 image: IMG_1838-2.jpg
 caption: dummy
 exc: You want to break into Wall Street or Investment Banking in general? Then you better get a great network and solid communication skills. But you also need to be quite well read in order to leave behind other aspiring bankers. Which books do you have to read?
+keywords: best investment banking books, popular investment banking books, investment banking required reading
+description: 3 of the best investment banking introduction books revealed so you know what to read to prepare for a solid career
 disclaimer: no
 ---
 

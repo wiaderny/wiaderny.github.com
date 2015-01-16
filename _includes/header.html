@@ -17,8 +17,18 @@
 
 	<link rel="apple-touch-icon-precomposed" href="{{ site.baseurl }}assets/images/avatar.jpg"/>
 
+	{% if page.description %}
+	<meta name="description" content="{{ page.description }}" />
+	{% else %}
 	<meta name="description" content="{{ site.meta-description }}" />
-	<meta name="keywords" content="jonah, jonasch, wiaderny, economics, econometrics, statistics, banking, financial management, finance, latex, miktex, gnu">
+	{% endif %}
+
+	{% if page.keywords %}
+	<meta name="keywords" content="{{ page.keywords }}">
+	{% else %}
+	<meta name="keywords" content="jonah, jonasch, wiaderny, investment banking, banking, economics, econometrics, statistics, financial management, finance">
+	{% endif %}
+
 	<!-- jQuery -->
 	<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js'></script>
 
