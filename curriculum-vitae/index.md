@@ -28,9 +28,6 @@ Education as Professional High-Performance Sports & Bodytrainer.
 **Junior Project Manager, DPolG GmbH**<span class="duration">2014 to present</span>
 Providing strategical and operational process optimization and innovation to improve efficiency and increase the team's overall profitability.
 
-**Founder of Green Mill Trading, LLC**<span class="duration">2013 to 2014</span>
-Analyzed, researched and implemented technical and structural processes and systems to shape the future of a launched foreign exchange trading company. Experience in building a high-performance team from the ground up.
-
 **Research Assistant, Martin-Luther-University**<span class="duration">2013 (4 months)</span>
 Achieved complementation of a dedicated quantitative research project regarding the Monetary Transmission Mechanism at the Chair of International Economic Relations
 
