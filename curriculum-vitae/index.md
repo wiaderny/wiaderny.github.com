@@ -3,7 +3,7 @@ layout: page
 title: Curriculum Vit&aelig;
 class: cv
 date: 2012-01-01 23:16:44
-update: Oct 24, 2013
+update: Jan 24, 2015
 downloads: <a href="../assets/data/wiaderny_cv_pub.pdf">Curriculum Vitæ as .pdf</a>
 ---
 
@@ -25,7 +25,7 @@ __BSA School of Health Management, Munich__<span class="duration">2007 (6 months
 Education as Professional High-Performance Sports & Bodytrainer.
 
 ###Employment
-**Junior Project Manager, DPolG GmbH**<span class="duration">2014 to present</span>
+**Junior Project Manager, DPolG GmbH**<span class="duration">2014 to 2015</span>
 Providing strategical and operational process optimization and innovation to improve efficiency and increase the team's overall profitability.
 
 **Research Assistant, Martin-Luther-University**<span class="duration">2013 (4 months)</span>
