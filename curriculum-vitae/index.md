@@ -45,6 +45,7 @@ Structured and maintained the office system, including data management, carrying
 
 **Personal Trainer**<span class="duration">2007 to 2010</span>
 Monitored and supervised a group of 20 overweight clients. Designed and implemented personalized exercise and diet programs targeting specific conditions and concerns including obesity, arthritis and high cholesterol.
+
 ###Completive Professional Activities
 **Internships**<br/>
 Permanent Representation of German State Baden-Württemberg to the EU, EnBW Public Affairs Department, Brussels<span class="duration">2012 (9 weeks)</span>
