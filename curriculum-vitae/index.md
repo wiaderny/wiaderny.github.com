@@ -66,10 +66,10 @@ American Finance Association, Econometric Society, Liechtenstein Society of Inve
 ###Skills
 **Problem Solving**<br/>
 
-Excellent analytical and logical reasoning skills. Creative and pioneering thinking approaches. Poise and patience under pressure. Committed to results. Can learn and utilize new skills quickly. Able to lead or work within a group environment.
+Substantial analytical and logical reasoning skills to obtain process information. Creative thinking approaches to plan, organize and prioritize workload. Poise and patience under pressure. Committed to results. Can learn and utilize new skills quickly. Able to lead or work within a group environment.
 
 **Computer Languages & Software**<br/>
-LaTeX, Mathematica, Matlab (especially Financial Tool- box), STATA, ARIS, Excel (currently learning VBA), Powerpoint, iWork, Adobe Creative Suite, HTML, XML, PHP, UNIX shell scripting, GNU make, SQL, JavaScript and CSS3. Can become proficient in other languages or Software upon request.
+LaTeX, Mathematica, Matlab (especially Financial Tool- box), STATA, ARIS, Excel (currently learning VBA), Powerpoint, iWork, Adobe Creative Suite, HTML, XML, PHP, UNIX shell scripting, GNU make, SQL, JavaScript and CSS3. Can become proficient in other languages or Software upon requirement.
 
 **Languages**<br/>
 German (Mother tongue), English (CEFR-Level C2), French (basic), Polish (basic).
