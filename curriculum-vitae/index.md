@@ -3,7 +3,7 @@ layout: page
 title: Curriculum Vit&aelig;
 class: cv
 date: 2012-01-01 23:16:44
-update: Jan 24, 2015
+update: Nov 21, 2017
 downloads: <a href="../assets/data/wiaderny_cv_pub.pdf">Curriculum Vitæ as .pdf</a>
 ---
 

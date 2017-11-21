@@ -3,6 +3,7 @@ layout: page
 title: About
 class: about white
 date: 2013-01-01 23:16:44
+update: Nov 21, 2017
 ---
 I'm Jonah, a 29-year-old banking and financial management graduate of the University of Liechtenstein and Managing Partner of [Jonah Levi Diamanten]. Previously, I attended the University of Halle-Wittenberg in Germany and fulfilled the requirements for receiving a Bachelor of Science in Economics. Beside my obvious interest in banking, particularly corporate finance and private banking, I like spending time hunting for beautiful typography, improving my humble coding skills, taking photographs and working out.
 
