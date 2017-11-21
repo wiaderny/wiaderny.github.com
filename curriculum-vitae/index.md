@@ -11,7 +11,7 @@ The most recent version of my public CV can be found right below this paragraph.
 
 
 
-###Education
+### Education
 __University of Liechtenstein, Vaduz__<span class="duration">2013 to present</span>
 Anticipate completion of M.Sc. in Banking and Financial Management in 2015.
 
