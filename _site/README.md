@@ -1,1 +1,0 @@
-Source for my Jekyll managed, personal site. See [wiaderny.org](http://www.wiaderny.org) for further details.
