@@ -34,9 +34,6 @@ Achieved complementation of a dedicated quantitative research project regarding 
 **Student Assistant, Martin-Luther-University**<span class="duration">2012 to 2013</span>
 Structured the curriculum and performed data analysis at the First Department of Medicine.
 
-**Co-Founder of Seidenbach S.á.r.l.**<span class="duration">2010 to 2012</span>
-Provided general oversight of all activities, managed day-to-day operations and assured efficient and profitable functioning of a company for handmade dress shirt and suit manufacturing.
-
 **Product Visualizer**<span class="duration">2009 to 2012</span>
 Provided creative/marketing solutions such as websites, UI-Design etc. including standardization and harmonization of interface appearance.
 
@@ -66,10 +63,10 @@ American Finance Association, Econometric Society, Liechtenstein Society of Inve
 <h3> Skills </h3> 
 **Problem Solving**<br/>
 
-Substantial analytical and logical reasoning skills to obtain process information. Creative thinking approaches to plan, organize and prioritize workload. Poise and patience under pressure. Committed to results. Can learn and utilize new skills quickly. Able to lead or work within a group environment.
+Analytical and logical reasoning skills to obtain process information. Poise and patience under pressure. Committed to results. Can learn and utilize new skills quickly. Able to lead or work within a group environment.
 
 **Computer Languages & Software**<br/>
-LaTeX, Mathematica, Matlab (especially Financial Toolbox), STATA, ARIS, Office Suite, iWork, Adobe Creative Suite, HTML, XML, PHP, UNIX shell scripting, GNU make, SQL, JavaScript and CSS3. Can become proficient in other languages or Software upon requirement.
+LaTeX, STATA, ARIS, Office Suite, iWork, Adobe Creative Suite, HTML, SQL, JavaScript and CSS3. Can become proficient in other languages or Software upon requirement.
 
 **Languages**<br/>
 German (Mother tongue), English (CEFR-Level C2), French (basic), Polish (basic).
