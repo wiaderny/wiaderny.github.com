@@ -11,7 +11,7 @@ The most recent version of my public CV can be found right below this paragraph.
 
 
 
-### Education
+<h3> Education </h3> 
 __University of Liechtenstein, Vaduz__<span class="duration">2013 to present</span>
 Anticipate completion of M.Sc. in Banking and Financial Management in 2015.
 
@@ -24,7 +24,7 @@ A-level in English, Ethics, Mathematics and Chemistry & Dietetics.
 __BSA School of Health Management, Munich__<span class="duration">2007 (6 months)</span>
 Education as Professional High-Performance Sports & Bodytrainer.
 
-###Employment
+<h3> Employment </h3> 
 **Junior Project Manager, DPolG GmbH**<span class="duration">2014 to 2015</span>
 Providing strategical and operational process optimization and innovation to improve efficiency and increase the team's overall profitability.
 
@@ -46,7 +46,7 @@ Structured and maintained the office system, including data management, carrying
 **Personal Trainer**<span class="duration">2007 to 2010</span>
 Monitored and supervised a group of 20 overweight clients. Designed and implemented personalized exercise and diet programs targeting specific conditions and concerns including obesity, arthritis and high cholesterol.
 
-###Completive Professional Activities
+<h3> Completive Professional Activities </h3> 
 **Internships**<br/>
 Permanent Representation of German State Baden-Württemberg to the EU, EnBW Public Affairs Department, Brussels<span class="duration">2012 (9 weeks)</span>
 
@@ -63,7 +63,7 @@ Capitalism and Socialism with Ass.- Prof. Dr. Art Carden<span class="duration">2
 **Memberships**<br/>
 American Finance Association, Econometric Society, Liechtenstein Society of Investment Professionals (pending), Royal Economic Society, Ludwig-von-Mises Institute
 
-###Skills
+<h3> Skills </h3> 
 **Problem Solving**<br/>
 
 Substantial analytical and logical reasoning skills to obtain process information. Creative thinking approaches to plan, organize and prioritize workload. Poise and patience under pressure. Committed to results. Can learn and utilize new skills quickly. Able to lead or work within a group environment.
