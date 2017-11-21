@@ -10,11 +10,13 @@ google-analytics-tracking-id: UA-16909425-8
 
 source:      .
 destination: ./_site
-plugins:     ./_plugins
+plugins_dif:     ./_plugins
+
+gems: [jekyll-paginate]
 
 future:      true
 lsi:         false
-pygments:    true
+highlighter: 
 markdown:    kramdown
 permalink:   /notes/:title/
 paginate:    10
@@ -34,7 +36,7 @@ kramdown:
   footnote_nr: 1
   entity_output: as_char
   toc_levels: 1..6
-  use_coderay: false
+  enable_coderay: false
 
 coderay:
     coderay_wrap: div
